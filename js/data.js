@@ -1,8 +1,8 @@
 const portfolioData = {
     "profile": {
-        "name": "Abdul Rafeh",
-        "title": "Web Developer & Content Writer",
-        "summary": "I am a highly motivated and ambitious individual with a solid educational foundation and a track record of success. I specialize in Web Development, WordPress, and SEO, creating modern, responsive, and high-performing websites.",
+        "name": "AR Software Solutions",
+        "title": "Premier Software Development Agency",
+        "summary": "We are a full-service digital agency delivering cutting-edge software solutions. Our team of expert developers, designers, and strategists specializes in Web Development, Custom Software, and Digital Marketing to transform your business ideas into reality.",
         "contact": {
             "mobile": "0300-0358189",
             "email": "abdulrafehqazi@gmail.com",
@@ -19,43 +19,31 @@ const portfolioData = {
     },
     "skills": {
         "programming": [
-            { "name": "HTML", "level": 95 },
-            { "name": "CSS / Tailwind", "level": 90 },
-            { "name": "JavaScript", "level": 85 },
-            { "name": "PHP", "level": 80 },
-            { "name": "SQL", "level": 75 }
+            { "name": "Frontend Development", "level": 98 },
+            { "name": "Backend Systems", "level": 95 },
+            { "name": "Mobile App Dev", "level": 90 },
+            { "name": "Cloud Architecture", "level": 85 },
+            { "name": "UI/UX Design", "level": 92 }
         ],
         "tools": [
-            "WordPress", "Bootstrap", "VS Code", "GitHub", "XAMPP", "MS Office", "SEO Tools (Ahrefs, Analytics)"
+            "React.js", "Vue.js", "Node.js", "Laravel", "Python/Django", "AWS", "Docker", "Figma", "Adobe XD", "SEO Suite"
         ]
     },
     "experience": [
         {
-            "role": "Web & WordPress Development",
+            "role": "Full-Stack Development",
             "period": "2019 - Present",
-            "description": "Building visual appealing and highly functional websites. Specialized in custom themes, performance optimization, and SEO-friendly structures."
+            "description": "Delivering robust web applications and enterprise solutions. We handle everything from database architecture to intuitive frontend interfaces."
         },
         {
-            "role": "SEO Specialist",
+            "role": "Digital Marketing & SEO",
             "period": "2020 - Present",
-            "description": "Expert in On-page and Off-page SEO, keyword research, and traffic analysis to improve search engine rankings."
+            "description": "Driving growth through data-driven SEO strategies and content marketing. We help businesses achieve top rankings and increased visibility."
         },
         {
-            "role": "Content Writer",
+            "role": "Corporate Branding",
             "period": "2018 - Present",
-            "description": "Produced high-quality content for over 20+ clients, ranging from blog posts to technical documentation."
-        }
-    ],
-    "education": [
-        {
-            "degree": "BSIT (Hons)",
-            "institution": "Sindh Agriculture University Tandojam",
-            "year": "2018 - 2022"
-        },
-        {
-            "degree": "Intermediate",
-            "institution": "BISE Hyderabad",
-            "year": "2015 - 2017"
+            "description": "Creating compelling brand identities. Our services include logo design, brand messaging, and technical documentation."
         }
     ],
     "portfolio": {
