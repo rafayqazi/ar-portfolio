@@ -110,25 +110,11 @@ const portfolioData = {
         ],
         "Fiverr Projects": [
             {
-                "id": "modern-garage-builder",
-                "title": "Modern Garage Builder",
-                "images": [],
-                "description": "A service-based website for a construction company specializing in modern garage builds. The site showcases portfolio galleries of past projects, detailed service descriptions, and request-a-quote functionality.",
-                "technologies": ["WordPress", "Elementor"]
-            },
-            {
                 "id": "rishta-agency",
                 "title": "Rishta Agency",
                 "images": [],
                 "description": "A matrimonial matchmaking service website. It includes profile listings, advanced search filters for finding compatible partners, and secure messaging features. Designed with a focus on cultural sensitivity and user privacy.",
                 "technologies": ["PHP", "MySQL"]
-            },
-            {
-                "id": "eternal-weddingz",
-                "title": "Eternal Weddingz",
-                "images": [],
-                "description": "A portfolio and booking site for a wedding planning agency. It features high-resolution galleries, vendor management tools, and package selection for couples planning their big day.",
-                "technologies": ["WordPress", "Gallery Plugin"]
             }
         ],
         "Writing Samples": [
