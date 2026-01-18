@@ -19,31 +19,36 @@ const portfolioData = {
     },
     "skills": {
         "programming": [
-            { "name": "Frontend Development", "level": 98 },
+            { "name": "Frontend Architecture", "level": 98 },
             { "name": "Backend Systems", "level": 95 },
-            { "name": "Mobile App Dev", "level": 90 },
-            { "name": "Cloud Architecture", "level": 85 },
-            { "name": "UI/UX Design", "level": 92 }
+            { "name": "Database Design", "level": 92 },
+            { "name": "API Development", "level": 90 },
+            { "name": "Cloud Integration", "level": 85 }
         ],
         "tools": [
-            "React.js", "Vue.js", "Node.js", "Laravel", "Python/Django", "AWS", "Docker", "Figma", "Adobe XD", "SEO Suite"
+            "React.js", "Vue.js", "Node.js", "Laravel", "Python/Django", "AWS", "MongoDB", "MySQL", "Tailwind CSS", "Redux"
         ]
     },
     "experience": [
         {
-            "role": "Full-Stack Development",
+            "role": "Enterprise SaaS Development",
+            "period": "2021 - Present",
+            "description": "Architecting scalable Software-as-a-Service platforms for global businesses. We specialize in multi-tenant architectures, secure authentication systems, and real-time data processing."
+        },
+        {
+            "role": "Full-Stack Web Solutions",
             "period": "2019 - Present",
-            "description": "Delivering robust web applications and enterprise solutions. We handle everything from database architecture to intuitive frontend interfaces."
+            "description": "Delivering robust web applications using the MERN and LAMP stacks. We handle everything from complex database schema design to responsive, high-performance frontend interfaces."
+        },
+        {
+            "role": "E-commerce & CMS Customization",
+            "period": "2020 - Present",
+            "description": "Building high-conversion e-commerce stores and custom Content Management Systems. Experts in Shopify, WooCommerce, and headless CMS implementations."
         },
         {
             "role": "Digital Marketing & SEO",
             "period": "2020 - Present",
-            "description": "Driving growth through data-driven SEO strategies and content marketing. We help businesses achieve top rankings and increased visibility."
-        },
-        {
-            "role": "Corporate Branding",
-            "period": "2018 - Present",
-            "description": "Creating compelling brand identities. Our services include logo design, brand messaging, and technical documentation."
+            "description": "Driving growth through technical SEO and performance marketing. We optmize web applications for speed, accessibility, and search engine visibility."
         }
     ],
     "portfolio": {
