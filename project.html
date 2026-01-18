@@ -152,50 +152,76 @@
                 <span class="text-slate-800 font-medium" x-text="project?.category"></span>
             </nav>
 
-            <!-- Carousel Section (Top) -->
+            <!-- Carousel / Media Section (Top) -->
             <div class="mb-12">
-                <!-- Main Active Image -->
-                <div class="w-full h-[400px] md:h-[600px] bg-slate-100 rounded-2xl overflow-hidden mb-4 border border-slate-200 flex items-center justify-center relative group shadow-lg"
-                    @mouseenter="stopAutoplay()" @mouseleave="startAutoplay()">
+                <!-- PDF Viewer -->
+                <template x-if="project?.pdf">
+                    <div
+                        class="w-full h-[80vh] bg-slate-100 rounded-2xl overflow-hidden mb-4 border border-slate-200 shadow-lg relative">
+                        <iframe :src="project.pdf" class="w-full h-full" type="application/pdf"></iframe>
 
-                    <template x-if="project?.images && project.images.length > 0">
-                        <img :src="activeImage" :alt="project.title" class="w-full h-full object-contain"
-                            x-transition.opacity.duration.500ms>
-                    </template>
-                    <template x-if="!project?.images || project.images.length === 0">
-                        <span class="text-6xl text-slate-300 font-bold" x-text="project?.title.charAt(0)"></span>
-                    </template>
-
-                    <!-- Navigation Buttons -->
-                    <template x-if="project?.images && project.images.length > 1">
-                        <div>
-                            <button @click="prev()"
-                                class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-md text-slate-800 p-3 rounded-full hover:bg-white/30 transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 border border-white/20 shadow-xl">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <!-- Fallback / Download button if embedded view fails (optional but good UI) -->
+                        <div class="absolute bottom-4 right-4">
+                            <a :href="project.pdf" target="_blank"
+                                class="bg-primary text-white px-4 py-2 rounded-lg shadow-lg hover:bg-sky-600 transition-colors flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 19l-7-7 7-7"></path>
+                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                                 </svg>
-                            </button>
-                            <button @click="next()"
-                                class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-md text-slate-800 p-3 rounded-full hover:bg-white/30 transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 border border-white/20 shadow-xl">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 5l7 7-7 7"></path>
-                                </svg>
-                            </button>
+                                Download PDF
+                            </a>
                         </div>
-                    </template>
-                </div>
+                    </div>
+                </template>
 
-                <!-- Thumbnails -->
-                <template x-if="project?.images && project.images.length > 1">
-                    <div class="flex justify-center gap-3 overflow-x-auto pb-2 scrollbar-hide">
-                        <template x-for="(img, index) in project.images" :key="index">
-                            <button @click="setImage(index)"
-                                class="shrink-0 w-24 h-16 md:w-32 md:h-20 rounded-lg border-2 transition-all cursor-pointer overflow-hidden relative"
-                                :class="activeIndex === index ? 'border-primary opacity-100 ring-2 ring-primary/20' : 'border-transparent opacity-60 hover:opacity-100'">
-                                <img :src="img" class="w-full h-full object-cover">
-                            </button>
+                <!-- Image Carousel (Only if no PDF) -->
+                <template x-if="!project?.pdf">
+                    <div>
+                        <!-- Main Active Image -->
+                        <div class="w-full h-[400px] md:h-[600px] bg-slate-100 rounded-2xl overflow-hidden mb-4 border border-slate-200 flex items-center justify-center relative group shadow-lg"
+                            @mouseenter="stopAutoplay()" @mouseleave="startAutoplay()">
+
+                            <template x-if="project?.images && project.images.length > 0">
+                                <img :src="activeImage" :alt="project.title" class="w-full h-full object-contain"
+                                    x-transition.opacity.duration.500ms>
+                            </template>
+                            <template x-if="!project?.images || project.images.length === 0">
+                                <span class="text-6xl text-slate-300 font-bold"
+                                    x-text="project?.title.charAt(0)"></span>
+                            </template>
+
+                            <!-- Navigation Buttons -->
+                            <template x-if="project?.images && project.images.length > 1">
+                                <div>
+                                    <button @click="prev()"
+                                        class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-md text-slate-800 p-3 rounded-full hover:bg-white/30 transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 border border-white/20 shadow-xl">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 19l-7-7 7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <button @click="next()"
+                                        class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-md text-slate-800 p-3 rounded-full hover:bg-white/30 transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 border border-white/20 shadow-xl">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </template>
+                        </div>
+
+                        <!-- Thumbnails -->
+                        <template x-if="project?.images && project.images.length > 1">
+                            <div class="flex justify-center gap-3 overflow-x-auto pb-2 scrollbar-hide">
+                                <template x-for="(img, index) in project.images" :key="index">
+                                    <button @click="setImage(index)"
+                                        class="shrink-0 w-24 h-16 md:w-32 md:h-20 rounded-lg border-2 transition-all cursor-pointer overflow-hidden relative"
+                                        :class="activeIndex === index ? 'border-primary opacity-100 ring-2 ring-primary/20' : 'border-transparent opacity-60 hover:opacity-100'">
+                                        <img :src="img" class="w-full h-full object-cover">
+                                    </button>
+                                </template>
+                            </div>
                         </template>
                     </div>
                 </template>

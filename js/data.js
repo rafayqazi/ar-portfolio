@@ -174,6 +174,7 @@ const portfolioData = {
                 "id": "nawaz-internship-report",
                 "title": "Nawaz Internship Report",
                 "images": [],
+                "pdf": "writiing portfolio/Intrenship Reports/Nawaz Intrenship Report.pdf",
                 "description": "A comprehensive internship report detailing the experience and technical knowledge gained during the internship at Nawaz. This document covers project workflows, technical challenges, and professional development.",
                 "technologies": ["Technical Writing", "Documentation"]
             }
