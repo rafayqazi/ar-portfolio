@@ -169,6 +169,13 @@ const portfolioData = {
                 ],
                 "description": "Content strategy and writing for Nearpeer, a leading Ed-Tech platform in Pakistan. Work included SEO-optimized blog posts, course descriptions, and educational guides to drive student engagement and enrollment.",
                 "technologies": ["SEO Writing", "Copywriting"]
+            },
+            {
+                "id": "nawaz-internship-report",
+                "title": "Nawaz Internship Report",
+                "images": [],
+                "description": "A comprehensive internship report detailing the experience and technical knowledge gained during the internship at Nawaz. This document covers project workflows, technical challenges, and professional development.",
+                "technologies": ["Technical Writing", "Documentation"]
             }
         ]
     }
