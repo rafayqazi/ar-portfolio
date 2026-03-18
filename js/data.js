@@ -54,6 +54,24 @@ const portfolioData = {
     "portfolio": {
         "Web Development": [
             {
+                "id": "school-management-system",
+                "title": "School Management System (SMS)",
+                "images": [
+                    "Portfolio/SMS/Dashboard.jpg",
+                    "Portfolio/SMS/Dashboard 2.jpg",
+                    "Portfolio/SMS/grading Dashboard.jpg",
+                    "Portfolio/SMS/book bank.png",
+                    "Portfolio/SMS/teacher.png",
+                    "Portfolio/SMS/enrty.jpg",
+                    "Portfolio/SMS/ID Card.jpg",
+                    "Portfolio/SMS/Marks.jpg",
+                    "Portfolio/SMS/Slips.jpg",
+                    "Portfolio/SMS/Slips Printing.jpg"
+                ],
+                "description": "A comprehensive digital School Management System developed for a primary school. The system replaces manual registers with a digital solution for student admissions, daily attendance tracking (for both students and teachers), year-end promotions, and alumni management. Features include an interactive dashboard, printable certificate-style student profiles, document storage, fee collection, and a built-in AI assistant for intelligent data querying and instant school statistics.",
+                "technologies": ["PHP", "MySQL", "JavaScript", "Tailwind CSS", "AJAX"]
+            },
+            {
                 "id": "baja-call-center",
                 "title": "Baja Call Center",
                 "images": [

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | AR Software Solutions</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="About Abdul Rafay | AR Software Solutions">
+    <meta name="description" content="Learn about Abdul Rafay, founder of AR Software Solutions. With 5+ years of experience in Enterprise SaaS, Web Development, and Digital Strategy.">
+    <meta name="keywords" content="About AR Software Solutions, Abdul Rafay Qazi, Tech Agency Background, Software Developer Experience">
+    <meta name="author" content="Abdul Rafay">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arsoftwaresolutions.com/about.html">
+    <meta property="og:title" content="About Us | AR Software Solutions">
+    <meta property="og:description" content="Learn about Abdul Rafay, founder of AR Software Solutions. With 5+ years of experience in Enterprise SaaS, Web Development, and Digital Strategy.">
+    <meta property="og:image" content="images/favicon.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="About Us | AR Software Solutions">
+    <meta property="twitter:description" content="Learn about Abdul Rafay, founder of AR Software Solutions. With 5+ years of experience in Enterprise SaaS, Web Development, and Digital Strategy.">
+    <meta property="twitter:image" content="images/favicon.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon.png">
+    <meta name="theme-color" content="#0b1121">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Neo-Glass CSS -->
+    <link rel="stylesheet" href="index.css">
+    
+    <!-- AOS Scroll Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Data Source -->
+    <script src="js/data.js"></script>
+</head>
+
+<body class="antialiased relative" x-data="{ data: portfolioData, menuOpen: false }">
+
+    <!-- Background Orbs -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">
+        <div class="bg-orb bg-orb-1" style="animation-delay: -2s; background: radial-gradient(circle, rgba(168,85,247,0.15) 0%, rgba(15,23,42,0) 70%);"></div>
+        <div class="bg-orb bg-orb-2" style="animation-delay: -7s; background: radial-gradient(circle, rgba(56,189,248,0.15) 0%, rgba(15,23,42,0) 70%);"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 relative group">
+                <div class="w-10 h-10 rounded-full neo-card flex items-center justify-center text-primary font-bold text-xl group-hover:text-white transition-colors">
+                    AR
+                </div>
+                <span class="font-bold text-xl tracking-tight hidden sm:block">Software Solutions<span class="text-primary">.</span></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-2">
+                <a href="index.html" class="neo-btn px-4 py-2 text-sm">Home</a>
+                <a href="about.html" class="neo-btn active px-4 py-2 text-sm text-primary">About</a>
+                <a href="services.html" class="neo-btn px-4 py-2 text-sm">Services</a>
+                <a href="portfolio.html" class="neo-btn px-4 py-2 text-sm">Portfolio</a>
+                <a href="publications.html" class="neo-btn px-4 py-2 text-sm">Publications</a>
+                <a href="contact.html" class="neo-btn-primary ml-4">Start a Project</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button @click="menuOpen = !menuOpen" class="md:hidden neo-btn p-2">
+                <svg x-show="!menuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <svg x-show="menuOpen" style="display: none;" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div x-show="menuOpen" 
+             style="display: none;"
+             class="md:hidden absolute w-full top-full left-0 glass-panel border-t-0 rounded-t-none shadow-2xl">
+            <div class="flex flex-col p-4 space-y-3">
+                <a href="index.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Home</a>
+                <a href="about.html" class="text-primary font-medium p-3 neo-card border border-transparent">About & Expertise</a>
+                <a href="services.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Services</a>
+                <a href="portfolio.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Portfolio</a>
+                <a href="publications.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Publications</a>
+                <a href="contact.html" class="neo-btn-primary w-full text-center py-3 mt-2">Start a Project</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="pt-32 pb-16 px-6 relative z-10 border-b border-white/5 bg-[#0b1121]/50">
+        <div class="container mx-auto px-6 text-center max-w-3xl" data-aos="fade-down">
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+                Our <span class="text-gradient">Story</span> & Expertise
+            </h1>
+            <p class="text-lg text-slate-400" x-text="data.profile.title"></p>
+        </div>
+    </header>
+
+    <!-- About Content Grid -->
+    <section class="py-20 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                
+                <!-- Summary & Tools -->
+                <div class="space-y-12" data-aos="fade-right">
+                    <div class="glass-panel p-8 md:p-10 border-l-4 border-l-primary">
+                        <svg class="w-12 h-12 text-primary/20 mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                        <p class="text-slate-300 text-lg leading-relaxed mb-6" x-text="data.profile.summary"></p>
+                        
+                        <div class="pt-6 border-t border-white/10 mt-6 flex gap-4">
+                            <a href="Abdul rafeh Ganeral Cv .pdf" target="_blank" class="neo-btn flex-1 text-sm font-semibold hover:border-primary/50 text-white">
+                                <svg class="w-4 h-4 mr-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                                Download Complete Resumé
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Technologies -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-xl neo-card flex items-center justify-center text-purple-400">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
+                            </span>
+                            Tech Stack
+                        </h3>
+                        <div class="flex flex-wrap gap-3">
+                            <template x-for="tool in data.skills.tools" :key="tool">
+                                <span class="px-4 py-2 glass-panel text-sm font-medium text-slate-300 cursor-default hover:text-white hover:border-purple-500/50 transition-colors" x-text="tool"></span>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Programming Skills Bars -->
+                <div class="neo-card p-8 md:p-10 border border-white/5" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                        <span class="w-10 h-10 rounded-xl neo-card flex items-center justify-center text-primary">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        </span>
+                        Technical Proficiency
+                    </h3>
+                    
+                    <div class="space-y-8" x-data="{ reveal: false }" @scroll.window="if(window.scrollY > 100) reveal = true" x-init="setTimeout(() => reveal = true, 500)">
+                        <template x-for="skill in data.skills.programming" :key="skill.name">
+                            <div>
+                                <div class="flex justify-between items-end mb-3">
+                                    <span class="text-slate-300 font-medium" x-text="skill.name"></span>
+                                    <span class="text-primary font-bold text-lg" x-text="skill.level + '%'"></span>
+                                </div>
+                                <div class="neo-progress-track">
+                                    <div class="neo-progress-bar" 
+                                         :style="reveal ? 'width: ' + skill.level + '%' : 'width: 0%'"></div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="py-24 bg-[#0a0f1c] border-t border-white/5 relative z-10" id="experience">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Professional <span class="text-gradient">Journey</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-700 before:to-transparent">
+                
+                <template x-for="(exp, index) in data.experience" :key="index">
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active" data-aos="fade-up" :data-aos-delay="index * 100">
+                        <!-- Icon -->
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-[#0a0f1c] bg-slate-800 text-slate-500 group-hover:text-primary group-hover:border-primary/20 shadow-md shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-colors">
+                            <div class="w-3 h-3 bg-current rounded-full"></div>
+                        </div>
+                        
+                        <!-- Card -->
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] neo-card p-6 md:p-8 hover:border hover:border-primary/30 transition-all">
+                            <div class="flex flex-col mb-4">
+                                <span class="text-primary text-sm font-bold tracking-wider uppercase mb-1" x-text="exp.period"></span>
+                                <h4 class="text-xl font-bold text-white" x-text="exp.role"></h4>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed" x-text="exp.description"></p>
+                        </div>
+                    </div>
+                </template>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0b1121] py-12 border-t border-white/5 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full neo-card flex items-center justify-center text-primary font-bold text-sm">AR</div>
+                    <span class="font-bold text-lg text-white">Software Solutions<span class="text-primary">.</span></span>
+                </div>
+
+                <div class="flex space-x-6">
+                    <template x-for="(link, platform) in data.profile.socials" :key="platform">
+                        <a :href="link" target="_blank" class="w-10 h-10 rounded-full neo-card flex items-center justify-center text-slate-400 hover:text-primary transition-colors hover:shadow-[0_0_15px_rgba(56,189,248,0.4)]">
+                            <span class="capitalize text-xs font-semibold" x-text="platform.substring(0,2)"></span>
+                        </a>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100,
+                easing: 'ease-out-cubic'
+            });
+        });
+    </script>
+</body>
+</html>

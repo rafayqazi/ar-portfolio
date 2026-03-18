@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications & Writing | AR Software Solutions</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Publications & Writing | AR Software Solutions">
+    <meta name="description" content="Selected articles, technical documentation, and journalistic contributions published across premier magazines and national newspapers.">
+    <meta name="keywords" content="Technical Writing, Journalism, Tech Articles, Content Strategy, AR Software Solutions">
+    <meta name="author" content="Abdul Rafay">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arsoftwaresolutions.com/publications.html">
+    <meta property="og:title" content="Publications & Writing | AR Software Solutions">
+    <meta property="og:description" content="Selected articles, technical documentation, and journalistic contributions published across premier magazines and national newspapers.">
+    <meta property="og:image" content="images/favicon.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Publications & Writing | AR Software Solutions">
+    <meta property="twitter:description" content="Selected articles, technical documentation, and journalistic contributions published across premier magazines and national newspapers.">
+    <meta property="twitter:image" content="images/favicon.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon.png">
+    <meta name="theme-color" content="#0b1121">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Neo-Glass CSS -->
+    <link rel="stylesheet" href="index.css">
+    
+    <!-- AOS Scroll Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Data Source -->
+    <script src="js/data.js?v=2"></script>
+</head>
+
+<body class="antialiased relative" x-data="{ data: portfolioData, menuOpen: false, selectedArticle: null }" :class="selectedArticle ? 'overflow-hidden' : ''">
+
+    <!-- Background Orbs -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 relative group">
+                <div class="w-10 h-10 rounded-full neo-card flex items-center justify-center text-primary font-bold text-xl group-hover:text-white transition-colors">
+                    AR
+                </div>
+                <span class="font-bold text-xl tracking-tight hidden sm:block">Software Solutions<span class="text-primary">.</span></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-2">
+                <a href="index.html" class="neo-btn px-4 py-2 text-sm">Home</a>
+                <a href="about.html" class="neo-btn px-4 py-2 text-sm">About</a>
+                <a href="services.html" class="neo-btn px-4 py-2 text-sm">Services</a>
+                <a href="portfolio.html" class="neo-btn px-4 py-2 text-sm">Portfolio</a>
+                <a href="publications.html" class="neo-btn active px-4 py-2 text-sm">Publications</a>
+                <a href="contact.html" class="neo-btn-primary ml-4">Start a Project</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button @click="menuOpen = !menuOpen" class="md:hidden neo-btn p-2">
+                <svg x-show="!menuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <svg x-show="menuOpen" style="display: none;" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div x-show="menuOpen" 
+             x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 -translate-y-4"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-150"
+             x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 -translate-y-4"
+             @click.away="menuOpen = false"
+             style="display: none;"
+             class="md:hidden absolute w-full top-full left-0 glass-panel border-t-0 rounded-t-none shadow-2xl">
+            <div class="flex flex-col p-4 space-y-3">
+                <a href="index.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Home</a>
+                <a href="about.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">About</a>
+                <a href="services.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Services</a>
+                <a href="portfolio.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Portfolio</a>
+                <a href="publications.html" class="text-primary font-medium p-3 neo-card border border-transparent">Publications</a>
+                <a href="contact.html" class="neo-btn-primary w-full text-center py-3 mt-2">Start a Project</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="pt-32 pb-16 px-6 relative z-10 border-b border-white/5 bg-[#0b1121]/50">
+        <div class="container mx-auto px-6 max-w-4xl text-center" data-aos="fade-down">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full neo-card mb-6 border border-white/5 mx-auto">
+                <span class="w-2 h-2 rounded-full bg-orange-400"></span>
+                <span class="text-sm font-medium text-slate-300">Journalism & Technical Writing</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-6 font-serif">
+                Editorial <span class="text-gradient">Archive</span>
+            </h1>
+            <p class="text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">Selected articles, technical documentation, and journalistic contributions published across premier magazines and national newspapers.</p>
+        </div>
+    </header>
+
+    <!-- Masonry Publications Grid -->
+    <section class="py-24 relative z-10">
+        <div class="container mx-auto px-6 max-w-6xl">
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <template x-for="(article, index) in data.portfolio['Writing Samples']" :key="index">
+                    <!-- Editorial Card Design -->
+                    <article class="glass-panel group relative flex flex-col hover:shadow-[0_10px_40px_rgba(249,115,22,0.15)] overflow-hidden cursor-pointer" 
+                             data-aos="fade-up" 
+                             :data-aos-delay="index * 100"
+                             @click="selectedArticle = article">
+                        
+                        <!-- Article Image / PDF Preview -->
+                        <div class="h-64 sm:h-80 w-full overflow-hidden relative bg-slate-800 border-b border-white/5">
+                            <div class="absolute inset-0 bg-slate-900/60 z-10 group-hover:bg-slate-900/20 transition-colors duration-500"></div>
+                            
+                            <template x-if="article.images && article.images.length > 0">
+                                <img :src="article.images[0]" :alt="article.title" class="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105">
+                            </template>
+                            <template x-if="!article.images || article.images.length === 0">
+                                <div class="w-full h-full flex items-center justify-center bg-slate-800">
+                                    <svg class="w-20 h-20 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
+                                </div>
+                            </template>
+                            
+                            <!-- Topic Badge -->
+                            <div class="absolute top-6 right-6 z-20 flex gap-2">
+                                <template x-for="tech in article.technologies.slice(0, 1)" :key="tech">
+                                    <span class="px-3 py-1 bg-slate-900/80 backdrop-blur-md rounded-full text-xs font-semibold text-orange-400 border border-white/10" x-text="tech"></span>
+                                </template>
+                            </div>
+                        </div>
+
+                        <!-- Article Content -->
+                        <div class="p-8 flex-1 flex flex-col relative z-20 -mt-6 bg-gradient-to-t from-slate-900 via-slate-900 to-transparent pt-12">
+                            <h2 class="text-3xl font-serif font-bold text-white mb-4 group-hover:text-orange-400 transition-colors" x-text="article.title"></h2>
+                            <p class="text-slate-400 text-base leading-relaxed mb-6 line-clamp-3" x-text="article.description"></p>
+                            
+                            <div class="mt-auto flex items-center justify-between text-sm">
+                                <span class="text-primary font-bold group-hover:-translate-y-1 transition-transform inline-flex items-center gap-2">
+                                    Read Full Piece <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+                </template>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Action Banner -->
+    <section class="py-24 relative z-10 border-t border-white/5 bg-[#0b1121]/30">
+        <div class="container mx-auto px-6 max-w-4xl text-center" data-aos="zoom-in" data-aos-duration="1000">
+            <h2 class="text-3xl md:text-5xl font-bold font-serif text-white mb-6 tracking-tight">Looking for an <span class="text-gradient">Authoritative Voice?</span></h2>
+            <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto">From in-depth technical documentation to high-converting SEO copy and engaging magazine features, I deliver writing that establishes authority.</p>
+            
+            <a href="contact.html" class="neo-btn-primary text-lg px-8 py-4 relative z-10 transition-transform hover:scale-105">
+                Discuss Content Strategy
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0b1121] py-12 border-t border-white/5 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full neo-card flex items-center justify-center text-primary font-bold text-sm">AR</div>
+                    <span class="font-bold text-lg text-white">Software Solutions<span class="text-primary">.</span></span>
+                </div>
+
+                <div class="flex space-x-6">
+                    <template x-for="(link, platform) in data.profile.socials" :key="platform">
+                        <a :href="link" target="_blank" class="w-10 h-10 rounded-full neo-card flex items-center justify-center text-slate-400 hover:text-primary transition-colors hover:shadow-[0_0_15px_rgba(56,189,248,0.4)]">
+                            <span class="capitalize text-xs font-semibold" x-text="platform.substring(0,2)"></span>
+                        </a>
+                    </template>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 mt-8 pt-8 text-center text-slate-500 text-sm">
+                 &copy; <span x-text="new Date().getFullYear()"></span> <span x-text="data.profile.name"></span>. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Article Details Modal -->
+    <div x-show="selectedArticle" style="display: none;" class="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+        <!-- Backdrop -->
+        <div x-show="selectedArticle" 
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 backdrop-blur-none"
+             x-transition:enter-end="opacity-100 backdrop-blur-sm"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100 backdrop-blur-sm"
+             x-transition:leave-end="opacity-0 backdrop-blur-none"
+             class="absolute inset-0 bg-slate-900/90"
+             @click="selectedArticle = null"></div>
+        
+        <!-- Modal Content -->
+        <div x-show="selectedArticle"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 scale-95 translate-y-4"
+             x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+             x-transition:leave-end="opacity-0 scale-95 translate-y-4"
+             class="relative glass-panel w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl border-0 flex flex-col bg-[#0b1121]">
+             
+             <!-- Close Button -->
+             <button @click="selectedArticle = null" class="fixed top-6 right-6 z-[110] w-12 h-12 rounded-full neo-card flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-800 transition-colors bg-slate-900/80 backdrop-blur-xl border border-white/10">
+                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+             </button>
+
+             <!-- Editorial Header -->
+             <div class="px-8 pt-16 pb-8 border-b border-white/5 text-center sm:text-left bg-gradient-to-b from-[#0f172a] to-[#0b1121]">
+                 <span class="inline-block px-3 py-1 bg-orange-500/10 text-orange-400 rounded-full text-xs font-semibold border border-orange-500/20 mb-4" x-text="selectedArticle?.technologies[0] || 'Editorial'"></span>
+                 <h2 class="text-4xl sm:text-5xl font-serif font-bold text-white mb-6 leading-tight" x-text="selectedArticle?.title"></h2>
+                 <p class="text-slate-400 text-lg sm:text-xl leading-relaxed max-w-3xl font-serif italic" x-text="selectedArticle?.description"></p>
+                 
+                 <!-- Tags -->
+                 <div class="flex flex-wrap items-center gap-2 mt-8 justify-center sm:justify-start" x-show="selectedArticle?.technologies?.length > 0">
+                     <template x-for="tech in selectedArticle?.technologies" :key="tech">
+                         <span class="text-xs font-semibold px-3 py-1 rounded bg-[#0b1121] text-slate-400 border border-white/5 uppercase tracking-wider" x-text="tech"></span>
+                     </template>
+                 </div>
+             </div>
+
+             <!-- Document / Image Viewer -->
+             <div class="p-4 sm:p-12 bg-[#0b1121]">
+                 
+                 <template x-if="selectedArticle?.images && selectedArticle.images.length > 0">
+                     <div class="flex flex-col gap-8 items-center">
+                         <template x-for="(img, idx) in selectedArticle.images" :key="idx">
+                             <div class="w-full max-w-3xl glass-panel p-2 shadow-2xl">
+                                <img :src="img" class="w-full h-auto rounded mix-blend-screen opacity-90 border border-white/5" alt="Article Page">
+                             </div>
+                         </template>
+                     </div>
+                 </template>
+                 
+                 <!-- External PDF Link Fallback -->
+                 <template x-if="selectedArticle?.pdf">
+                     <div class="text-center py-16">
+                         <div class="w-20 h-20 rounded-2xl bg-slate-800 flex items-center justify-center mx-auto mb-6 text-red-400 shadow-inner">
+                             <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                         </div>
+                         <h3 class="text-2xl font-bold text-white mb-4">Detailed Document Available</h3>
+                         <p class="text-slate-400 mb-8 max-w-md mx-auto">This project contains a comprehensive PDF report detailing all technical workflows and methodologies.</p>
+                         <a :href="selectedArticle.pdf" target="_blank" class="neo-btn-primary inline-flex items-center gap-2">
+                             Download Full PDF <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                         </a>
+                     </div>
+                 </template>
+
+                 <template x-if="(!selectedArticle?.images || selectedArticle.images.length === 0) && !selectedArticle?.pdf">
+                     <div class="text-center py-16 text-slate-500">
+                         Full text documentation currently unavailable online.
+                     </div>
+                 </template>
+             </div>
+             
+        </div>
+    </div>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100,
+                easing: 'ease-out-cubic'
+            });
+        });
+    </script>
+</body>
+</html>
