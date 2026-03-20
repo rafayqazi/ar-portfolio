@@ -44,10 +44,95 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Data Source -->
-    <script src="js/data.js?v=2"></script>
+    <script src="js/data.js?v=3"></script>
+
+    <style>
+        .project-number {
+            font-size: 7rem;
+            line-height: 1;
+            font-weight: 900;
+            background: linear-gradient(180deg, rgba(56,189,248,0.15) 0%, rgba(56,189,248,0) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            user-select: none;
+            letter-spacing: -0.05em;
+        }
+        .project-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.5rem;
+        }
+        .project-img-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(56,189,248,0.08) 0%, rgba(168,85,247,0.08) 100%);
+            z-index: 1;
+            pointer-events: none;
+            border-radius: inherit;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .project-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.7s ease;
+        }
+        .project-row:hover .project-img-wrapper img {
+            transform: scale(1.04);
+        }
+        .tech-pill {
+            display: inline-block;
+            padding: 0.3rem 0.85rem;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            background: rgba(56,189,248,0.08);
+            color: #38bdf8;
+            border: 1px solid rgba(56,189,248,0.2);
+        }
+        .divider-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%);
+        }
+        .category-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+        /* Thumbnail strip */
+        .thumb-strip {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .thumb-strip::-webkit-scrollbar { display: none; }
+        .thumb-strip img {
+            width: 72px;
+            height: 52px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 0.5rem;
+            border: 1.5px solid rgba(255,255,255,0.07);
+            cursor: pointer;
+            transition: border-color 0.2s, opacity 0.2s;
+            opacity: 0.6;
+            flex-shrink: 0;
+        }
+        .thumb-strip img:hover,
+        .thumb-strip img.active {
+            border-color: #38bdf8;
+            opacity: 1;
+        }
+    </style>
 </head>
 
-<body class="antialiased relative" x-data="{ data: portfolioData, menuOpen: false, selectedProject: null }" :class="selectedProject ? 'overflow-hidden' : ''">
+<body class="antialiased relative" x-data="portfolioPage()" :class="selectedProject ? 'overflow-hidden' : ''">
 
     <!-- Background Orbs -->
     <div class="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">
@@ -102,101 +187,102 @@
     </nav>
 
     <!-- Header Section -->
-    <header class="pt-32 pb-16 px-6 relative z-10 border-b border-white/5 bg-[#0b1121]/50">
+    <header class="pt-36 pb-20 px-6 relative z-10">
         <div class="container mx-auto px-6 text-center max-w-3xl" data-aos="fade-down">
-            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-                Our <span class="text-gradient">Portfolio</span>
+            <p class="category-label text-primary mb-5">Our Work</p>
+            <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
+                Crafted with <span class="text-gradient">Precision.</span>
             </h1>
-            <p class="text-lg text-slate-400">Explore our diverse gallery of digital solutions, ranging from high-conversion websites to complex SaaS architectures.</p>
+            <p class="text-lg text-slate-400 max-w-xl mx-auto leading-relaxed">Explore our portfolio of digital solutions — from lightning-fast SaaS platforms to elegant, high-conversion websites.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap justify-center gap-3 mt-14" data-aos="fade-up" data-aos-delay="100">
+            <button @click="filter = 'All'" :class="filter === 'All' ? 'neo-btn active text-primary border-primary/30' : 'neo-btn text-slate-400'" class="transition-all px-5 py-2 text-sm font-semibold">
+                All Projects
+            </button>
+            <template x-for="cat in Object.keys(data.portfolio)" :key="cat">
+                <button @click="filter = cat" :class="filter === cat ? 'neo-btn active text-primary border-primary/30' : 'neo-btn text-slate-400'" class="transition-all px-5 py-2 text-sm font-semibold" x-text="cat">
+                </button>
+            </template>
         </div>
     </header>
 
-    <!-- Portfolio Gallery -->
-    <section class="py-20 relative z-10" x-data="{ filter: 'All' }">
-        <div class="container mx-auto px-6 max-w-7xl">
-            
-            <!-- Filter Tabs -->
-            <div class="flex flex-wrap justify-center gap-4 mb-16">
-                <button @click="filter = 'All'"
-                    :class="filter === 'All' ? 'neo-btn active text-primary' : 'neo-btn text-slate-400'"
-                    class="transition-colors">
-                    All Projects
-                </button>
-                <template x-for="cat in Object.keys(data.portfolio)" :key="cat">
-                    <button @click="filter = cat"
-                        :class="filter === cat ? 'neo-btn active text-primary' : 'neo-btn text-slate-400'"
-                        class="transition-colors" x-text="cat">
-                    </button>
-                </template>
-            </div>
+    <!-- Projects — Editorial Scroll Layout -->
+    <section class="relative z-10 pb-32">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <template x-for="(item, index) in filteredProjects" :key="item.id">
+                <div x-show="filter === 'All' || filter === item.category"
+                     x-transition:enter="transition ease-out duration-500"
+                     x-transition:enter-start="opacity-0 translate-y-8"
+                     x-transition:enter-end="opacity-100 translate-y-0">
+                    
+                    <!-- Divider (skip first) -->
+                    <div x-show="index > 0" class="divider-line my-20"></div>
 
-            <!-- Projects Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" 
-                 x-data="{ 
-                     get allProjects() {
-                         let all = [];
-                         for(const [category, items] of Object.entries(data.portfolio)) {
-                             items.forEach(item => {
-                                 item.category = category;
-                                 all.push(item);
-                             });
-                         }
-                         return all;
-                     }
-                 }">
-                
-                <template x-for="item in allProjects" :key="item.id">
-                    <div x-show="filter === 'All' || filter === item.category"
-                         x-transition:enter="transition ease-out duration-500"
-                         x-transition:enter-start="opacity-0 translate-y-8"
-                         x-transition:enter-end="opacity-100 translate-y-0"
-                         data-aos="fade-up"
-                         @click="selectedProject = item"
-                         class="glass-panel group overflow-hidden flex flex-col h-full hover:shadow-[0_10px_40px_rgba(56,189,248,0.1)] cursor-pointer">
-                        
-                        <div class="h-64 relative overflow-hidden bg-slate-900/80 p-4 border-b border-white/5">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent z-10 opacity-80 group-hover:opacity-40 transition-opacity"></div>
-                            
-                            <template x-if="item.images && item.images.length > 0">
-                                <img :src="item.images[0]" :alt="item.title" class="w-full h-full object-cover object-top rounded-xl transform group-hover:scale-105 transition-transform duration-700 mix-blend-screen opacity-90 group-hover:opacity-100" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x400/0f172a/38bdf8?text=Project+Preview';">
-                            </template>
-                            <template x-if="!item.images || item.images.length === 0">
-                                <div class="w-full h-full rounded-xl flex items-center justify-center bg-slate-800 border border-white/10">
-                                    <span class="text-5xl text-slate-600 group-hover:text-primary transition-colors">
-                                        <span x-text="item.category.includes('Web') ? '</>' : (item.category.includes('Writing') ? '¶' : '★')"></span>
-                                    </span>
-                                </div>
-                            </template>
+                    <!-- Project Row — alternates direction -->
+                    <div class="project-row grid lg:grid-cols-2 gap-12 lg:gap-20 items-center" 
+                         :class="index % 2 !== 0 ? 'lg:grid-flow-dense' : ''"
+                         data-aos="fade-up">
 
-                            <div class="absolute top-6 right-6 z-20">
-                                <span class="px-3 py-1 bg-slate-900/80 backdrop-blur-md rounded-full text-xs font-semibold text-white border border-white/10 shadow-lg" x-text="item.category"></span>
+                        <!-- Image Side -->
+                        <div :class="index % 2 !== 0 ? 'lg:col-start-2' : ''"
+                             x-data="{ activeImg: 0 }">
+                            <div class="project-img-wrapper shadow-2xl" style="height: 340px;">
+                                <img :src="item.images && item.images.length > 0 ? item.images[activeImg] : 'https://via.placeholder.com/800x400/0f172a/38bdf8?text=Preview'" :alt="item.title"
+                                     onerror="this.onerror=null; this.src='https://via.placeholder.com/800x400/0f172a/38bdf8?text=Preview';">
                             </div>
-                        </div>
-
-                        <div class="p-8 flex-1 flex flex-col bg-slate-800/20">
-                            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors" x-text="item.title"></h3>
-                            <p class="text-slate-400 text-sm mb-6 flex-1 line-clamp-4 leading-relaxed" x-text="item.description"></p>
-                            
-                            <!-- Tech Stack Pills -->
-                            <div class="flex flex-wrap gap-2 mt-auto pt-6 border-t border-white/5">
-                                <template x-if="item.technologies">
-                                    <template x-for="tech in item.technologies" :key="tech">
-                                        <span class="text-xs font-medium px-2.5 py-1 rounded bg-[#0f172a] text-primary border border-primary/20" x-text="tech"></span>
-                                    </template>
+                            <!-- Thumbnail Strip (show only if multiple images) -->
+                            <div class="thumb-strip mt-3 px-1" x-show="item.images && item.images.length > 1">
+                                <template x-for="(img, i) in item.images" :key="i">
+                                    <img :src="img" :class="activeImg === i ? 'active' : ''" @click="activeImg = i"
+                                         onerror="this.onerror=null; this.src='https://via.placeholder.com/72x52/0f172a/38bdf8?text=+';">
                                 </template>
                             </div>
                         </div>
-                    </div>
-                </template>
 
+                        <!-- Text Side -->
+                        <div :class="index % 2 !== 0 ? 'lg:col-start-1 lg:row-start-1' : ''">
+                            <!-- Number + Category -->
+                            <div class="flex items-center gap-4 mb-4">
+                                <span class="project-number" x-text="String(index + 1).padStart(2, '0')"></span>
+                                <span class="category-label text-slate-500" x-text="item.category"></span>
+                            </div>
+
+                            <h2 class="text-3xl md:text-4xl font-bold text-white leading-tight mb-5" x-text="item.title"></h2>
+                            <p class="text-slate-400 leading-relaxed mb-8 text-sm" x-text="item.description.split('\n')[0]"></p>
+
+                            <!-- Tech Pills -->
+                            <div class="flex flex-wrap gap-2 mb-10" x-show="item.technologies">
+                                <template x-for="tech in item.technologies" :key="tech">
+                                    <span class="tech-pill" x-text="tech"></span>
+                                </template>
+                            </div>
+
+                            <!-- CTA -->
+                            <button @click="selectedProject = item"
+                                class="group inline-flex items-center gap-3 text-sm font-bold text-white hover:text-primary transition-colors">
+                                <span class="w-11 h-11 rounded-full neo-card flex items-center justify-center border border-white/10 group-hover:bg-primary group-hover:border-primary group-hover:text-slate-900 transition-all duration-300">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </span>
+                                View Full Case Study
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <!-- Empty State -->
+            <div x-show="filteredProjects.length === 0" class="text-center py-24">
+                <p class="text-slate-500 text-lg">No projects in this category yet.</p>
             </div>
         </div>
     </section>
 
     <!-- Call to Action Banner -->
-    <section class="py-16 relative z-10 border-t border-white/5 bg-[#0b1121]">
+    <section class="py-20 relative z-10 border-t border-white/5">
         <div class="container mx-auto px-6" data-aos="zoom-in">
-            <div class="neo-card p-10 flex flex-col md:flex-row items-center justify-between gap-8 border border-primary/20 bg-gradient-to-r from-slate-900 to-slate-800">
+            <div class="neo-card p-10 flex flex-col md:flex-row items-center justify-between gap-8 border border-primary/20 bg-gradient-to-r from-slate-900 to-slate-800 max-w-5xl mx-auto">
                 <div>
                     <h3 class="text-3xl font-bold text-white mb-2">Impressed by what you see?</h3>
                     <p class="text-slate-400">Let's discuss how we can bring your visionary ideas to life.</p>
@@ -212,15 +298,22 @@
     <footer class="bg-[#0b1121] py-12 border-t border-white/5 relative z-10">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                
                 <div class="flex items-center gap-2">
                     <div class="w-8 h-8 rounded-full neo-card flex items-center justify-center text-primary font-bold text-sm">AR</div>
                     <span class="font-bold text-lg text-white">Software Solutions<span class="text-primary">.</span></span>
                 </div>
-
                 <div class="flex space-x-6">
                     <template x-for="(link, platform) in data.profile.socials" :key="platform">
-                        <a :href="link" target="_blank" class="w-10 h-10 rounded-full neo-card flex items-center justify-center text-slate-400 hover:text-primary transition-colors hover:shadow-[0_0_15px_rgba(56,189,248,0.4)]">
+                        <a :href="link" target="_blank"
+                            class="w-10 h-10 rounded-full neo-card flex items-center justify-center text-slate-400 transition-all duration-300"
+                            :class="{
+                                'hover:text-[#0077b5] hover:shadow-[0_0_20px_rgba(0,119,181,0.4)] hover:border-[#0077b5]/50': platform === 'linkedin',
+                                'hover:text-white hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:border-white/50': platform === 'github',
+                                'hover:text-[#ff0000] hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] hover:border-[#ff0000]/50': platform === 'youtube',
+                                'hover:text-[#1877f2] hover:shadow-[0_0_20px_rgba(24,119,242,0.4)] hover:border-[#1877f2]/50': platform === 'facebook',
+                                'hover:text-[#e4405f] hover:shadow-[0_0_20px_rgba(228,64,95,0.4)] hover:border-[#e4405f]/50': platform === 'instagram',
+                                'hover:text-primary hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] hover:border-primary/50': platform === 'website'
+                            }">
                             <span class="capitalize text-xs font-semibold" x-text="platform.substring(0,2)"></span>
                         </a>
                     </template>
@@ -234,12 +327,12 @@
         <!-- Backdrop -->
         <div x-show="selectedProject" 
              x-transition:enter="transition ease-out duration-300"
-             x-transition:enter-start="opacity-0 backdrop-blur-none"
-             x-transition:enter-end="opacity-100 backdrop-blur-sm"
+             x-transition:enter-start="opacity-0"
+             x-transition:enter-end="opacity-100"
              x-transition:leave="transition ease-in duration-200"
-             x-transition:leave-start="opacity-100 backdrop-blur-sm"
-             x-transition:leave-end="opacity-0 backdrop-blur-none"
-             class="absolute inset-0 bg-slate-900/80"
+             x-transition:leave-start="opacity-100"
+             x-transition:leave-end="opacity-0"
+             class="absolute inset-0 bg-slate-900/85 backdrop-blur-sm"
              @click="selectedProject = null"></div>
         
         <!-- Modal Content -->
@@ -270,7 +363,7 @@
                  </div>
                  <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6" x-text="selectedProject?.title"></h2>
                  
-                 <p class="text-slate-300 text-lg leading-relaxed mb-10 whitespace-pre-line" x-text="selectedProject?.description"></p>
+                 <p class="text-slate-300 text-base leading-relaxed mb-10 whitespace-pre-line" x-text="selectedProject?.description"></p>
                  
                  <!-- Technologies -->
                  <div class="mb-10" x-show="selectedProject?.technologies?.length > 0">
@@ -307,11 +400,30 @@
     <!-- AOS Animation Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        function portfolioPage() {
+            return {
+                data: portfolioData,
+                menuOpen: false,
+                selectedProject: null,
+                filter: 'All',
+                get filteredProjects() {
+                    let all = [];
+                    for (const [category, items] of Object.entries(this.data.portfolio)) {
+                        items.forEach(item => {
+                            all.push({ ...item, category });
+                        });
+                    }
+                    if (this.filter === 'All') return all;
+                    return all.filter(p => p.category === this.filter);
+                }
+            };
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             AOS.init({
-                duration: 800,
+                duration: 900,
                 once: true,
-                offset: 100,
+                offset: 80,
                 easing: 'ease-out-cubic'
             });
         });

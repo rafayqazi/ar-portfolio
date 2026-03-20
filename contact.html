@@ -164,8 +164,18 @@
                             <h4 class="text-sm text-slate-500 font-medium mb-4 uppercase tracking-wider">Connect Socially</h4>
                             <div class="flex flex-wrap gap-4">
                                 <template x-for="(link, platform) in data.profile.socials" :key="platform">
-                                    <a :href="link" target="_blank" class="w-10 h-10 neo-card rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:border-primary/50 transition-all shadow-sm">
-                                        <span class="text-xs font-semibold capitalize" x-text="platform.substring(0,2)"></span>
+                                    <a :href="link" target="_blank"
+                                        class="w-10 h-10 neo-card rounded-full flex items-center justify-center text-slate-400 transition-all duration-300"
+                                        :class="{
+                                            'hover:text-[#0077b5] hover:shadow-[0_0_20px_rgba(0,119,181,0.4)] hover:border-[#0077b5]/50': platform === 'linkedin',
+                                            'hover:text-white hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:border-white/50': platform === 'github',
+                                            'hover:text-[#ff0000] hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] hover:border-[#ff0000]/50': platform === 'youtube',
+                                            'hover:text-[#1877f2] hover:shadow-[0_0_20px_rgba(24,119,242,0.4)] hover:border-[#1877f2]/50': platform === 'facebook',
+                                            'hover:text-[#e4405f] hover:shadow-[0_0_20px_rgba(228,64,95,0.4)] hover:border-[#e4405f]/50': platform === 'instagram',
+                                            'hover:text-primary hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] hover:border-primary/50': platform === 'website'
+                                        }">
+                                        <span class="text-xs font-semibold capitalize"
+                                            x-text="platform.substring(0,2)"></span>
                                     </a>
                                 </template>
                             </div>

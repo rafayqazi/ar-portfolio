@@ -52,7 +52,30 @@ const portfolioData = {
         }
     ],
     "portfolio": {
-        "Web Development": [
+        "SaaS Development": [
+            {
+                "id": "point-of-sale-pos",
+                "title": "Point of Sale (POS) & Inventory Suite",
+                "images": [
+                    "Portfolio/POS/Cover.png",
+                    "Portfolio/POS/dashboard.png",
+                    "Portfolio/POS/POS.png",
+                    "Portfolio/POS/Login Screen.png",
+                    "Portfolio/POS/Check Inventory.png",
+                    "Portfolio/POS/Customer Ledger.png",
+                    "Portfolio/POS/Dealer Ledger.png",
+                    "Portfolio/POS/Customers.png",
+                    "Portfolio/POS/Expense.png",
+                    "Portfolio/POS/Recipt.png",
+                    "Portfolio/POS/Reports.png",
+                    "Portfolio/POS/quick Restock.png",
+                    "Portfolio/POS/retrun Product.png",
+                    "Portfolio/POS/sales history.png",
+                    "Portfolio/POS/Backup and restore.png"
+                ],
+                "description": "From the classroom to the showroom—we are digitalizing Pakistan! 🇵🇰 We are proud to present our Point of Sale (POS) modern, lightning-fast POS & Inventory suite.\n\n✨ What Makes Our POS Different?\n📦 Complete Inventory Control: Add, update, and track products with real-time stock calculations and expiry alerts.\n💰 Smart POS Terminal: Experience a desktop-like, lightning-fast billing interface with dynamic price and discount features.\n📈 Real-Time Analytics: An interactive dashboard displays sales trends, total products, and return statistics instantly.\n👥 People & Ledger Management: Dedicated, real-time financial ledgers for both Customers and Dealers.\n📑 Extensive Reporting: Generate and print professional sales, inventory, and expense summaries with one click.\n🔒 App Lockdown & Security: Secure your business with built-in lockdown modes and password-protected data backups.\n🚀 Ultra-Portable Engine: Uses a 100% file-based CSV architecture—no complex SQL setup required!\n\n🏢 One Partner, Every Solution\nWhether you need to automate a School or power a Retail Store, AR Software Solutions provides the tools trusted by the Digitalize School Initiative.\n\n✨ READY TO UPGRADE YOUR OPERATIONS? ✨\nExperience the power of standalone App Mode—no browser clutter, just pure business efficiency!",
+                "technologies": ["JavaScript", "HTML", "CSS", "CSV Architecture", "Standalone App"]
+            },
             {
                 "id": "school-management-system",
                 "title": "School Management System (SMS)",
@@ -70,7 +93,9 @@ const portfolioData = {
                 ],
                 "description": "A comprehensive digital School Management System developed for a primary school. The system replaces manual registers with a digital solution for student admissions, daily attendance tracking (for both students and teachers), year-end promotions, and alumni management. Features include an interactive dashboard, printable certificate-style student profiles, document storage, fee collection, and a built-in AI assistant for intelligent data querying and instant school statistics.",
                 "technologies": ["PHP", "MySQL", "JavaScript", "Tailwind CSS", "AJAX"]
-            },
+            }
+        ],
+        "Web Development": [
             {
                 "id": "baja-call-center",
                 "title": "Baja Call Center",
