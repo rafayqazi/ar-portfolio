@@ -23,6 +23,13 @@
 
   /* Animations */
   --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Platform Colors */
+  --trustpilot: #00b67a;
+  --google-blue: #4285f4;
+  --google-red: #ea4335;
+  --google-yellow: #fbbc05;
+  --google-green: #34a853;
 }
 
 body {
@@ -98,6 +105,55 @@ body {
   background: rgba(15, 23, 42, 0.6);
   border-color: rgba(255, 255, 255, 0.15);
 }
+
+/* Platform Specific Enhancements */
+.trustpilot-card:hover {
+  box-shadow: 0 10px 40px rgba(0, 182, 122, 0.15);
+  border-color: rgba(0, 182, 122, 0.3);
+}
+
+.google-card:hover {
+  box-shadow: 0 10px 40px rgba(66, 133, 244, 0.15);
+  border-color: rgba(66, 133, 244, 0.3);
+}
+
+.platform-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+    z-index: 20;
+}
+
+.star-rating {
+    display: flex;
+    gap: 0.125rem;
+    margin-bottom: 0.75rem;
+}
+
+.star-rating svg {
+    width: 1rem;
+    height: 1rem;
+    color: #fbbf24; /* Amber 400 */
+}
+
+.trustpilot-stars svg {
+    color: white;
+    background: var(--trustpilot);
+    padding: 2px;
+    border-radius: 2px;
+}
+
 
 .glass-nav {
   background: rgba(15, 23, 42, 0.7);

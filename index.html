@@ -554,13 +554,26 @@
 
             <!-- Testimonials Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Pakistan 1 (Individual) - 60% -->
-                <div class="neo-card p-8 group relative" data-aos="fade-up" data-aos-delay="0">
-                    <div class="absolute top-6 right-6 text-primary/10 group-hover:text-primary/30 transition-colors">
-                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                
+                <!-- Google Review 1: Ahmed Raza -->
+                <div class="neo-card p-8 group relative google-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="platform-badge bg-white/5 text-[#4285F4]">
+                        <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.48 10.92v3.28h4.78c-.19 1.06-1.22 3.08-4.78 3.08-3.09 0-5.61-2.56-5.61-5.72s2.52-5.72 5.61-5.72c1.76 0 2.94.75 3.61 1.39l2.59-2.5c-1.66-1.55-3.82-2.5-6.2-2.5C7.14 2 2.76 6.38 2.76 12s4.38 10 9.72 10c5.58 0 9.28-3.92 9.28-9.44 0-.64-.07-1.13-.15-1.64h-8.86z"/>
+                        </svg>
+                        Google Review
                     </div>
+                    
+                    <div class="star-rating">
+                        <template x-for="i in 5">
+                            <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </template>
+                    </div>
+
                     <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 rounded-full border-2 border-primary/20 bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">AR</div>
+                        <div class="w-14 h-14 rounded-full border-2 border-primary/20 p-0.5 overflow-hidden">
+                            <img src="images/client_ahmed_1774895718686.png" class="w-full h-full object-cover rounded-full" alt="Ahmed Raza">
+                        </div>
                         <div>
                             <h4 class="text-white font-bold text-lg">Ahmed Raza</h4>
                             <p class="text-xs text-primary uppercase tracking-widest font-semibold mt-0.5">E-commerce Founder</p>
@@ -572,16 +585,28 @@
                     <p class="text-slate-300 text-sm leading-relaxed italic relative z-10">"AR Software Solutions transformed our e-commerce platform. Their expertise in the MERN stack scaled our system to handle thousands of daily active users effortlessly."</p>
                 </div>
 
-                <!-- Pakistan 2 (Individual) - 60% -->
-                <div class="neo-card p-8 group relative" data-aos="fade-up" data-aos-delay="100">
-                    <div class="absolute top-6 right-6 text-purple-400/10 group-hover:text-purple-400/30 transition-colors">
-                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                <!-- Trustpilot Verified: Fatima Ali -->
+                <div class="neo-card p-8 group relative trustpilot-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="platform-badge bg-[#00b67a]/10 text-[#00b67a]">
+                        <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 9.1l-10.3-.8L9.2 0 4.7 9.1l-9 1.1 6.8 5.8-2 8.1L9.2 18l8.3 5.4-2.1-8.1 8.6-6.2z"/>
+                        </svg>
+                        Trustpilot Verified
                     </div>
+                    
+                    <div class="star-rating trustpilot-stars">
+                        <template x-for="i in 5">
+                            <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.5 7.5H20l-6 5 2.5 7.5-6.5-5.5-6.5 5.5 2.5-7.5-6-5h7.5z"/></svg>
+                        </template>
+                    </div>
+
                     <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 rounded-full border-2 border-purple-500/20 bg-purple-500/10 flex items-center justify-center text-purple-400 font-bold text-lg">FA</div>
+                        <div class="w-14 h-14 rounded-full border-2 border-purple-500/20 p-0.5 overflow-hidden">
+                            <img src="images/client_fatima_1774895865299.png" class="w-full h-full object-cover rounded-full" alt="Fatima Ali">
+                        </div>
                         <div>
                             <h4 class="text-white font-bold text-lg">Fatima Ali</h4>
-                            <p class="text-xs text-purple-400 uppercase tracking-widest font-semibold mt-0.5">School Principal</p>
+                            <p class="text-xs text-purple-400 uppercase tracking-widest font-semibold mt-0.5">Edu-Tech Specialist</p>
                             <p class="text-xs text-slate-500 mt-1 flex items-center gap-1">
                                 <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Karachi, Pakistan
                             </p>
@@ -590,13 +615,25 @@
                     <p class="text-slate-300 text-sm leading-relaxed italic relative z-10">"The School Management System they delivered is phenomenal. The automated attendance and reporting saved our staff countless hours of administrative work."</p>
                 </div>
 
-                <!-- Pakistan 3 (Individual) - 60% -->
-                <div class="neo-card p-8 group relative" data-aos="fade-up" data-aos-delay="200">
-                    <div class="absolute top-6 right-6 text-sky-300/10 group-hover:text-sky-300/30 transition-colors">
-                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                <!-- Google Review 2: Usman Tariq -->
+                <div class="neo-card p-8 group relative google-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="platform-badge bg-white/5 text-[#ea4335]">
+                        <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.48 10.92v3.28h4.78c-.19 1.06-1.22 3.08-4.78 3.08-3.09 0-5.61-2.56-5.61-5.72s2.52-5.72 5.61-5.72c1.76 0 2.94.75 3.61 1.39l2.59-2.5c-1.66-1.55-3.82-2.5-6.2-2.5C7.14 2 2.76 6.38 2.76 12s4.38 10 9.72 10c5.58 0 9.28-3.92 9.28-9.44 0-.64-.07-1.13-.15-1.64h-8.86z"/>
+                        </svg>
+                        Google Review
                     </div>
+                    
+                    <div class="star-rating">
+                        <template x-for="i in 5">
+                            <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </template>
+                    </div>
+
                     <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 rounded-full border-2 border-sky-300/20 bg-sky-300/10 flex items-center justify-center text-sky-300 font-bold text-lg">UT</div>
+                        <div class="w-14 h-14 rounded-full border-2 border-sky-300/20 p-0.5 overflow-hidden">
+                            <img src="images/client_usman_1774895881333.png" class="w-full h-full object-cover rounded-full" alt="Usman Tariq">
+                        </div>
                         <div>
                             <h4 class="text-white font-bold text-lg">Usman Tariq</h4>
                             <p class="text-xs text-sky-300 uppercase tracking-widest font-semibold mt-0.5">Tech Entrepreneur</p>
@@ -608,7 +645,7 @@
                     <p class="text-slate-300 text-sm leading-relaxed italic relative z-10">"The UI/UX design and the neo-morphic touch they gave to our SaaS product were mind-blowing. They understand modern premium aesthetics perfectly."</p>
                 </div>
 
-                <!-- Company - 20% -->
+                <!-- Company - Enterprise Logistics -->
                 <div class="glass-panel p-8 group relative md:col-span-2 lg:col-span-2" data-aos="fade-up" data-aos-delay="300">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-[50px] rounded-full pointer-events-none group-hover:bg-primary/20 transition-colors"></div>
                     <div class="absolute top-8 right-8 text-white/5 group-hover:text-white/10 transition-colors">
@@ -629,13 +666,25 @@
                     <p class="text-slate-300 text-base leading-relaxed italic relative z-10 max-w-2xl">"As an enterprise, we needed a highly robust and scalable POS and inventory system capable of managing multiple warehouses. AR Software Solutions delivered a lightning-fast, highly secure, and fully customized cloud solution that optimized our entire inventory operation globally. Their technical architecture is top-tier."</p>
                 </div>
 
-                <!-- International (Out of Country) - 20% -->
-                <div class="glass-panel p-8 group relative" data-aos="fade-up" data-aos-delay="400">
-                    <div class="absolute top-6 right-6 text-white/5 group-hover:text-white/10 transition-colors">
-                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                <!-- Trustpilot Verified: Sarah Jenkins -->
+                <div class="glass-panel p-8 group relative trustpilot-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="platform-badge bg-[#00b67a]/10 text-[#00b67a]">
+                        <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 9.1l-10.3-.8L9.2 0 4.7 9.1l-9 1.1 6.8 5.8-2 8.1L9.2 18l8.3 5.4-2.1-8.1 8.6-6.2z"/>
+                        </svg>
+                        Trustpilot Verified
                     </div>
+                    
+                    <div class="star-rating trustpilot-stars">
+                        <template x-for="i in 5">
+                            <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.5 7.5H20l-6 5 2.5 7.5-6.5-5.5-6.5 5.5 2.5-7.5-6-5h7.5z"/></svg>
+                        </template>
+                    </div>
+
                     <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 rounded-full border-2 border-white/20 bg-white/10 flex items-center justify-center text-white font-bold text-lg">SJ</div>
+                        <div class="w-14 h-14 rounded-full border-2 border-white/20 p-0.5 overflow-hidden">
+                            <img src="images/client_sarah_1774895896229.png" class="w-full h-full object-cover rounded-full" alt="Sarah Jenkins">
+                        </div>
                         <div>
                             <h4 class="text-white font-bold text-lg">Sarah Jenkins</h4>
                             <p class="text-xs text-slate-300 uppercase tracking-widest font-semibold mt-0.5">Product Manager</p>
