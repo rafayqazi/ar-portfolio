@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rafayqazi.github.io/ar-portfolio/sitemap.xml
