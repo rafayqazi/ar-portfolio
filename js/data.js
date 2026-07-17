@@ -155,7 +155,7 @@ const portfolioData = {
             {
                 "id": "rishta-agency",
                 "title": "Rishta Agency",
-                "images": [],
+                "images": ["images/rishta.png"],
                 "description": "A matrimonial matchmaking service website. It includes profile listings, advanced search filters for finding compatible partners, and secure messaging features. Designed with a focus on cultural sensitivity and user privacy.",
                 "technologies": ["PHP", "MySQL"]
             }
@@ -195,7 +195,7 @@ const portfolioData = {
             {
                 "id": "nawaz-internship-report",
                 "title": "Nawaz Internship Report",
-                "images": [],
+                "images": ["images/nawaz.png"],
                 "pdf": "writiing%20portfolio/Intrenship%20Reports/Nawaz%20Intrenship%20Report.pdf",
                 "description": "A comprehensive internship report detailing the experience and technical knowledge gained during the internship at Nawaz. This document covers project workflows, technical challenges, and professional development.",
                 "technologies": ["Technical Writing", "Documentation"]

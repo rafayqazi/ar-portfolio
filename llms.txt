@@ -1,0 +1,21 @@
+# AR Software Solutions
+> Premium Development Agency — Enterprise SaaS, Web Development, CMS, and Digital Marketing.
+
+## About
+https://rafayqazi.github.io/ar-portfolio/about.html
+AR Software Solutions was founded by Abdul Rafay. We specialize in MERN stack, LAMP stack, and cloud-native development with 5+ years of experience delivering enterprise-grade digital solutions.
+
+## Services
+https://rafayqazi.github.io/ar-portfolio/services.html
+- Enterprise SaaS Development: Multi-tenant architectures, custom dashboards, API integration
+- Web Development: React, Vue, MERN & LAMP stacks
+- CMS & E-Commerce: WordPress, Shopify, Headless CMS
+- SEO & Marketing: Technical SEO, content strategy, performance marketing
+
+## Portfolio
+https://rafayqazi.github.io/ar-portfolio/portfolio.html
+Featured projects include School Management System, POS & Inventory Suite, Celebrity Wife platform, Baja Call Center, and more.
+
+## Contact
+https://rafayqazi.github.io/ar-portfolio/contact.html
+Available for new projects. Response within 24 hours.
