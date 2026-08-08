@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
 <head>
@@ -39,7 +39,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Custom Neo-Glass CSS -->
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css?v=6">
     
     <!-- AOS Scroll Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -94,7 +94,7 @@
     </script>
 </head>
 
-<body class="antialiased relative" x-data="{ data: portfolioData, menuOpen: false }">
+<body class="antialiased relative wm-theme" x-data="{ data: portfolioData, menuOpen: false }">
 
     <!-- Background Orbs -->
     <div class="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">
@@ -398,12 +398,12 @@
     <!-- Call to Action -->
     <section class="py-24 relative z-10">
         <div class="container mx-auto px-6 max-w-5xl">
-            <div class="glass-panel p-12 md:p-16 text-center relative overflow-hidden border border-primary/20 bg-gradient-to-b from-slate-900/80 to-[#0f172a]" data-aos="zoom-in" data-aos-duration="1000">
+<div class="glass-panel p-12 md:p-16 text-center relative overflow-hidden border border-primary/20 bg-gradient-to-b from-slate-900/80 to-[#0f172a] wm-dark" data-aos="zoom-in" data-aos-duration="1000">
                 
                 <div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
                 <div class="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/20 blur-[100px] rounded-full pointer-events-none"></div>
 
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 relative z-10 tracking-tight">Need a <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">custom solution?</span></h2>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 relative z-10 tracking-tight">Need a <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FF9C82] to-[#FFD9CE]">custom solution?</span></h2>
                 <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto relative z-10">We are ready to translate your requirements into high-performing digital realities. Let's build something epic together.</p>
                 
                 <a href="contact.html" class="neo-btn-primary text-lg px-8 py-4 relative z-10 transition-transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">

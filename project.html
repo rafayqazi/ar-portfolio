@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
 <head>
@@ -11,9 +11,9 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#3b82f6', // Sky 500
+                        primary: '#EE6341', // Web Matrix coral
                         dark: '#0f172a',    // Slate 900
-                        secondary: '#64748b' // Slate 500
+                        secondary: '#123179' // Navy
                     }
                 }
             }
@@ -24,6 +24,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <script src="js/data.js"></script>
+    <link rel="stylesheet" href="index.css?v=6">
     <link rel="canonical" href="https://rafayqazi.github.io/ar-portfolio/project.html">
 
     <!-- Schema JSON-LD -->
@@ -73,7 +74,7 @@
     </script>
 </head>
 
-<body class="bg-white text-slate-900 font-sans antialiased" x-data="projectPage()">
+<body class="bg-white text-slate-900 font-sans antialiased wm-theme" x-data="projectPage()">
 
     <!-- Navigation (Light Version) -->
     <nav x-data="{ open: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 20) ? true : false"
@@ -210,7 +211,7 @@
                         <!-- Fallback / Download button if embedded view fails (optional but good UI) -->
                         <div class="absolute bottom-4 right-4">
                             <a :href="project.pdf" target="_blank"
-                                class="bg-primary text-white px-4 py-2 rounded-lg shadow-lg hover:bg-sky-600 transition-colors flex items-center gap-2">
+                                class="bg-primary text-white px-4 py-2 rounded-lg shadow-lg hover:bg-[#d9562c] transition-colors flex items-center gap-2">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
@@ -298,7 +299,7 @@
                 </div>
 
                 <!-- Contact / CTA Section -->
-                <div class="bg-slate-900 rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden">
+                <div class="wm-dark bg-slate-900 rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden">
                     <!-- Decorative Gradients -->
                     <div
                         class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2">
@@ -314,7 +315,7 @@
 
                         <div class="flex flex-col sm:flex-row gap-4 justify-center">
                             <a href="index.html#contact"
-                                class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold rounded-full hover:bg-sky-600 transition-all shadow-lg shadow-sky-500/30 text-lg group">
+                                class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold rounded-full hover:bg-[#d9562c] transition-all shadow-lg shadow-[#EE6341]/30 text-lg group">
                                 Contact Us
                                 <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24">
@@ -335,7 +336,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 border-t border-slate-800 py-12 mt-20 relative z-10">
+    <footer class="bg-[#0b1121] border-t border-white/5 py-12 mt-20 relative z-10">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-2xl font-bold text-white mb-6">Let's Work Together</h2>
             <div class="flex justify-center space-x-6 mb-8">

@@ -1,0 +1,30 @@
+name: Refresh Fiverr data
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch Fiverr profile + reviews
+        run: node fiverr-update.mjs
+
+      - name: Commit fresh data (if changed)
+        run: |
+          if ! git diff --quiet fiverr-data.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add fiverr-data.json
+            git commit -m "chore: refresh Fiverr profile and reviews"
+            git push
+          else
+            echo "No changes in fiverr-data.json — skipping commit."
+          fi

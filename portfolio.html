@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
 <head>
@@ -43,7 +43,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Custom Neo-Glass CSS -->
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css?v=6">
 
     <!-- AOS Scroll Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -98,11 +98,11 @@
     </script>
 
     <style>
-        .project-number {
+.project-number {
             font-size: 7rem;
             line-height: 1;
             font-weight: 900;
-            background: linear-gradient(180deg, rgba(56, 189, 248, 0.15) 0%, rgba(56, 189, 248, 0) 100%);
+            background: linear-gradient(180deg, rgba(238, 99, 65, 0.14) 0%, rgba(238, 99, 65, 0) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -120,11 +120,11 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%);
+            background: linear-gradient(135deg, rgba(238, 99, 65, 0.06) 0%, rgba(18, 49, 121, 0.06) 100%);
             z-index: 1;
             pointer-events: none;
             border-radius: inherit;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(18, 49, 121, 0.10);
         }
 
         .project-img-wrapper img {
@@ -146,14 +146,14 @@
             font-size: 0.72rem;
             font-weight: 600;
             letter-spacing: 0.05em;
-            background: rgba(56, 189, 248, 0.08);
-            color: #38bdf8;
-            border: 1px solid rgba(56, 189, 248, 0.2);
+            background: rgba(238, 99, 65, 0.07);
+            color: #EE6341;
+            border: 1px solid rgba(238, 99, 65, 0.22);
         }
 
         .divider-line {
             height: 1px;
-            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 50%, transparent 100%);
+            background: linear-gradient(90deg, transparent 0%, rgba(18, 49, 121, 0.12) 50%, transparent 100%);
         }
 
         .category-label {
@@ -181,7 +181,7 @@
             object-fit: cover;
             object-position: top;
             border-radius: 0.5rem;
-            border: 1.5px solid rgba(255, 255, 255, 0.07);
+            border: 1.5px solid rgba(18, 49, 121, 0.14);
             cursor: pointer;
             transition: border-color 0.2s, opacity 0.2s;
             opacity: 0.6;
@@ -190,13 +190,13 @@
 
         .thumb-strip img:hover,
         .thumb-strip img.active {
-            border-color: #38bdf8;
+            border-color: #EE6341;
             opacity: 1;
         }
     </style>
 </head>
 
-<body class="antialiased relative" x-data="portfolioPage()" :class="selectedProject ? 'overflow-hidden' : ''">
+<body class="antialiased relative wm-theme" x-data="portfolioPage()" :class="selectedProject ? 'overflow-hidden' : ''">
 
     <!-- Background Orbs -->
     <div class="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">
@@ -271,7 +271,7 @@
                 Crafted with <span class="text-gradient">Precision.</span>
             </h1>
             <p class="text-lg text-slate-400 max-w-xl mx-auto leading-relaxed">Explore our portfolio of digital
-                solutions — from lightning-fast SaaS platforms to elegant, high-conversion websites.</p>
+                solutions â€” from lightning-fast SaaS platforms to elegant, high-conversion websites.</p>
         </div>
 
         <!-- Filter Tabs -->
@@ -290,7 +290,7 @@
         </div>
     </header>
 
-    <!-- Projects — Editorial Scroll Layout -->
+    <!-- Projects â€” Editorial Scroll Layout -->
     <section class="relative z-10 pb-32">
         <div class="container mx-auto px-6 max-w-6xl">
             <template x-for="(item, index) in filteredProjects" :key="item.id">
@@ -302,7 +302,7 @@
                     <!-- Divider (skip first) -->
                     <div x-show="index > 0" class="divider-line my-20"></div>
 
-                    <!-- Project Row — alternates direction -->
+                    <!-- Project Row â€” alternates direction -->
                     <div class="project-row grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"
                         :class="index % 2 !== 0 ? 'lg:grid-flow-dense' : ''" data-aos="fade-up">
 
@@ -369,8 +369,8 @@
     <!-- Call to Action Banner -->
     <section class="py-20 relative z-10 border-t border-white/5">
         <div class="container mx-auto px-6" data-aos="zoom-in">
-            <div
-                class="neo-card p-10 flex flex-col md:flex-row items-center justify-between gap-8 border border-primary/20 bg-gradient-to-r from-slate-900 to-slate-800 max-w-5xl mx-auto">
+<div
+                class="neo-card p-10 flex flex-col md:flex-row items-center justify-between gap-8 border border-primary/20 bg-gradient-to-r from-slate-900 to-slate-800 max-w-5xl mx-auto wm-dark">
                 <div>
                     <h3 class="text-3xl font-bold text-white mb-2">Impressed by what you see?</h3>
                     <p class="text-slate-400">Let's discuss how we can bring your visionary ideas to life.</p>
@@ -420,7 +420,7 @@
         <div x-show="selectedProject" x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
             x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100"
-            x-transition:leave-end="opacity-0" class="absolute inset-0 bg-slate-900/85 backdrop-blur-sm"
+x-transition:leave-end="opacity-0" class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm wm-backdrop"
             @click="selectedProject = null"></div>
 
         <!-- Modal Content -->
@@ -430,24 +430,24 @@
             x-transition:leave="transition ease-in duration-200"
             x-transition:leave-start="opacity-100 scale-100 translate-y-0"
             x-transition:leave-end="opacity-0 scale-95 translate-y-4"
-            class="relative glass-panel w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl border border-white/10 flex flex-col bg-slate-900/95">
+            class="relative glass-panel wm-modal w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl border border-white/10 flex flex-col">
 
             <!-- Close Button -->
             <button @click="selectedProject = null"
-                class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full neo-card flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-800 transition-colors bg-slate-900/50 backdrop-blur-md border border-white/10">
+                class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full neo-card flex items-center justify-center text-slate-300 hover:text-primary hover:bg-slate-800 transition-colors border border-white/10 bg-white/70">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
                     </path>
                 </svg>
             </button>
 
-            <!-- Modal Header/Banner -->
+<!-- Modal Header/Banner -->
             <div class="h-64 sm:h-80 relative bg-slate-800 shrink-0 border-b border-white/5">
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent z-10"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent z-10"></div>
                 <img :src="selectedProject?.images && selectedProject.images.length > 0 ? selectedProject.images[0] : ''"
                     :alt="selectedProject?.title"
-                    class="w-full h-full object-cover object-top mix-blend-screen opacity-90"
-                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x400/0f172a/38bdf8?text=Project+Preview';">
+                    class="w-full h-full object-cover object-top"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x400/123179/EE6341?text=Project+Preview';">
             </div>
 
             <!-- Modal Body -->
@@ -517,8 +517,8 @@
                         <template x-for="(img, idx) in selectedProject?.images.slice(1)" :key="idx">
                             <a :href="img" target="_blank"
                                 class="block aspect-video rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition-colors group shadow-lg">
-                                <img :src="img"
-                                    class="w-full h-full object-cover mix-blend-screen opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+<img :src="img"
+                                    class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
                             </a>
                         </template>
                     </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
 <head>
@@ -39,7 +39,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Custom Neo-Glass CSS -->
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css?v=6">
     
     <!-- AOS Scroll Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -94,12 +94,12 @@
     </script>
 </head>
 
-<body class="antialiased relative" x-data="{ data: portfolioData, menuOpen: false }">
+<body class="antialiased relative wm-theme" x-data="{ data: portfolioData, menuOpen: false }">
 
     <!-- Background Orbs -->
     <div class="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">
-        <div class="bg-orb bg-orb-1" style="animation-delay: -3s; background: radial-gradient(circle, rgba(56,189,248,0.2) 0%, rgba(15,23,42,0) 70%);"></div>
-        <div class="bg-orb bg-orb-2" style="animation-delay: -6s; background: radial-gradient(circle, rgba(236,72,153,0.15) 0%, rgba(15,23,42,0) 70%);"></div>
+<div class="bg-orb bg-orb-1" style="animation-delay: -3s; background: radial-gradient(circle, rgba(238,99,65,0.16) 0%, rgba(255,255,255,0) 70%);"></div>
+        <div class="bg-orb bg-orb-2" style="animation-delay: -6s; background: radial-gradient(circle, rgba(18,49,121,0.12) 0%, rgba(255,255,255,0) 70%);"></div>
     </div>
 
     <!-- Navigation -->
@@ -235,7 +235,7 @@
                     <div class="glass-panel p-8 md:p-12 relative overflow-hidden">
                         
                         <!-- Decorative glow -->
-                        <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-3xl mix-blend-screen pointer-events-none"></div>
+                        <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-3xl pointer-events-none"></div>
 
                         <form class="space-y-6 relative z-10" @submit.prevent>
                             <h3 class="text-2xl font-bold text-white mb-2">Send us a message</h3>
