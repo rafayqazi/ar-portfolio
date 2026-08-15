@@ -97,6 +97,18 @@ const portfolioData = {
         ],
         "Web Development": [
             {
+                "id": "rangeela-wear",
+                "title": "Rangeela Wear",
+                "url": "http://rangeelawear.com/",
+                "images": [
+                    "Web Development/Rangeela Wear/Home.png",
+                    "Web Development/Rangeela Wear/Women Clothing.png",
+                    "Web Development/Rangeela Wear/Product.png"
+                ],
+                "description": "A premium WordPress + WooCommerce fashion store for Rangeela Wear, a luxury traditional women's clothing brand. The store presents curated collections across Women Clothing, Clutch Bags, and Accessories with elegant product galleries, size variants, sale pricing, and secure checkout. It also includes dedicated About, Contact, and policy pages (Privacy, Refund, Shipping, Terms) — blending traditional elegance with a modern shopping experience.",
+                "technologies": ["WordPress", "WooCommerce", "Custom Theme", "PHP", "MySQL"]
+            },
+            {
                 "id": "baja-call-center",
                 "title": "Baja Call Center",
                 "images": [
