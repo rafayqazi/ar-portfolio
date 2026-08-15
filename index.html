@@ -22,18 +22,20 @@
     <meta property="og:title" content="AR Software Solutions | Premium Development Agency">
     <meta property="og:description"
         content="We build digital experiences that inspire. AR Software Solutions offers premium Enterprise SaaS, Web Development, CMS, and Digital Marketing services.">
-    <meta property="og:image" content="https://rafayqazi.github.io/ar-portfolio/images/favicon.png">
+    <meta property="og:image" content="https://rafayqazi.github.io/ar-portfolio/images/og-image.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="AR Software Solutions | Premium Development Agency">
     <meta property="twitter:description"
         content="We build digital experiences that inspire. AR Software Solutions offers premium Enterprise SaaS, Web Development, CMS, and Digital Marketing services.">
-    <meta property="twitter:image" content="https://rafayqazi.github.io/ar-portfolio/images/favicon.png">
+    <meta property="twitter:image" content="https://rafayqazi.github.io/ar-portfolio/images/og-image.png">
 
     <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="apple-touch-icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
     <meta name="theme-color" content="#EE6341">
     <link rel="canonical" href="https://rafayqazi.github.io/ar-portfolio/">
 
@@ -62,7 +64,7 @@
                     "@id": "https://rafayqazi.github.io/ar-portfolio/#organization",
                     "name": "AR Software Solutions",
                     "url": "https://rafayqazi.github.io/ar-portfolio/",
-                    "logo": "https://rafayqazi.github.io/ar-portfolio/images/favicon.png",
+                    "logo": "https://rafayqazi.github.io/ar-portfolio/images/og-image.png",
                     "foundingDate": "2021",
                     "founder": {
                         "@id": "https://rafayqazi.github.io/ar-portfolio/#person"
@@ -89,7 +91,7 @@
                     "@id": "https://rafayqazi.github.io/ar-portfolio/#website",
                     "url": "https://rafayqazi.github.io/ar-portfolio/",
                     "name": "AR Software Solutions",
-                    "description": "Premium Development Agency offering Enterprise SaaS, Web Development, CMS, and Digital Marketing services.",
+                    "description": "Premium Development Agency offering Enterprise SaaS, Web Development, CMS, E-Commerce, and SEO services.",
                     "publisher": {
                         "@id": "https://rafayqazi.github.io/ar-portfolio/#organization"
                     }
@@ -103,7 +105,6 @@
     x-data="{
         data: portfolioData,
         menuOpen: false,
-        servicesOpen: false,
         testimonials: [
             { img: 'images/client_ahmed_1774895718686.png', name: 'Ahmed Raza', role: 'E-commerce Founder', quote: 'AR Software Solutions transformed our e-commerce platform. Their MERN stack expertise scaled our system to handle thousands of daily active users effortlessly.' },
             { img: 'images/client_fatima_1774895865299.png', name: 'Fatima Ali', role: 'Edu-Tech Specialist', quote: 'The School Management System they delivered is phenomenal. The automated attendance and reporting saved our staff countless hours of administrative work.' },
@@ -175,36 +176,33 @@
             </a>
 
             <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center space-x-2" x-data="{ servicesMenu: false }">
+                        <div class="hidden md:flex items-center space-x-2" x-data="{ servicesMenu: false }">
                 <a href="index.html" class="neo-btn active px-4 py-2 text-sm">Home</a>
-
-                <!-- Our Services Dropdown -->
+                <a href="about.html" class="neo-btn px-4 py-2 text-sm">About</a>
+                <!-- Services Dropdown -->
                 <div class="relative">
                     <button @click="servicesMenu = !servicesMenu" @click.outside="servicesMenu = false"
                         class="neo-btn px-4 py-2 text-sm inline-flex items-center gap-1.5" :class="{ 'active': servicesMenu }">
-                        Our Services
+                        Services
                         <svg class="w-4 h-4 transition-transform" :class="servicesMenu ? 'rotate-180' : ''"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
                     <div x-show="servicesMenu" x-transition style="display: none;"
                         class="absolute left-0 mt-3 w-64 glass-panel rounded-2xl p-3 shadow-2xl">
-                        <a href="services.html#saas" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Enterprise SaaS Development</a>
-                        <a href="services.html#web" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Website Development</a>
-                        <a href="services.html#ecommerce" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">E-Commerce & Shopify</a>
-                        <a href="services.html#cms" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">CMS Customization</a>
-                        <a href="services.html#marketing" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Digital Marketing & PPC</a>
-                        <a href="services.html#seo" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">SEO Optimization</a>
-                        <a href="services.html#uiux" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">UI/UX & Logo Design</a>
-                        <a href="services.html#copywriting" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Creative Copywriting</a>
+                        <a href="services.html#saas" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Enterprise SaaS Development</a>
+                        <a href="services.html#web" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Website Development</a>
+                        <a href="e-commerce.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">E-Commerce &amp; Shopify</a>
+                        <a href="services.html#cms" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">CMS Customization</a>
+                        <a href="social-media.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Social Media Management</a>
+                        <a href="services.html#seo" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">SEO Optimization</a>
+                        <a href="services.html#copywriting" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Creative Copywriting</a>
                     </div>
                 </div>
-
                 <a href="portfolio.html" class="neo-btn px-4 py-2 text-sm">Portfolio</a>
-                <a href="about.html" class="neo-btn px-4 py-2 text-sm">About</a>
-                <a href="contact.html" class="neo-btn-primary ml-4">Get Started</a>
+                <a href="publications.html" class="neo-btn px-4 py-2 text-sm">Publications</a>
+                <a href="contact.html" class="neo-btn-primary ml-4">Start a Project</a>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -229,36 +227,33 @@
             class="md:hidden absolute w-full top-full left-0 glass-panel border-t-0 rounded-t-none shadow-2xl max-h-[80vh] overflow-y-auto">
             <div class="flex flex-col p-4 space-y-2">
                 <a href="index.html" class="text-primary font-medium p-3 neo-card border border-transparent">Home</a>
-
-                <div class="neo-card p-2 border border-white/5">
+                <a href="about.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">About</a>
+                                <div class="neo-card p-2 border border-white/5" x-data="{ servicesOpen: false }">
                     <button @click="servicesOpen = !servicesOpen"
                         class="w-full flex items-center justify-between p-3 text-slate-300 hover:text-white transition-colors">
-                        <span class="font-medium">Our Services</span>
+                        <span class="font-medium">Services</span>
                         <svg class="w-4 h-4 transition-transform" :class="servicesOpen ? 'rotate-180' : ''"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
                     <div x-show="servicesOpen" x-transition style="display: none;">
                         <div class="flex flex-col pb-2">
-                            <a href="services.html#saas" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white">Enterprise SaaS Development</a>
-                            <a href="services.html#web" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white">Website Development</a>
-                            <a href="services.html#ecommerce" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white">E-Commerce & Shopify</a>
-                            <a href="services.html#cms" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white">Custom CMS</a>
-                            <a href="services.html#marketing" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white">Digital Marketing & PPC</a>
-                            <a href="services.html#seo" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white">SEO Optimization</a>
-                            <a href="services.html#uiux" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white">UI/UX & Logo Design</a>
-                            <a href="services.html#copywriting" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white">Creative Copywriting</a>
+                            <a href="services.html#saas" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Enterprise SaaS Development</a>
+                            <a href="services.html#web" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Website Development</a>
+                            <a href="e-commerce.html" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">E-Commerce &amp; Shopify</a>
+                            <a href="services.html#cms" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">CMS Customization</a>
+                            <a href="social-media.html" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Social Media Management</a>
+                            <a href="services.html#seo" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">SEO Optimization</a>
+                            <a href="services.html#copywriting" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Creative Copywriting</a>
                         </div>
                     </div>
                 </div>
-
                 <a href="portfolio.html"
                     class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Portfolio</a>
-                <a href="about.html"
-                    class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">About</a>
-                <a href="contact.html" class="neo-btn-primary w-full text-center py-3 mt-2">Get Started</a>
+                <a href="publications.html"
+                    class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Publications</a>
+                <a href="contact.html" class="neo-btn-primary w-full text-center py-3 mt-2">Start a Project</a>
             </div>
         </div>
     </header>
@@ -390,7 +385,7 @@
         </section>
 
         <!-- ============================================ -->
-        <!-- 4.4 - Our Services (8 flip cards)            -->
+        <!-- 4.4 - Our Services (6 flip cards)            -->
         <!-- ============================================ -->
         <section class="py-20 relative z-10" id="services">
             <div class="container mx-auto px-6">
@@ -403,7 +398,7 @@
                         Everything You Need to <span class="text-gradient">Grow Online</span>
                     </h2>
                     <p class="text-slate-400 text-base sm:text-lg leading-relaxed">
-                        Eight service lines, one accountable partner. Pick the support you need â€” or bundle them all
+                        Six service lines, one accountable partner. Pick the support you need â€” or bundle them all
                         for a complete digital presence.
                     </p>
                 </div>
@@ -468,7 +463,7 @@
                             <div class="flip-back neo-card p-6 border border-sky-400/30">
                                 <h3 class="text-lg font-bold text-white mb-2">E-Commerce &amp; Shopify</h3>
                                 <p class="text-slate-400 text-sm leading-relaxed mb-4">To find out our Packages.</p>
-                                <a href="services.html#ecommerce" class="flip-link">Explore &rarr;</a>
+                                <a href="e-commerce.html" class="flip-link">Explore &rarr;</a>
                             </div>
                         </div>
                     </div>
@@ -500,27 +495,6 @@
                             <div class="flip-front neo-card p-6 border border-white/5">
                                 <span class="flip-num">05</span>
                                 <div class="w-14 h-14 rounded-2xl bg-slate-800 flex items-center justify-center mb-5 border border-white/5">
-                                    <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l8 5-8 5V7zM6 7l8 5-8 5V7z"></path>
-                                    </svg>
-                                </div>
-                                <h3 class="text-lg font-bold text-white mb-2">Digital Marketing &amp; PPC</h3>
-                                <p class="text-slate-400 text-sm leading-relaxed">Performance campaigns that turn clicks into customers.</p>
-                            </div>
-                            <div class="flip-back neo-card p-6 border border-amber-400/30">
-                                <h3 class="text-lg font-bold text-white mb-2">Digital Marketing &amp; PPC</h3>
-                                <p class="text-slate-400 text-sm leading-relaxed mb-4">To find out our Packages.</p>
-                                <a href="services.html#marketing" class="flip-link">Explore &rarr;</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Service 06 -->
-                    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="flip-inner">
-                            <div class="flip-front neo-card p-6 border border-white/5">
-                                <span class="flip-num">06</span>
-                                <div class="w-14 h-14 rounded-2xl bg-slate-800 flex items-center justify-center mb-5 border border-white/5">
                                     <svg class="w-7 h-7 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 014-4h10a4 4 0 010 8H9m13-10a2 2 0 10-4 0"></path>
                                     </svg>
@@ -536,32 +510,11 @@
                         </div>
                     </div>
 
-                    <!-- Service 07 -->
-                    <div class="flip-card" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Service 06 -->
+                    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="flip-inner">
                             <div class="flip-front neo-card p-6 border border-white/5">
-                                <span class="flip-num">07</span>
-                                <div class="w-14 h-14 rounded-2xl bg-slate-800 flex items-center justify-center mb-5 border border-white/5">
-                                    <svg class="w-7 h-7 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4c-3.6-1.7-6 0.4-6 3.2 0 4 6.8 7.6 6.8 7.6s6.8-3.6 6.8-7.6c0-2.8-2.4-4.9-6-3.2z"></path>
-                                    </svg>
-                                </div>
-                                <h3 class="text-lg font-bold text-white mb-2">UI/UX &amp; Logo Design</h3>
-                                <p class="text-slate-400 text-sm leading-relaxed">Premium interfaces and identities that communicate value.</p>
-                            </div>
-                            <div class="flip-back neo-card p-6 border border-rose-400/30">
-                                <h3 class="text-lg font-bold text-white mb-2">UI/UX &amp; Logo Design</h3>
-                                <p class="text-slate-400 text-sm leading-relaxed mb-4">To find out more details.</p>
-                                <a href="services.html#uiux" class="flip-link">Explore &rarr;</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Service 08 -->
-                    <div class="flip-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="flip-inner">
-                            <div class="flip-front neo-card p-6 border border-white/5">
-                                <span class="flip-num">08</span>
+                                <span class="flip-num">06</span>
                                 <div class="w-14 h-14 rounded-2xl bg-slate-800 flex items-center justify-center mb-5 border border-white/5">
                                     <svg class="w-7 h-7 text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5h6a2 2 0 012 2v6m-9 6h6a2 2 0 002-2V8a2 2 0 00-2-2H8a2 2 0 00-2 2v6m-1 1h2v4h4"></path>
@@ -574,12 +527,13 @@
                                 <h3 class="text-lg font-bold text-white mb-2">Creative Copywriting</h3>
                                 <p class="text-slate-400 text-sm leading-relaxed mb-4">To find out more details.</p>
                                 <a href="services.html#copywriting" class="flip-link">Explore &rarr;</a>
-                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- ============================================ -->
         <!-- 4.5 - Why Choose AR (Stats Counters)         -->
@@ -791,8 +745,8 @@
                     </div>
 
                     <div class="glass-panel p-8 sm:p-10 rounded-[2rem] border border-white/10" data-aos="fade-left"
-                        x-data="{ sent: false, form: {} }">
-                        <form x-show="!sent" @submit.prevent="sent = true"
+                        x-data="{ sent: false, form: {}, sending: false, error: '', async submitForm() { this.sending = true; this.error = ''; try { await fetch('https://script.google.com/macros/s/AKfycbx-46YfpPisj4iA0WaZQAYH5RVST65QO3rPhl1arJoAiXQrcjHYFl9sEMNPrD2fyNO_Fg/exec', { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(this.form) }); this.sent = true; } catch (err) { this.error = 'Something went wrong. Please try again.'; } finally { this.sending = false; } } }">
+                        <form x-show="!sent" @submit.prevent="submitForm"
                             class="space-y-5">
                             <div class="grid sm:grid-cols-2 gap-5">
                                 <div>
@@ -823,7 +777,11 @@
                                     No spam â€” ever.
                                 </span>
                             </label>
-                            <button type="submit" class="neo-btn-primary w-full">Send Message</button>
+                            <div x-show="error" class="neo-card p-4 border border-red-400/30 text-red-400 text-sm" x-text="error" style="display: none;"></div>
+                            <button type="submit" class="neo-btn-primary w-full" :disabled="sending">
+                                <span x-show="!sending">Send Message</span>
+                                <span x-show="sending" style="display: none;">Sending...</span>
+                            </button>
                         </form>
                         <div x-show="sent" x-transition class="text-center py-16">
                             <div class="w-20 h-20 mx-auto rounded-full bg-green-500/15 flex items-center justify-center mb-6">
@@ -1023,11 +981,10 @@
                     <ul class="space-y-2.5 text-sm">
                         <li><a href="services.html#saas" class="text-slate-400 hover:text-primary transition-colors">Enterprise SaaS</a></li>
                         <li><a href="services.html#web" class="text-slate-400 hover:text-primary transition-colors">Website Development</a></li>
-                        <li><a href="services.html#ecommerce" class="text-slate-400 hover:text-primary transition-colors">E-Commerce &amp; Shopify</a></li>
+                        <li><a href="e-commerce.html" class="text-slate-400 hover:text-primary transition-colors">E-Commerce &amp; Shopify</a></li>
                         <li><a href="services.html#cms" class="text-slate-400 hover:text-primary transition-colors">CMS Customization</a></li>
-                        <li><a href="services.html#marketing" class="text-slate-400 hover:text-primary transition-colors">Digital Marketing &amp; PPC</a></li>
+                        <li><a href="social-media.html" class="text-slate-400 hover:text-primary transition-colors">Social Media Management</a></li>
                         <li><a href="services.html#seo" class="text-slate-400 hover:text-primary transition-colors">SEO Optimization</a></li>
-                        <li><a href="services.html#uiux" class="text-slate-400 hover:text-primary transition-colors">UI/UX &amp; Logo Design</a></li>
                         <li><a href="services.html#copywriting" class="text-slate-400 hover:text-primary transition-colors">Creative Copywriting</a></li>
                     </ul>
                 </div>

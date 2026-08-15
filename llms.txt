@@ -1,4 +1,4 @@
-# AR Software Solutions
+﻿# AR Software Solutions
 > Premium Development Agency — Enterprise SaaS, Web Development, CMS, and Digital Marketing.
 
 ## About
@@ -10,7 +10,23 @@ https://rafayqazi.github.io/ar-portfolio/services.html
 - Enterprise SaaS Development: Multi-tenant architectures, custom dashboards, API integration
 - Web Development: React, Vue, MERN & LAMP stacks
 - CMS & E-Commerce: WordPress, Shopify, Headless CMS
-- SEO & Marketing: Technical SEO, content strategy, performance marketing
+- SEO Optimization: Technical SEO, on-page optimization, keyword strategy
+
+## E-Commerce
+https://rafayqazi.github.io/ar-portfolio/e-commerce.html
+- Shopify Theme & App Development: custom themes, Liquid, private apps, B2B/wholesale setup
+- eBay Store Management: store setup, SEO listings, inventory syncing, repricing, order automation
+- Custom E-Commerce: WooCommerce, Magento, headless storefronts, subscription pricing
+- Payments & CRO: Stripe, PayPal, local gateways, checkout optimization, abandoned-cart recovery
+
+## Social Media Management
+https://rafayqazi.github.io/ar-portfolio/social-media.html
+- Content creation: Reels, carousels, stories, photography direction, captions, hashtag research
+- Posting & scheduling: strategic calendars optimized for peak engagement times
+- Community management: comments, DMs, and mentions handled on-brand
+- Paid ads & boosting: Instagram & Facebook Ads, targeting, retargeting
+- Analytics & reporting: monthly growth reports with engagement and reach insights
+- Live case studies: managed Instagram accounts @cakesbyguriya and @rangeelawear embedded in real time
 
 ## Portfolio
 https://rafayqazi.github.io/ar-portfolio/portfolio.html

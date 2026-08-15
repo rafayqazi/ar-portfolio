@@ -1,0 +1,555 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Management | AR Software Solutions</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Social Media Management | Instagram, Facebook & Growth">
+    <meta name="description" content="Full-service social media management: content creation, Instagram & Facebook growth, paid ads, and analytics. See our live managed accounts — @cakesbyguriya and @rangeelawear on Instagram.">
+    <meta name="keywords" content="Social Media Management, Instagram Marketing, Facebook Ads, Content Creation, Social Media Growth, AR Software Solutions">
+    <meta name="author" content="Abdul Rafay">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rafayqazi.github.io/ar-portfolio/social-media.html">
+    <meta property="og:title" content="Social Media Management | Instagram, Facebook & Growth">
+    <meta property="og:description" content="Full-service social media management: content creation, Instagram & Facebook growth, paid ads, and analytics.">
+    <meta property="og:image" content="https://rafayqazi.github.io/ar-portfolio/images/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Social Media Management | Instagram, Facebook & Growth">
+    <meta property="twitter:description" content="Full-service social media management: content creation, Instagram & Facebook growth, paid ads, and analytics.">
+    <meta property="twitter:image" content="https://rafayqazi.github.io/ar-portfolio/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <meta name="theme-color" content="#0b1121">
+    <link rel="canonical" href="https://rafayqazi.github.io/ar-portfolio/social-media.html">
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Tailwind CSS (for layout utilities) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Neo-Glass CSS -->
+    <link rel="stylesheet" href="index.css?v=6">
+
+    <!-- AOS Scroll Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Data Source -->
+    <script src="js/data.js?v=2"></script>
+
+    <!-- Schema JSON-LD -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Service",
+                    "name": "Social Media Management",
+                    "provider": {
+                        "@id": "https://rafayqazi.github.io/ar-portfolio/#organization"
+                    },
+                    "url": "https://rafayqazi.github.io/ar-portfolio/social-media.html",
+                    "serviceType": "Social Media Management",
+                    "description": "Full-service social media management: content creation, Instagram & Facebook growth, paid ads, and analytics."
+                },
+                {
+                    "@type": "Organization",
+                    "@id": "https://rafayqazi.github.io/ar-portfolio/#organization",
+                    "name": "AR Software Solutions",
+                    "url": "https://rafayqazi.github.io/ar-portfolio/",
+                    "logo": "https://rafayqazi.github.io/ar-portfolio/images/og-image.png",
+                    "foundingDate": "2021",
+                    "founder": {
+                        "@id": "https://rafayqazi.github.io/ar-portfolio/#person"
+                    },
+                    "sameAs": [
+                        "https://www.linkedin.com/in/rafayqazi",
+                        "https://github.com/rafayqazi"
+                    ]
+                },
+                {
+                    "@type": "Person",
+                    "@id": "https://rafayqazi.github.io/ar-portfolio/#person",
+                    "name": "Abdul Rafay",
+                    "jobTitle": "Founder & CEO",
+                    "image": "https://rafayqazi.github.io/ar-portfolio/images/owner_avatar.png",
+                    "url": "https://rafayqazi.github.io/ar-portfolio/",
+                    "sameAs": [
+                        "https://www.linkedin.com/in/rafayqazi",
+                        "https://github.com/rafayqazi"
+                    ]
+                },
+                {
+                    "@type": "WebSite",
+                    "@id": "https://rafayqazi.github.io/ar-portfolio/#website",
+                    "url": "https://rafayqazi.github.io/ar-portfolio/",
+                    "name": "AR Software Solutions",
+                    "description": "Premium Development Agency offering Enterprise SaaS, Web Development, CMS, E-Commerce, and SEO services.",
+                    "publisher": {
+                        "@id": "https://rafayqazi.github.io/ar-portfolio/#organization"
+                    }
+                }
+            ]
+        }
+    </script>
+</head>
+
+<body class="antialiased relative wm-theme" x-data="{ data: portfolioData, menuOpen: false }">
+
+    <!-- Background Orbs -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 relative group">
+                <div class="w-10 h-10 rounded-full neo-card flex items-center justify-center text-primary font-bold text-xl group-hover:text-white transition-colors">
+                    AR
+                </div>
+                <span class="font-bold text-xl tracking-tight hidden sm:block">Software Solutions<span class="text-primary">.</span></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-2" x-data="{ servicesMenu: false }">
+                <a href="index.html" class="neo-btn px-4 py-2 text-sm">Home</a>
+                <a href="about.html" class="neo-btn px-4 py-2 text-sm">About</a>
+
+                <!-- Services Dropdown -->
+                <div class="relative">
+                    <button @click="servicesMenu = !servicesMenu" @click.outside="servicesMenu = false"
+                        class="neo-btn px-4 py-2 text-sm inline-flex items-center gap-1.5" :class="{ 'active': servicesMenu }">
+                        Services
+                        <svg class="w-4 h-4 transition-transform" :class="servicesMenu ? 'rotate-180' : ''"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div x-show="servicesMenu" x-transition style="display: none;"
+                        class="absolute left-0 mt-3 w-64 glass-panel rounded-2xl p-3 shadow-2xl">
+                        <a href="services.html#saas" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Enterprise SaaS Development</a>
+                        <a href="services.html#web" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Website Development</a>
+                        <a href="e-commerce.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">E-Commerce &amp; Shopify</a>
+                        <a href="services.html#cms" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">CMS Customization</a>
+                        <a href="social-media.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Social Media Management</a>
+                        <a href="services.html#seo" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">SEO Optimization</a>
+                        <a href="services.html#copywriting" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Creative Copywriting</a>
+                    </div>
+                </div>
+
+                <a href="portfolio.html" class="neo-btn px-4 py-2 text-sm">Portfolio</a>
+                <a href="publications.html" class="neo-btn px-4 py-2 text-sm">Publications</a>
+                <a href="contact.html" class="neo-btn-primary ml-4">Start a Project</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button @click="menuOpen = !menuOpen" class="md:hidden neo-btn p-2">
+                <svg x-show="!menuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <svg x-show="menuOpen" style="display: none;" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div x-show="menuOpen"
+             x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 -translate-y-4"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-150"
+             x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 -translate-y-4"
+             @click.away="menuOpen = false"
+             style="display: none;"
+             class="md:hidden absolute w-full top-full left-0 glass-panel border-t-0 rounded-t-none shadow-2xl max-h-[80vh] overflow-y-auto">
+            <div class="flex flex-col p-4 space-y-3">
+                <a href="index.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Home</a>
+                <a href="about.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">About</a>
+                <div class="neo-card p-2 border border-white/5" x-data="{ servicesOpen: false }">
+                    <button @click="servicesOpen = !servicesOpen"
+                        class="w-full flex items-center justify-between p-3 text-slate-300 hover:text-white transition-colors">
+                        <span class="font-medium">Services</span>
+                        <svg class="w-4 h-4 transition-transform" :class="servicesOpen ? 'rotate-180' : ''"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div x-show="servicesOpen" x-transition style="display: none;">
+                        <div class="flex flex-col pb-2">
+                            <a href="services.html#saas" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Enterprise SaaS Development</a>
+                            <a href="services.html#web" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Website Development</a>
+                            <a href="e-commerce.html" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">E-Commerce &amp; Shopify</a>
+                            <a href="services.html#cms" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">CMS Customization</a>
+                            <a href="social-media.html" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Social Media Management</a>
+                            <a href="services.html#seo" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">SEO Optimization</a>
+                            <a href="services.html#copywriting" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Creative Copywriting</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="portfolio.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Portfolio</a>
+                <a href="publications.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Publications</a>
+                <a href="contact.html" class="neo-btn-primary w-full text-center py-3 mt-2">Start a Project</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="pt-32 pb-16 px-6 relative z-10 border-b border-white/5 bg-[#0b1121]/50">
+        <div class="container mx-auto px-6 text-center max-w-3xl" data-aos="fade-down">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full neo-card mb-6 border border-white/5 mx-auto">
+                <span class="w-2 h-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500"></span>
+                <span class="text-sm font-medium text-slate-300">Social Media Management</span>
+            </div>
+
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+                Social Media, <span class="text-gradient">Handled.</span>
+            </h1>
+            <p class="text-lg text-slate-400 leading-relaxed">We don't just post — we build audiences. Full-service social media management across Instagram, Facebook, and beyond: content strategy, creation, scheduling, community engagement, and paid growth.</p>
+        </div>
+    </header>
+
+    <!-- Live Instagram Portfolio -->
+    <section class="py-24 relative z-10">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full neo-card mb-6 border border-white/5 mx-auto">
+                    <span class="w-2 h-2 rounded-full bg-pink-500"></span>
+                    <span class="text-sm font-medium text-slate-300">Live Case Studies</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-4">Managed Accounts <span class="text-gradient">In Real Time</span></h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg">These are Instagram accounts we actively manage — content, captions, and growth, live right now.</p>
+            </div>
+
+            <!-- Embedded Accounts Grid -->
+            <div class="grid lg:grid-cols-2 gap-8 items-start">
+                <!-- Instagram @cakesbyguriya -->
+                <div class="relative" data-aos="fade-up">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-pink-500/20 via-purple-500/20 to-yellow-500/20 blur-3xl rounded-full"></div>
+                    <div class="relative z-10 glass-panel rounded-3xl overflow-hidden border border-white/10 shadow-[0_10px_40px_rgba(168,85,247,0.1)]">
+                        <div class="h-6 border-b border-white/5 bg-slate-800/80 flex items-center px-4 gap-1.5">
+                            <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                            <span class="ml-3 text-xs text-slate-400">instagram.com/cakesbyguriya</span>
+                            <span class="ml-auto flex items-center gap-1.5 text-xs text-green-400">
+                                <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span> LIVE
+                            </span>
+                        </div>
+                        <div class="bg-[#0b1121]/40">
+                            <iframe
+                                src="https://www.instagram.com/cakesbyguriya/embed"
+                                width="100%"
+                                height="560"
+                                frameborder="0"
+                                scrolling="no"
+                                allowtransparency="true"
+                                title="Instagram @cakesbyguriya - managed by AR Software Solutions"
+                                class="w-full block min-h-[560px]"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instagram @rangeelawear -->
+                <div class="relative" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-sky-500/20 via-purple-500/20 to-rose-500/20 blur-3xl rounded-full"></div>
+                    <div class="relative z-10 glass-panel rounded-3xl overflow-hidden border border-white/10 shadow-[0_10px_40px_rgba(56,189,248,0.1)]">
+                        <div class="h-6 border-b border-white/5 bg-slate-800/80 flex items-center px-4 gap-1.5">
+                            <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                            <span class="ml-3 text-xs text-slate-400">instagram.com/rangeelawear</span>
+                            <span class="ml-auto flex items-center gap-1.5 text-xs text-green-400">
+                                <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span> LIVE
+                            </span>
+                        </div>
+                        <div class="bg-[#0b1121]/40">
+                            <iframe
+                                src="https://www.instagram.com/rangeelawear/embed"
+                                width="100%"
+                                height="560"
+                                frameborder="0"
+                                scrolling="no"
+                                allowtransparency="true"
+                                title="Instagram @rangeelawear - managed by AR Software Solutions"
+                                class="w-full block min-h-[560px]"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shared Text Content -->
+            <div class="grid lg:grid-cols-2 gap-16 items-center mt-24">
+                <!-- Text Content -->
+                <div class="order-2 lg:order-1" data-aos="fade-right">
+                    <div class="w-14 h-14 rounded-2xl bg-slate-800 flex items-center justify-center mb-6 border border-white/5 shadow-inner text-pink-400">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-4">Real Accounts, <span class="text-gradient">Real Results</span></h3>
+                    <p class="text-slate-400 text-lg leading-relaxed mb-6">From a premium cake brand to a fashion label, we manage diverse accounts end to end — updated live from Instagram. What you see here is exactly what we do: consistent posting, scroll-stopping visuals, and captions that drive engagement.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-pink-400 mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-slate-300">Content Strategy &amp; Reel Production</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-pink-400 mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-slate-300">Captions, Hashtag Research &amp; Scheduling</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-pink-400 mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-slate-300">Community Engagement &amp; DM Handling</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-pink-400 mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-slate-300">Analytics, Growth Reports &amp; Ad Boosting</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Account Buttons -->
+                <div class="order-1 lg:order-2" data-aos="fade-left">
+                    <div class="glass-panel rounded-3xl p-8 border border-white/10">
+                        <h4 class="text-xl font-bold text-white mb-6">Our Managed Accounts</h4>
+                        <div class="space-y-4">
+                            <div class="neo-card p-5 border border-white/5 flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg shrink-0">CG</div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-white font-bold truncate">@cakesbyguriya</p>
+                                    <p class="text-xs text-slate-400">Cakes &amp; Bakery — Instagram</p>
+                                </div>
+                                <a href="https://www.instagram.com/cakesbyguriya/" target="_blank" rel="noopener" class="neo-btn px-4 py-2 text-sm shrink-0">
+                                    Follow
+                                    <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                </a>
+                            </div>
+                            <div class="neo-card p-5 border border-white/5 flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-500 to-rose-500 flex items-center justify-center text-white font-bold text-lg shrink-0">RW</div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-white font-bold truncate">@rangeelawear</p>
+                                    <p class="text-xs text-slate-400">Fashion &amp; Clothing — Instagram</p>
+                                </div>
+                                <a href="https://www.instagram.com/rangeelawear/" target="_blank" rel="noopener" class="neo-btn px-4 py-2 text-sm shrink-0">
+                                    Follow
+                                    <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                </a>
+                            </div>
+                            <p class="text-xs text-slate-500 pt-2">Your brand could be here next.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Manage -->
+    <section class="py-24 bg-[#0c1222] border-y border-white/5 relative z-10">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-4">What We <span class="text-gradient">Manage</span></h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg">A complete social media operation, from the first concept to the final report.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="neo-card p-8 border-white/5" data-aos="fade-up">
+                    <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center mb-5 text-pink-400 border border-white/5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Content Creation</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Reels, carousels, and stories designed to stop the scroll — photography direction, graphic design, and caption writing included.</p>
+                </div>
+                <div class="neo-card p-8 border-white/5" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center mb-5 text-purple-400 border border-white/5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Posting &amp; Scheduling</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Strategic posting calendars optimized for peak engagement times — never a dead feed, never a missed trend.</p>
+                </div>
+                <div class="neo-card p-8 border-white/5" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center mb-5 text-sky-400 border border-white/5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Community Management</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Comments, DMs, and mentions handled fast and on-brand — turning followers into customers, not just likes.</p>
+                </div>
+                <div class="neo-card p-8 border-white/5" data-aos="fade-up">
+                    <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center mb-5 text-yellow-400 border border-white/5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Paid Ads &amp; Boosting</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Instagram &amp; Facebook Ads, audience targeting, and retargeting campaigns managed for maximum ROI per rupee.</p>
+                </div>
+                <div class="neo-card p-8 border-white/5" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center mb-5 text-emerald-400 border border-white/5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Analytics &amp; Reporting</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Monthly growth reports with engagement, reach, and follower insights — plus the strategy to act on them.</p>
+                </div>
+                <div class="neo-card p-8 border-white/5" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center mb-5 text-rose-400 border border-white/5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Growth Strategy</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Trend adoption, collaborations, and content pillars mapped to your business goals — building an audience that actually buys.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-24 relative z-10">
+        <div class="container mx-auto px-6 max-w-5xl">
+<div class="glass-panel p-12 md:p-16 text-center relative overflow-hidden border border-primary/20 bg-gradient-to-b from-slate-900/80 to-[#0f172a] wm-dark" data-aos="zoom-in" data-aos-duration="1000">
+
+                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/20 blur-[100px] rounded-full pointer-events-none"></div>
+
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 relative z-10 tracking-tight">Let's grow your <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FF9C82] to-[#FFD9CE]">audience together.</span></h2>
+                <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto relative z-10">Show us your current accounts and your goals — we'll take it from there.</p>
+
+                <a href="contact.html" class="neo-btn-primary text-lg px-8 py-4 relative z-10 transition-transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
+                    Get a Social Media Plan
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+    <footer class="bg-[#0b1121] py-14 border-t border-white/5 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-9 h-9 rounded-full neo-card flex items-center justify-center text-primary font-bold text-sm">AR</div>
+                        <span class="font-bold text-lg text-white">Software Solutions<span class="text-primary">.</span></span>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                        A full-service digital agency delivering SaaS, web systems, e-commerce and growth marketing end to end.
+                    </p>
+                    <div class="flex gap-3">
+                        <template x-for="(link, platform) in data.profile.socials" :key="platform">
+                            <a :href="link" target="_blank" :title="platform"
+                                class="w-9 h-9 rounded-full neo-card flex items-center justify-center text-slate-400 transition-all duration-300 hover:text-primary">
+                                <span class="capitalize text-[10px] font-semibold" x-text="platform.substring(0, 2)"></span>
+                            </a>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Our Services</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="services.html#saas" class="text-slate-400 hover:text-primary transition-colors">Enterprise SaaS</a></li>
+                        <li><a href="services.html#web" class="text-slate-400 hover:text-primary transition-colors">Website Development</a></li>
+                        <li><a href="e-commerce.html" class="text-slate-400 hover:text-primary transition-colors">E-Commerce &amp; Shopify</a></li>
+                        <li><a href="services.html#cms" class="text-slate-400 hover:text-primary transition-colors">CMS Customization</a></li>
+                        <li><a href="social-media.html" class="text-primary transition-colors">Social Media Management</a></li>
+                        <li><a href="services.html#seo" class="text-slate-400 hover:text-primary transition-colors">SEO Optimization</a></li>
+                        <li><a href="services.html#copywriting" class="text-slate-400 hover:text-primary transition-colors">Creative Copywriting</a></li>
+                    </ul>
+                </div>
+
+                <!-- Recognized Platforms -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Recognized Platforms</h4>
+                    <div class="neo-card p-4 border border-white/5 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-[#00b67a]/15 flex items-center justify-center text-[#00b67a] shrink-0">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 9.1l-10.3-.8L9.2 0 4.7 9.1l-9 1.1 6.8 5.8-2 8.1L9.2 18l8.3 5.4-2.1-8.1 8.6-6.2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-white font-bold text-sm">5.0 on Trustpilot</p>
+                            <p class="text-xs text-slate-400">Verified Client Reviews</p>
+                        </div>
+                    </div>
+                    <div class="rounded-card p-4 border border-white/5 mt-3 flex items-center gap-3 neo-card">
+                        <div class="w-10 h-10 rounded-xl bg-[#4285F4]/15 flex items-center justify-center text-[#4285F4] shrink-0">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.48 10.92v3.28h4.78c-.19 1.06-1.22 3.08-4.78 3.08-3.09 0-5.61-2.56-5.61-5.72s2.52-5.72 5.61-5.72c1.76 0 2.94.75 3.61 1.39l2.59-2.5C12.94 2.7 9.44 2 7.24 2 3.98 2 0 4.49 0 8.48c0 3.99 3.98 6.52 7.24 6.52 2.56 0 4.4-1.4 5.24-2.86v-3.22z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-white font-bold text-xs">5.0 on Google</p>
+                            <p class="text-xs text-slate-400">Client Reviews</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Contact Us</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full neo-card flex items-center justify-center text-primary shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            </span>
+                            <a :href="'tel:+92' + data.profile.contact.mobile.replace(/-/g, '')"
+                                class="text-slate-400 hover:text-primary transition-colors" x-text="'+92 ' + data.profile.contact.mobile"></a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full neo-card flex items-center justify-center text-purple-400 shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </span>
+                            <span class="text-slate-400" x-text="data.profile.contact.address"></span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full neo-card flex items-center justify-center text-green-400 shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </span>
+                            <a :href="'mailto:' + data.profile.contact.email"
+                                class="text-slate-400 hover:text-primary transition-colors break-all"
+                                x-text="data.profile.contact.email"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 mt-10 pt-8 text-center text-slate-500 text-sm">
+                &copy; <span x-text="new Date().getFullYear()"></span> <span x-text="data.profile.name"></span>. All
+                rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100,
+                easing: 'ease-out-cubic'
+            });
+        });
+    </script>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/923000358189" target="_blank" class="whatsapp-float">
+        <span class="whatsapp-tooltip">Chat with us!</span>
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.431 5.631 1.432h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+</body>
+</html>

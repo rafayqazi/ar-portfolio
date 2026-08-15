@@ -21,18 +21,20 @@
     <meta property="og:title" content="Portfolio | AR Software Solutions">
     <meta property="og:description"
         content="Browse our extensive portfolio of digital solutions, from full-stack Enterprise Web Applications to beautiful CMS builds and modern UI designs.">
-    <meta property="og:image" content="https://rafayqazi.github.io/ar-portfolio/images/favicon.png">
+    <meta property="og:image" content="https://rafayqazi.github.io/ar-portfolio/images/og-image.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="Portfolio | AR Software Solutions">
     <meta property="twitter:description"
         content="Browse our extensive portfolio of digital solutions, from full-stack Enterprise Web Applications to beautiful CMS builds and modern UI designs.">
-    <meta property="twitter:image" content="https://rafayqazi.github.io/ar-portfolio/images/favicon.png">
+    <meta property="twitter:image" content="https://rafayqazi.github.io/ar-portfolio/images/og-image.png">
 
     <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="apple-touch-icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
     <meta name="theme-color" content="#0b1121">
     <link rel="canonical" href="https://rafayqazi.github.io/ar-portfolio/portfolio.html">
 
@@ -61,7 +63,7 @@
                     "@id": "https://rafayqazi.github.io/ar-portfolio/#organization",
                     "name": "AR Software Solutions",
                     "url": "https://rafayqazi.github.io/ar-portfolio/",
-                    "logo": "https://rafayqazi.github.io/ar-portfolio/images/favicon.png",
+                    "logo": "https://rafayqazi.github.io/ar-portfolio/images/og-image.png",
                     "foundingDate": "2021",
                     "founder": {
                         "@id": "https://rafayqazi.github.io/ar-portfolio/#person"
@@ -88,7 +90,7 @@
                     "@id": "https://rafayqazi.github.io/ar-portfolio/#website",
                     "url": "https://rafayqazi.github.io/ar-portfolio/",
                     "name": "AR Software Solutions",
-                    "description": "Premium Development Agency offering Enterprise SaaS, Web Development, CMS, and Digital Marketing services.",
+                    "description": "Premium Development Agency offering Enterprise SaaS, Web Development, CMS, E-Commerce, and SEO services.",
                     "publisher": {
                         "@id": "https://rafayqazi.github.io/ar-portfolio/#organization"
                     }
@@ -221,10 +223,30 @@
             </a>
 
             <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center space-x-2">
+                        <div class="hidden md:flex items-center space-x-2" x-data="{ servicesMenu: false }">
                 <a href="index.html" class="neo-btn px-4 py-2 text-sm">Home</a>
                 <a href="about.html" class="neo-btn px-4 py-2 text-sm">About</a>
-                <a href="services.html" class="neo-btn px-4 py-2 text-sm">Services</a>
+                <!-- Services Dropdown -->
+                <div class="relative">
+                    <button @click="servicesMenu = !servicesMenu" @click.outside="servicesMenu = false"
+                        class="neo-btn px-4 py-2 text-sm inline-flex items-center gap-1.5" :class="{ 'active': servicesMenu }">
+                        Services
+                        <svg class="w-4 h-4 transition-transform" :class="servicesMenu ? 'rotate-180' : ''"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div x-show="servicesMenu" x-transition style="display: none;"
+                        class="absolute left-0 mt-3 w-64 glass-panel rounded-2xl p-3 shadow-2xl">
+                        <a href="services.html#saas" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Enterprise SaaS Development</a>
+                        <a href="services.html#web" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Website Development</a>
+                        <a href="e-commerce.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">E-Commerce &amp; Shopify</a>
+                        <a href="services.html#cms" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">CMS Customization</a>
+                        <a href="social-media.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Social Media Management</a>
+                        <a href="services.html#seo" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">SEO Optimization</a>
+                        <a href="services.html#copywriting" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Creative Copywriting</a>
+                    </div>
+                </div>
                 <a href="portfolio.html" class="neo-btn active px-4 py-2 text-sm text-primary">Portfolio</a>
                 <a href="publications.html" class="neo-btn px-4 py-2 text-sm">Publications</a>
                 <a href="contact.html" class="neo-btn-primary ml-4">Start a Project</a>
@@ -252,8 +274,27 @@
                     class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Home</a>
                 <a href="about.html"
                     class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">About</a>
-                <a href="services.html"
-                    class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Services</a>
+                                <div class="neo-card p-2 border border-white/5" x-data="{ servicesOpen: false }">
+                    <button @click="servicesOpen = !servicesOpen"
+                        class="w-full flex items-center justify-between p-3 text-slate-300 hover:text-white transition-colors">
+                        <span class="font-medium">Services</span>
+                        <svg class="w-4 h-4 transition-transform" :class="servicesOpen ? 'rotate-180' : ''"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div x-show="servicesOpen" x-transition style="display: none;">
+                        <div class="flex flex-col pb-2">
+                            <a href="services.html#saas" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Enterprise SaaS Development</a>
+                            <a href="services.html#web" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Website Development</a>
+                            <a href="e-commerce.html" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">E-Commerce &amp; Shopify</a>
+                            <a href="services.html#cms" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">CMS Customization</a>
+                            <a href="social-media.html" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Social Media Management</a>
+                            <a href="services.html#seo" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">SEO Optimization</a>
+                            <a href="services.html#copywriting" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Creative Copywriting</a>
+                        </div>
+                    </div>
+                </div>
                 <a href="portfolio.html"
                     class="text-primary font-medium p-3 neo-card border border-transparent">Portfolio</a>
                 <a href="publications.html"
@@ -382,33 +423,103 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#0b1121] py-12 border-t border-white/5 relative z-10">
+<!-- Footer -->
+    <footer class="bg-[#0b1121] py-14 border-t border-white/5 relative z-10">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="flex items-center gap-2">
-                    <div
-                        class="w-8 h-8 rounded-full neo-card flex items-center justify-center text-primary font-bold text-sm">
-                        AR</div>
-                    <span class="font-bold text-lg text-white">Software Solutions<span
-                            class="text-primary">.</span></span>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-9 h-9 rounded-full neo-card flex items-center justify-center text-primary font-bold text-sm">AR</div>
+                        <span class="font-bold text-lg text-white">Software Solutions<span class="text-primary">.</span></span>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                        A full-service digital agency delivering SaaS, web systems, e-commerce and growth marketing end to end.
+                    </p>
+                    <div class="flex gap-3">
+                        <template x-for="(link, platform) in data.profile.socials" :key="platform">
+                            <a :href="link" target="_blank" :title="platform"
+                                class="w-9 h-9 rounded-full neo-card flex items-center justify-center text-slate-400 transition-all duration-300 hover:text-primary">
+                                <span class="capitalize text-[10px] font-semibold" x-text="platform.substring(0, 2)"></span>
+                            </a>
+                        </template>
+                    </div>
                 </div>
-                <div class="flex space-x-6">
-                    <template x-for="(link, platform) in data.profile.socials" :key="platform">
-                        <a :href="link" target="_blank"
-                            class="w-10 h-10 rounded-full neo-card flex items-center justify-center text-slate-400 transition-all duration-300"
-                            :class="{
-                                'hover:text-[#0077b5] hover:shadow-[0_0_20px_rgba(0,119,181,0.4)] hover:border-[#0077b5]/50': platform === 'linkedin',
-                                'hover:text-white hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:border-white/50': platform === 'github',
-                                'hover:text-[#ff0000] hover:shadow-[0_0_20px_rgba(255,0,0,0.4)] hover:border-[#ff0000]/50': platform === 'youtube',
-                                'hover:text-[#1877f2] hover:shadow-[0_0_20px_rgba(24,119,242,0.4)] hover:border-[#1877f2]/50': platform === 'facebook',
-                                'hover:text-[#e4405f] hover:shadow-[0_0_20px_rgba(228,64,95,0.4)] hover:border-[#e4405f]/50': platform === 'instagram',
-                                'hover:text-primary hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] hover:border-primary/50': platform === 'website'
-                            }">
-                            <span class="capitalize text-xs font-semibold" x-text="platform.substring(0,2)"></span>
-                        </a>
-                    </template>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Our Services</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="services.html#saas" class="text-slate-400 hover:text-primary transition-colors">Enterprise SaaS</a></li>
+                        <li><a href="services.html#web" class="text-slate-400 hover:text-primary transition-colors">Website Development</a></li>
+                        <li><a href="e-commerce.html" class="text-slate-400 hover:text-primary transition-colors">E-Commerce &amp; Shopify</a></li>
+                        <li><a href="services.html#cms" class="text-slate-400 hover:text-primary transition-colors">CMS Customization</a></li>
+                        <li><a href="social-media.html" class="text-slate-400 hover:text-primary transition-colors">Social Media Management</a></li>
+                        <li><a href="services.html#seo" class="text-slate-400 hover:text-primary transition-colors">SEO Optimization</a></li>
+                        <li><a href="services.html#copywriting" class="text-slate-400 hover:text-primary transition-colors">Creative Copywriting</a></li>
+                    </ul>
                 </div>
+
+                <!-- Recognized Platforms -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Recognized Platforms</h4>
+                    <div class="neo-card p-4 border border-white/5 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-[#00b67a]/15 flex items-center justify-center text-[#00b67a] shrink-0">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 9.1l-10.3-.8L9.2 0 4.7 9.1l-9 1.1 6.8 5.8-2 8.1L9.2 18l8.3 5.4-2.1-8.1 8.6-6.2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-white font-bold text-sm">5.0 on Trustpilot</p>
+                            <p class="text-xs text-slate-400">Verified Client Reviews</p>
+                        </div>
+                    </div>
+                    <div class="rounded-card p-4 border border-white/5 mt-3 flex items-center gap-3 neo-card">
+                        <div class="w-10 h-10 rounded-xl bg-[#4285F4]/15 flex items-center justify-center text-[#4285F4] shrink-0">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.48 10.92v3.28h4.78c-.19 1.06-1.22 3.08-4.78 3.08-3.09 0-5.61-2.56-5.61-5.72s2.52-5.72 5.61-5.72c1.76 0 2.94.75 3.61 1.39l2.59-2.5C12.94 2.7 9.44 2 7.24 2 3.98 2 0 4.49 0 8.48c0 3.99 3.98 6.52 7.24 6.52 2.56 0 4.4-1.4 5.24-2.86v-3.22z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-white font-bold text-xs">5.0 on Google</p>
+                            <p class="text-xs text-slate-400">Client Reviews</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Contact Us</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full neo-card flex items-center justify-center text-primary shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            </span>
+                            <a :href="'tel:+92' + data.profile.contact.mobile.replace(/-/g, '')"
+                                class="text-slate-400 hover:text-primary transition-colors" x-text="'+92 ' + data.profile.contact.mobile"></a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full neo-card flex items-center justify-center text-purple-400 shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </span>
+                            <span class="text-slate-400" x-text="data.profile.contact.address"></span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full neo-card flex items-center justify-center text-green-400 shrink-0">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </span>
+                            <a :href="'mailto:' + data.profile.contact.email"
+                                class="text-slate-400 hover:text-primary transition-colors break-all"
+                                x-text="data.profile.contact.email"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 mt-10 pt-8 text-center text-slate-500 text-sm">
+                &copy; <span x-text="new Date().getFullYear()"></span> <span x-text="data.profile.name"></span>. All
+                rights reserved.
             </div>
         </div>
     </footer>
