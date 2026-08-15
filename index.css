@@ -669,6 +669,13 @@ body.wm-theme footer .neo-card:hover {
   background: rgba(18, 49, 121, 0.45);
   border-color: rgba(255, 255, 255, 0.25);
 }
+/* Dark footer: keep accent colors visible (theme re-maps purple/sky to navy elsewhere) */
+body.wm-theme footer .text-purple-400 {
+  color: #c084fc;
+}
+body.wm-theme footer .text-sky-300 {
+  color: #7dd3fc;
+}
 body.wm-theme footer a:hover {
   color: #ffffff;
 }
