@@ -162,6 +162,13 @@ const portfolioData = {
                 "description": "A community-focused website for the University Congregational United Church of Christ. The site focuses on community engagement, event calendars, sermon archives, and donation portals. It is designed to be accessible and welcoming, reflecting the inclusive values of the organization.",
                 "technologies": ["WordPress", "Event Calendar"]
             }
+            {
+                "id": "homehabitco",
+                "title": "HomeHabit Co - Shopify Store",
+                "images": ["Portfolio/Shopify/Home.png", "Portfolio/Shopify/Products.png"],
+                "description": "Shopify store creation for HomeHabit Co, a home and lifestyle brand. Modern, clean design with intuitive navigation, product galleries, and secure checkout.",
+                "technologies": ["Shopify", "HTML", "CSS", "Liquid", "PayPal Integration"]
+            }
         ],
         "Fiverr Projects": [
             {

@@ -137,7 +137,7 @@
                     this.fiverr.loaded = true;
                     if (this.fiverr.reviews.length > 0) {
                         this.testimonials = this.fiverr.reviews.map(r => ({
-                            img: '',
+                            img: r.avatar || this.avatarFor(r.name),
                             fiverr: true,
                             name: r.name,
                             role: 'Fiverr Client' + (r.country ? ' · ' + r.country : ''),
@@ -148,6 +148,14 @@
                     }
                 })
                 .catch(() => { /* keep static testimonials */ });
+        },
+        avatarFor(name) {
+            const initial = (name || '?').charAt(0).toUpperCase();
+            const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">'
+                + '<rect width="128" height="128" rx="64" fill="#EE6341"/>'
+                + '<text x="50%" y="50%" dy=".35em" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="58" font-weight="700" fill="#ffffff">' + initial + '</text>'
+                + '</svg>';
+            return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
         }
     }"
     :class="selectedProject ? 'overflow-hidden' : ''">
@@ -896,8 +904,10 @@
 
                         <div class="flex items-center gap-4 mb-6">
                             <template x-if="testimonials[slide].fiverr">
-                                <div class="w-16 h-16 rounded-full border-2 border-primary/20 flex items-center justify-center shrink-0 bg-white/10">
-                                    <span class="text-primary font-bold text-xl" x-text="testimonials[slide].name.charAt(0).toUpperCase()"></span>
+                                <div class="w-16 h-16 rounded-full border-2 border-primary/20 flex items-center justify-center shrink-0 bg-white/10 overflow-hidden">
+                                    <img :src="testimonials[slide].img" :alt="testimonials[slide].name"
+                                        class="w-full h-full object-cover rounded-full"
+                                        onerror="this.outerHTML='<span class=\'text-primary font-bold text-xl\'>'+ (this.alt ? this.alt.charAt(0).toUpperCase() : '') +'</span>'">
                                 </div>
                             </template>
                             <template x-if="!testimonials[slide].fiverr">
