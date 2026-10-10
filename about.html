@@ -4,26 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | AR Software Solutions</title>
+    <title>About AR Software Solutions | Digital Products &amp; Web Development</title>
     
     <!-- Primary Meta Tags -->
-    <meta name="title" content="About Abdul Rafay | AR Software Solutions">
-    <meta name="description" content="Learn about Abdul Rafay, founder of AR Software Solutions. With 5+ years of experience in Enterprise SaaS, Web Development, and Digital Strategy.">
-    <meta name="keywords" content="About AR Software Solutions, Abdul Rafay Qazi, Tech Agency Background, Software Developer Experience">
+    <meta name="title" content="About AR Software Solutions | Digital Products & Web Development">
+    <meta name="description" content="Meet AR Software Solutions, led by Abdul Rafay. Explore our portfolio of retail and school management software, Shopify and WooCommerce stores, and custom websites.">
+    <meta name="keywords" content="AR Software Solutions, Abdul Rafay Qazi, POS inventory software, school management system, Shopify development, WooCommerce, custom web development">
     <meta name="author" content="Abdul Rafay">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rafayqazi.github.io/ar-portfolio/about.html">
-    <meta property="og:title" content="About Us | AR Software Solutions">
-    <meta property="og:description" content="Learn about Abdul Rafay, founder of AR Software Solutions. With 5+ years of experience in Enterprise SaaS, Web Development, and Digital Strategy.">
+    <meta property="og:title" content="About AR Software Solutions | Digital Products & Web Development">
+    <meta property="og:description" content="Meet AR Software Solutions, led by Abdul Rafay. Explore our portfolio of retail and school management software, Shopify and WooCommerce stores, and custom websites.">
     <meta property="og:image" content="https://rafayqazi.github.io/ar-portfolio/images/og-image.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="About Us | AR Software Solutions">
-    <meta property="twitter:description" content="Learn about Abdul Rafay, founder of AR Software Solutions. With 5+ years of experience in Enterprise SaaS, Web Development, and Digital Strategy.">
+    <meta property="twitter:title" content="About AR Software Solutions | Digital Products & Web Development">
+    <meta property="twitter:description" content="Meet AR Software Solutions, led by Abdul Rafay. Explore our portfolio of retail and school management software, Shopify and WooCommerce stores, and custom websites.">
     <meta property="twitter:image" content="https://rafayqazi.github.io/ar-portfolio/images/og-image.png">
 
     <!-- Favicon -->
@@ -41,13 +41,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Custom Neo-Glass CSS -->
-    <link rel="stylesheet" href="index.css?v=7">
+    <link rel="stylesheet" href="index.css?v=8">
     
     <!-- AOS Scroll Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Data Source -->
-    <script src="js/data.js"></script>
+    <script src="js/data.js?v=5"></script>
 
     <!-- Schema JSON-LD -->
     <script type="application/ld+json">
@@ -96,7 +96,19 @@
     </script>
 </head>
 
-<body class="antialiased relative wm-theme" x-data="{ data: portfolioData, menuOpen: false }">
+<body class="antialiased relative wm-theme" x-data="{
+    data: portfolioData,
+    menuOpen: false,
+    get featuredProjects() {
+        const portfolio = this.data.portfolio;
+        return [
+            { project: portfolio['SaaS Development'][0], category: 'Retail Software', summary: 'A point-of-sale and inventory suite for stock control, sales, customer and dealer ledgers, and reporting.' },
+            { project: portfolio['SaaS Development'][1], category: 'Education Software', summary: 'A school management system for admissions, attendance, fee collection, student records, and an AI-assisted dashboard.' },
+            { project: portfolio['Web Development'][0], category: 'WooCommerce', summary: 'A fashion storefront with curated collections, product variants, and essential store policy pages.' },
+            { project: portfolio['E-Commerce'][0], category: 'Shopify', summary: 'A home and kitchen store with organized collections, featured products, and a responsive shopping experience.' }
+        ].filter(item => item.project);
+    }
+}">
 
     <!-- Background Orbs -->
     <div class="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">
@@ -130,13 +142,13 @@
                     </button>
                     <div x-show="servicesMenu" x-transition style="display: none;"
                         class="absolute left-0 mt-3 w-64 glass-panel rounded-2xl p-3 shadow-2xl">
-                        <a href="services.html#saas" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Enterprise SaaS Development</a>
-                        <a href="services.html#web" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Website Development</a>
+                        <a href="saas-development.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Enterprise SaaS Development</a>
+                        <a href="web-development.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Website Development</a>
                         <a href="e-commerce.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">E-Commerce &amp; Shopify</a>
-                        <a href="services.html#cms" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">CMS Customization</a>
+                        <a href="cms-customization.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">CMS Customization</a>
                         <a href="social-media.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Social Media Management</a>
-                        <a href="services.html#seo" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">SEO Optimization</a>
-                        <a href="services.html#copywriting" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Creative Copywriting</a>
+                        <a href="seo-optimization.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">SEO Optimization</a>
+                        <a href="copywriting.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Creative Copywriting</a>
                     </div>
                 </div>
                 <a href="portfolio.html" class="neo-btn px-4 py-2 text-sm">Portfolio</a>
@@ -173,13 +185,13 @@
                     </button>
                     <div x-show="servicesOpen" x-transition style="display: none;">
                         <div class="flex flex-col pb-2">
-                            <a href="services.html#saas" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Enterprise SaaS Development</a>
-                            <a href="services.html#web" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Website Development</a>
+                            <a href="saas-development.html" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Enterprise SaaS Development</a>
+                            <a href="web-development.html" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Website Development</a>
                             <a href="e-commerce.html" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">E-Commerce &amp; Shopify</a>
-                            <a href="services.html#cms" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">CMS Customization</a>
+                            <a href="cms-customization.html" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">CMS Customization</a>
                             <a href="social-media.html" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Social Media Management</a>
-                            <a href="services.html#seo" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">SEO Optimization</a>
-                            <a href="services.html#copywriting" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Creative Copywriting</a>
+                            <a href="seo-optimization.html" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">SEO Optimization</a>
+                            <a href="copywriting.html" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Creative Copywriting</a>
                         </div>
                     </div>
                 </div>
@@ -193,10 +205,13 @@
     <!-- Header Section -->
     <header class="pt-32 pb-16 px-6 relative z-10 border-b border-white/5 bg-[#0b1121]/50">
         <div class="container mx-auto px-6 text-center max-w-3xl" data-aos="fade-down">
-            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-                Our <span class="text-gradient">Story</span> & Expertise
+            <p class="category-label text-primary mb-5">About AR Software Solutions</p>
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-5">
+                Practical software. <span class="text-gradient">Thoughtful execution.</span>
             </h1>
-            <p class="text-lg text-slate-400" x-text="data.profile.title"></p>
+            <p class="text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
+                Led by Abdul Rafay, we design and build digital products for businesses, schools, and online stores—from operational software to customer-facing websites.
+            </p>
         </div>
     </header>
 
@@ -210,11 +225,17 @@
                     <div class="glass-panel p-8 md:p-10 border-l-4 border-l-primary">
                         <svg class="w-12 h-12 text-primary/20 mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
                         <p class="text-slate-300 text-lg leading-relaxed mb-6" x-text="data.profile.summary"></p>
+                        <p class="text-slate-400 leading-relaxed">
+                            Our portfolio brings together retail and school management systems, WordPress and WooCommerce websites, Shopify storefronts, and custom business websites. We focus on clear workflows, useful features, and interfaces that work across devices.
+                        </p>
                         
-                        <div class="pt-6 border-t border-white/10 mt-6 flex gap-4">
-                            <a href="Abdul rafeh Ganeral Cv .pdf" target="_blank" class="neo-btn flex-1 text-sm font-semibold hover:border-primary/50 text-white">
+                        <div class="pt-6 border-t border-white/10 mt-6 flex flex-col sm:flex-row gap-3">
+                            <a href="portfolio.html" class="neo-btn flex-1 text-sm font-semibold hover:border-primary/50 text-white">
+                                Explore Our Work
+                            </a>
+                            <a href="Abdul rafeh Ganeral Cv .pdf" target="_blank" rel="noopener noreferrer" class="neo-btn flex-1 text-sm font-semibold hover:border-primary/50 text-white">
                                 <svg class="w-4 h-4 mr-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                                Download Complete Resumé
+                                Download Résumé
                             </a>
                         </div>
                     </div>
@@ -260,6 +281,44 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Selected Project Highlights -->
+    <section class="py-24 relative z-10 border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center mb-12">
+                <p class="category-label text-primary mb-4">Selected Work</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    What we build <span class="text-gradient">in practice.</span>
+                </h2>
+                <p class="text-slate-400 leading-relaxed">
+                    A few examples from our work across operations, education, and e-commerce.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-5">
+                <template x-for="item in featuredProjects" :key="item.project.id">
+                    <a :href="'project.html?id=' + encodeURIComponent(item.project.id)"
+                        class="about-project-card glass-panel overflow-hidden group flex flex-col">
+                        <div class="h-44 overflow-hidden bg-slate-100">
+                            <img :src="item.project.images[0]" :alt="item.project.title" loading="lazy"
+                                class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="p-5 flex flex-col flex-1">
+                            <span class="category-label text-primary mb-2" x-text="item.category"></span>
+                            <h3 class="text-lg font-bold text-white leading-snug mb-3" x-text="item.project.title"></h3>
+                            <p class="text-sm text-slate-400 leading-relaxed flex-1" x-text="item.summary"></p>
+                            <span class="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-primary">
+                                View project
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7-7 7"></path>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                </template>
             </div>
         </div>
     </section>
@@ -324,13 +383,11 @@
                 <div>
                     <h4 class="text-white font-bold mb-4">Our Services</h4>
                     <ul class="space-y-2.5 text-sm">
-                        <li><a href="services.html#saas" class="text-slate-400 hover:text-primary transition-colors">Enterprise SaaS</a></li>
-                        <li><a href="services.html#web" class="text-slate-400 hover:text-primary transition-colors">Website Development</a></li>
+                        <li><a href="saas-development.html" class="text-slate-400 hover:text-primary transition-colors">Enterprise SaaS</a></li>
+                        <li><a href="web-development.html" class="text-slate-400 hover:text-primary transition-colors">Website Development</a></li>
                         <li><a href="e-commerce.html" class="text-slate-400 hover:text-primary transition-colors">E-Commerce &amp; Shopify</a></li>
-                        <li><a href="services.html#cms" class="text-slate-400 hover:text-primary transition-colors">CMS Customization</a></li>
-                        <li><a href="social-media.html" class="text-slate-400 hover:text-primary transition-colors">Social Media Management</a></li>
-                        <li><a href="services.html#seo" class="text-slate-400 hover:text-primary transition-colors">SEO Optimization</a></li>
-                        <li><a href="services.html#copywriting" class="text-slate-400 hover:text-primary transition-colors">Creative Copywriting</a></li>
+                        <li><a href="cms-customization.html" class="text-slate-400 hover:text-primary transition-colors">CMS Customization</a></li>                        <li><a href="social-media.html" class="text-slate-400 hover:text-primary transition-colors">Social Media Management</a></li>
+                        <li><a href="seo-optimization.html" class="text-slate-400 hover:text-primary transition-colors">SEO Optimization</a></li>                        <li><a href="copywriting.html" class="text-slate-400 hover:text-primary transition-colors">Creative Copywriting</a></li>
                     </ul>
                 </div>
 
@@ -418,4 +475,3 @@
     </a>
 </body>
 </html>
-

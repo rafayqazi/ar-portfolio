@@ -23,8 +23,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-    <script src="js/data.js"></script>
-    <link rel="stylesheet" href="index.css?v=7">
+    <script src="js/data.js?v=5"></script>
+    <link rel="stylesheet" href="index.css?v=8">
     <link rel="canonical" href="https://rafayqazi.github.io/ar-portfolio/project.html">
 
     <!-- Schema JSON-LD -->
@@ -102,13 +102,13 @@
                     </button>
                     <div x-show="servicesMenu" x-transition style="display: none;"
                         class="absolute left-0 mt-3 w-64 glass-panel rounded-2xl p-3 shadow-2xl">
-                        <a href="services.html#saas" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Enterprise SaaS Development</a>
-                        <a href="services.html#web" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Website Development</a>
+                        <a href="saas-development.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Enterprise SaaS Development</a>
+                        <a href="web-development.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Website Development</a>
                         <a href="e-commerce.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">E-Commerce &amp; Shopify</a>
-                        <a href="services.html#cms" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">CMS Customization</a>
+                        <a href="cms-customization.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">CMS Customization</a>
                         <a href="social-media.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Social Media Management</a>
-                        <a href="services.html#seo" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">SEO Optimization</a>
-                        <a href="services.html#copywriting" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Creative Copywriting</a>
+                        <a href="seo-optimization.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">SEO Optimization</a>
+                        <a href="copywriting.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Creative Copywriting</a>
                     </div>
                 </div>
                 <a href="portfolio.html" class="neo-btn px-4 py-2 text-sm">Portfolio</a>
@@ -145,13 +145,13 @@
                     </button>
                     <div x-show="servicesOpen" x-transition style="display: none;">
                         <div class="flex flex-col pb-2">
-                            <a href="services.html#saas" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Enterprise SaaS Development</a>
-                            <a href="services.html#web" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Website Development</a>
+                            <a href="saas-development.html" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Enterprise SaaS Development</a>
+                            <a href="web-development.html" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Website Development</a>
                             <a href="e-commerce.html" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">E-Commerce &amp; Shopify</a>
-                            <a href="services.html#cms" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">CMS Customization</a>
+                            <a href="cms-customization.html" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">CMS Customization</a>
                             <a href="social-media.html" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Social Media Management</a>
-                            <a href="services.html#seo" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">SEO Optimization</a>
-                            <a href="services.html#copywriting" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Creative Copywriting</a>
+                            <a href="seo-optimization.html" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">SEO Optimization</a>
+                            <a href="copywriting.html" class="px-4 py-2.5 text-sm text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/50">Creative Copywriting</a>
                         </div>
                     </div>
                 </div>
@@ -359,6 +359,10 @@
                             customized for your business. Let's discuss your requirements.</p>
 
                         <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a x-show="project?.url" :href="project.url" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center justify-center px-8 py-4 bg-white/10 text-white font-bold rounded-full hover:bg-white/20 transition-all border border-white/20 backdrop-blur-sm text-lg">
+                                Visit Live Store
+                            </a>
                             <a href="index.html#contact"
                                 class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold rounded-full hover:bg-[#d9562c] transition-all shadow-lg shadow-[#EE6341]/30 text-lg group">
                                 Contact Us
@@ -408,13 +412,13 @@
                 <div>
                     <h4 class="text-white font-bold mb-4">Our Services</h4>
                     <ul class="space-y-2.5 text-sm">
-                        <li><a href="services.html#saas" class="text-slate-400 hover:text-primary transition-colors">Enterprise SaaS</a></li>
-                        <li><a href="services.html#web" class="text-slate-400 hover:text-primary transition-colors">Website Development</a></li>
+                        <li><a href="saas-development.html" class="text-slate-400 hover:text-primary transition-colors">Enterprise SaaS</a></li>
+                        <li><a href="web-development.html" class="text-slate-400 hover:text-primary transition-colors">Website Development</a></li>
                         <li><a href="e-commerce.html" class="text-slate-400 hover:text-primary transition-colors">E-Commerce &amp; Shopify</a></li>
-                        <li><a href="services.html#cms" class="text-slate-400 hover:text-primary transition-colors">CMS Customization</a></li>
+                        <li><a href="cms-customization.html" class="text-slate-400 hover:text-primary transition-colors">CMS Customization</a></li>
                         <li><a href="social-media.html" class="text-slate-400 hover:text-primary transition-colors">Social Media Management</a></li>
-                        <li><a href="services.html#seo" class="text-slate-400 hover:text-primary transition-colors">SEO Optimization</a></li>
-                        <li><a href="services.html#copywriting" class="text-slate-400 hover:text-primary transition-colors">Creative Copywriting</a></li>
+                        <li><a href="seo-optimization.html" class="text-slate-400 hover:text-primary transition-colors">SEO Optimization</a></li>
+                        <li><a href="copywriting.html" class="text-slate-400 hover:text-primary transition-colors">Creative Copywriting</a></li>
                     </ul>
                 </div>
 

@@ -802,3 +802,169 @@ body.wm-theme [data-aos] {
   opacity: 1 !important;
   transform: none !important;
 }
+
+/* Mobile app-like layout and touch targets shared by every page. */
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    min-width: 320px;
+    padding-bottom: env(safe-area-inset-bottom);
+    overscroll-behavior-x: none;
+  }
+
+  body.wm-theme .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  body.wm-theme section.py-24 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  body.wm-theme section.py-20,
+  body.wm-theme section.py-16,
+  body.wm-theme section.py-14 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  body.wm-theme h1 {
+    font-size: clamp(2rem, 9vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+  }
+
+  body.wm-theme h2 {
+    font-size: clamp(1.5rem, 7vw, 2.25rem);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+  }
+
+  body.wm-theme p {
+    overflow-wrap: anywhere;
+  }
+
+  body.wm-theme .glass-nav {
+    padding-top: env(safe-area-inset-top);
+    box-shadow: 0 4px 24px rgba(18, 49, 121, 0.08);
+  }
+
+  body.wm-theme nav button,
+  body.wm-theme nav a,
+  body.wm-theme button,
+  body.wm-theme .neo-btn,
+  body.wm-theme .neo-btn-primary {
+    touch-action: manipulation;
+  }
+
+  body.wm-theme button:not(.whatsapp-float),
+  body.wm-theme .neo-btn,
+  body.wm-theme .neo-btn-primary {
+    min-height: 2.75rem;
+  }
+
+  body.wm-theme input,
+  body.wm-theme select,
+  body.wm-theme textarea {
+    font-size: 16px;
+  }
+
+  body.wm-theme .mobile-filter-scroll {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.25rem 0.125rem 0.75rem;
+  }
+
+  body.wm-theme .mobile-filter-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.wm-theme .mobile-filter-scroll > * {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  body.wm-theme #portfolio .glass-panel.group {
+    border-radius: 1.25rem;
+    box-shadow: 0 8px 28px rgba(18, 49, 121, 0.09);
+  }
+
+  body.wm-theme #portfolio .glass-panel.group > div:first-child {
+    height: 13rem;
+    padding: 0.875rem;
+  }
+
+  body.wm-theme .about-project-card {
+    border-radius: 1.25rem;
+  }
+
+  body.wm-theme .about-project-card > div:first-child {
+    height: 12rem;
+  }
+
+  body.wm-theme .project-img-wrapper {
+    height: clamp(13rem, 65vw, 20rem);
+    border-radius: 1.25rem;
+  }
+
+  body.wm-theme .thumb-strip img {
+    width: 4.5rem;
+    height: 3.25rem;
+  }
+
+  body.wm-theme footer {
+    padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+  }
+
+  body.wm-theme .whatsapp-float {
+    right: 1rem;
+    bottom: calc(1rem + env(safe-area-inset-bottom));
+    width: 3.25rem;
+    height: 3.25rem;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+  }
+
+  body.wm-theme .wm-modal {
+    width: 100%;
+    max-height: calc(100dvh - 1rem - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    border-radius: 1.25rem;
+  }
+}
+
+@media (max-width: 380px) {
+  body.wm-theme .container {
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
+  }
+
+  body.wm-theme .neo-btn,
+  body.wm-theme .neo-btn-primary {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  body.wm-theme *,
+  body.wm-theme *::before,
+  body.wm-theme *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
