@@ -15,7 +15,7 @@ const PROFILE_URL = `https://www.fiverr.com/${SELLER}`;
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const OUT_FILE = path.join(__dirname, 'fiverr-data.json');
+const OUT_FILE = path.join(__dirname, '..', 'data', 'fiverr-data.json');
 const MIN_REVIEW_LEN = 60;
 
 const UA =

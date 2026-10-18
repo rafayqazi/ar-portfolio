@@ -41,7 +41,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Custom Neo-Glass CSS -->
-    <link rel="stylesheet" href="../index.css?v=9">
+    <link rel="stylesheet" href="../css/index.css?v=9">
 
     <!-- AOS Scroll Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -101,7 +101,7 @@
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-2" x-data="{ servicesMenu: false }">
                 <a href="../index.html" class="neo-btn px-4 py-2 text-sm">Home</a>
-                <a href="../about.html" class="neo-btn px-4 py-2 text-sm">About</a>
+                <a href="../pages/about.html" class="neo-btn px-4 py-2 text-sm">About</a>
 
                 <!-- Services Dropdown -->
                 <div class="relative">
@@ -125,9 +125,9 @@
                     </div>
                 </div>
 
-                <a href="../portfolio.html" class="neo-btn px-4 py-2 text-sm">Portfolio</a>
-                <a href="../publications.html" class="neo-btn px-4 py-2 text-sm">Publications</a>
-                <a href="../contact.html" class="neo-btn-primary ml-4">Start a Project</a>
+                <a href="../pages/portfolio.html" class="neo-btn px-4 py-2 text-sm">Portfolio</a>
+                <a href="../pages/publications.html" class="neo-btn px-4 py-2 text-sm">Publications</a>
+                <a href="../pages/contact.html" class="neo-btn-primary ml-4">Start a Project</a>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -154,7 +154,7 @@
              class="md:hidden absolute w-full top-full left-0 glass-panel border-t-0 rounded-t-none shadow-2xl max-h-[80vh] overflow-y-auto">
             <div class="flex flex-col p-4 space-y-3">
                 <a href="../index.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Home</a>
-                <a href="../about.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">About</a>
+                <a href="../pages/about.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">About</a>
                 <div class="neo-card p-2 border border-white/5" x-data="{ servicesOpen: true }">
                     <button @click="servicesOpen = !servicesOpen"
                         class="w-full flex items-center justify-between p-3 text-primary font-medium transition-colors">
@@ -176,9 +176,9 @@
                         </div>
                     </div>
                 </div>
-                <a href="../portfolio.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Portfolio</a>
-                <a href="../publications.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Publications</a>
-                <a href="../contact.html" class="neo-btn-primary w-full text-center py-3 mt-2">Start a Project</a>
+                <a href="../pages/portfolio.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Portfolio</a>
+                <a href="../pages/publications.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Publications</a>
+                <a href="../pages/contact.html" class="neo-btn-primary w-full text-center py-3 mt-2">Start a Project</a>
             </div>
         </div>
     </nav>
@@ -198,8 +198,8 @@
                 We craft high-performance business websites, portals, and interactive web applications engineered for speed, clean aesthetics, and genuine conversions. Built on modern MERN and LAMP stacks with responsive, mobile-first precision.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="../contact.html" class="neo-btn-primary w-full sm:w-auto">Start Your Web Project</a>
-                <a href="../portfolio.html" class="neo-btn w-full sm:w-auto">Explore Our Work</a>
+                <a href="../pages/contact.html" class="neo-btn-primary w-full sm:w-auto">Start Your Web Project</a>
+                <a href="../pages/portfolio.html" class="neo-btn w-full sm:w-auto">Explore Our Work</a>
             </div>
         </div>
     </header>
@@ -291,14 +291,14 @@
                     <span class="text-primary text-xs font-bold uppercase tracking-widest block mb-2">Portfolio</span>
                     <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Recent Web Projects</h2>
                 </div>
-                <a href="../portfolio.html" class="inline-flex items-center text-primary font-bold hover:text-white transition-colors">
+                <a href="../pages/portfolio.html" class="inline-flex items-center text-primary font-bold hover:text-white transition-colors">
                     View all projects &rarr;
                 </a>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Baja Call Center -->
-                <a href="../project.html?id=baja-call-center" class="glass-panel group overflow-hidden rounded-2xl border border-white/5 hover:border-primary/40 transition-all flex flex-col">
+                <a href="../pages/project.html?id=baja-call-center" class="glass-panel group overflow-hidden rounded-2xl border border-white/5 hover:border-primary/40 transition-all flex flex-col">
                     <div class="h-48 overflow-hidden bg-slate-800 relative">
                         <img src="../Web Development/Baja Call center/Baja Call center.png" alt="Baja Call Center" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <span class="absolute top-4 right-4 px-3 py-1 bg-slate-900/80 backdrop-blur-md rounded-full text-xs font-semibold text-primary border border-white/10">Corporate Web</span>
@@ -317,7 +317,7 @@
                 </a>
 
                 <!-- Nawabshah College -->
-                <a href="../project.html?id=nawabshah-college" class="glass-panel group overflow-hidden rounded-2xl border border-white/5 hover:border-primary/40 transition-all flex flex-col">
+                <a href="../pages/project.html?id=nawabshah-college" class="glass-panel group overflow-hidden rounded-2xl border border-white/5 hover:border-primary/40 transition-all flex flex-col">
                     <div class="h-48 overflow-hidden bg-slate-800 relative">
                         <img src="../Web Development/Nawabshah Homoeopathic Medical College/Nawabshah Homoeopathic Medical College.png" alt="Nawabshah Homoeopathic College" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <span class="absolute top-4 right-4 px-3 py-1 bg-slate-900/80 backdrop-blur-md rounded-full text-xs font-semibold text-purple-400 border border-white/10">Institutional</span>
@@ -335,7 +335,7 @@
                 </a>
 
                 <!-- University UCC -->
-                <a href="../project.html?id=university-ucc" class="glass-panel group overflow-hidden rounded-2xl border border-white/5 hover:border-primary/40 transition-all flex flex-col">
+                <a href="../pages/project.html?id=university-ucc" class="glass-panel group overflow-hidden rounded-2xl border border-white/5 hover:border-primary/40 transition-all flex flex-col">
                     <div class="h-48 overflow-hidden bg-slate-800 relative">
                         <img src="../Web Development/ucucc/ucucc.png" alt="University UCC" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <span class="absolute top-4 right-4 px-3 py-1 bg-slate-900/80 backdrop-blur-md rounded-full text-xs font-semibold text-sky-400 border border-white/10">Community Portal</span>
@@ -362,7 +362,7 @@
             <p class="text-slate-400 mb-8 leading-relaxed">
                 Let's build a website that presents your brand with authority and turns curious visitors into paying clients.
             </p>
-            <a href="../contact.html" class="neo-btn-primary inline-flex items-center gap-2">
+            <a href="../pages/contact.html" class="neo-btn-primary inline-flex items-center gap-2">
                 <span>Start Website Project</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>

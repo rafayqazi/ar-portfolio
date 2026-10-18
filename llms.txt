@@ -2,11 +2,11 @@
 > Premium Development Agency — Enterprise SaaS, Web Development, CMS, and Digital Marketing.
 
 ## About
-https://rafayqazi.github.io/ar-portfolio/about.html
+https://rafayqazi.github.io/ar-portfolio/pages/about.html
 AR Software Solutions was founded by Abdul Rafay. We specialize in MERN stack, LAMP stack, and cloud-native development with 5+ years of experience delivering enterprise-grade digital solutions.
 
 ## Services
-https://rafayqazi.github.io/ar-portfolio/services.html
+https://rafayqazi.github.io/ar-portfolio/services/
 - Enterprise SaaS Development: https://rafayqazi.github.io/ar-portfolio/services/saas-development.html
 - Custom Web Development: https://rafayqazi.github.io/ar-portfolio/services/web-development.html
 - CMS & Headless Architecture: https://rafayqazi.github.io/ar-portfolio/services/cms-customization.html
@@ -32,9 +32,9 @@ https://rafayqazi.github.io/ar-portfolio/services/social-media.html
 - Live case studies: managed Instagram accounts @cakesbyguriya and @rangeelawear embedded in real time
 
 ## Portfolio
-https://rafayqazi.github.io/ar-portfolio/portfolio.html
+https://rafayqazi.github.io/ar-portfolio/pages/portfolio.html
 Featured projects include School Management System, POS & Inventory Suite, Celebrity Wife platform, Baja Call Center, and more.
 
 ## Contact
-https://rafayqazi.github.io/ar-portfolio/contact.html
+https://rafayqazi.github.io/ar-portfolio/pages/contact.html
 Available for new projects. Response within 24 hours.

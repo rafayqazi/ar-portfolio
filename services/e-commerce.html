@@ -41,7 +41,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Custom Neo-Glass CSS -->
-    <link rel="stylesheet" href="../index.css?v=9">
+    <link rel="stylesheet" href="../css/index.css?v=9">
 
     <!-- AOS Scroll Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -127,7 +127,7 @@
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-2" x-data="{ servicesMenu: false }">
                 <a href="../index.html" class="neo-btn px-4 py-2 text-sm">Home</a>
-                <a href="../about.html" class="neo-btn px-4 py-2 text-sm">About</a>
+                <a href="../pages/about.html" class="neo-btn px-4 py-2 text-sm">About</a>
 
                 <!-- Services Dropdown -->
                 <div class="relative">
@@ -151,9 +151,9 @@
                     </div>
                 </div>
 
-                <a href="../portfolio.html" class="neo-btn px-4 py-2 text-sm">Portfolio</a>
-                <a href="../publications.html" class="neo-btn px-4 py-2 text-sm">Publications</a>
-                <a href="../contact.html" class="neo-btn-primary ml-4">Start a Project</a>
+                <a href="../pages/portfolio.html" class="neo-btn px-4 py-2 text-sm">Portfolio</a>
+                <a href="../pages/publications.html" class="neo-btn px-4 py-2 text-sm">Publications</a>
+                <a href="../pages/contact.html" class="neo-btn-primary ml-4">Start a Project</a>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -180,7 +180,7 @@
              class="md:hidden absolute w-full top-full left-0 glass-panel border-t-0 rounded-t-none shadow-2xl max-h-[80vh] overflow-y-auto">
             <div class="flex flex-col p-4 space-y-3">
                 <a href="../index.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Home</a>
-                <a href="../about.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">About</a>
+                <a href="../pages/about.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">About</a>
                 <div class="neo-card p-2 border border-white/5" x-data="{ servicesOpen: false }">
                     <button @click="servicesOpen = !servicesOpen"
                         class="w-full flex items-center justify-between p-3 text-slate-300 hover:text-white transition-colors">
@@ -202,9 +202,9 @@
                         </div>
                     </div>
                 </div>
-                <a href="../portfolio.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Portfolio</a>
-                <a href="../publications.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Publications</a>
-                <a href="../contact.html" class="neo-btn-primary w-full text-center py-3 mt-2">Start a Project</a>
+                <a href="../pages/portfolio.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Portfolio</a>
+                <a href="../pages/publications.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Publications</a>
+                <a href="../pages/contact.html" class="neo-btn-primary w-full text-center py-3 mt-2">Start a Project</a>
             </div>
         </div>
     </nav>
@@ -267,7 +267,7 @@
                             <span class="text-slate-300">Speed Optimization &amp; SEO-Ready Structure</span>
                         </li>
                     </ul>
-                    <a href="../portfolio.html" class="inline-flex items-center text-primary font-bold hover:text-white transition-colors">
+                    <a href="../pages/portfolio.html" class="inline-flex items-center text-primary font-bold hover:text-white transition-colors">
                         View Store Projects <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </a>
                 </div>
@@ -300,7 +300,7 @@
                             <span class="text-slate-300">Seller Hub Optimization &amp; Account Health Management</span>
                         </li>
                     </ul>
-                    <a href="../portfolio.html" class="inline-flex items-center text-[#0064D2] font-bold hover:text-white transition-colors">
+                    <a href="../pages/portfolio.html" class="inline-flex items-center text-[#0064D2] font-bold hover:text-white transition-colors">
                         View eBay Projects <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </a>
                 </div>
@@ -495,7 +495,7 @@
                 <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 relative z-10 tracking-tight">Ready to <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FF9C82] to-[#FFD9CE]">launch your store?</span></h2>
                 <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto relative z-10">Tell us about your products and your goals. We will build you an e-commerce experience that converts.</p>
 
-                <a href="../contact.html" class="neo-btn-primary text-lg px-8 py-4 relative z-10 transition-transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
+                <a href="../pages/contact.html" class="neo-btn-primary text-lg px-8 py-4 relative z-10 transition-transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
                     Start Your Store
                     <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                 </a>

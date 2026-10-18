@@ -46,7 +46,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Custom Neo-Glass CSS -->
-    <link rel="stylesheet" href="index.css?v=9">
+    <link rel="stylesheet" href="css/index.css?v=9">
 
     <!-- AOS Scroll Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -128,7 +128,7 @@
         },
         init() {
             setInterval(() => { this.slide = (this.slide + 1) % this.testimonials.length; }, 5000);
-            fetch('fiverr-data.json?v=' + Date.now())
+            fetch('data/fiverr-data.json?v=' + Date.now())
                 .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
                 .then(data => {
                     this.fiverr.profile = data.profile || null;
@@ -186,7 +186,7 @@
             <!-- Desktop Menu -->
                         <div class="hidden md:flex items-center space-x-2" x-data="{ servicesMenu: false }">
                 <a href="index.html" class="neo-btn active px-4 py-2 text-sm">Home</a>
-                <a href="about.html" class="neo-btn px-4 py-2 text-sm">About</a>
+                <a href="pages/about.html" class="neo-btn px-4 py-2 text-sm">About</a>
                 <!-- Services Dropdown -->
                 <div class="relative">
                     <button @click="servicesMenu = !servicesMenu" @click.outside="servicesMenu = false"
@@ -208,9 +208,9 @@
                         <a href="services/copywriting.html" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-primary hover:bg-slate-800/50 transition-colors">Creative Copywriting</a>
                     </div>
                 </div>
-                <a href="portfolio.html" class="neo-btn px-4 py-2 text-sm">Portfolio</a>
-                <a href="publications.html" class="neo-btn px-4 py-2 text-sm">Publications</a>
-                <a href="contact.html" class="neo-btn-primary ml-4">Start a Project</a>
+                <a href="pages/portfolio.html" class="neo-btn px-4 py-2 text-sm">Portfolio</a>
+                <a href="pages/publications.html" class="neo-btn px-4 py-2 text-sm">Publications</a>
+                <a href="pages/contact.html" class="neo-btn-primary ml-4">Start a Project</a>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -235,7 +235,7 @@
             class="md:hidden absolute w-full top-full left-0 glass-panel border-t-0 rounded-t-none shadow-2xl max-h-[80vh] overflow-y-auto">
             <div class="flex flex-col p-4 space-y-2">
                 <a href="index.html" class="text-primary font-medium p-3 neo-card border border-transparent">Home</a>
-                <a href="about.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">About</a>
+                <a href="pages/about.html" class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">About</a>
                                 <div class="neo-card p-2 border border-white/5" x-data="{ servicesOpen: false }">
                     <button @click="servicesOpen = !servicesOpen"
                         class="w-full flex items-center justify-between p-3 text-slate-300 hover:text-white transition-colors">
@@ -257,11 +257,11 @@
                         </div>
                     </div>
                 </div>
-                <a href="portfolio.html"
+                <a href="pages/portfolio.html"
                     class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Portfolio</a>
-                <a href="publications.html"
+                <a href="pages/publications.html"
                     class="text-slate-300 hover:text-white p-3 hover:bg-slate-800/50 rounded-xl transition-colors">Publications</a>
-                <a href="contact.html" class="neo-btn-primary w-full text-center py-3 mt-2">Start a Project</a>
+                <a href="pages/contact.html" class="neo-btn-primary w-full text-center py-3 mt-2">Start a Project</a>
             </div>
         </div>
     </header>
@@ -291,8 +291,8 @@
 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-5 mb-16" data-aos="fade-up"
                     data-aos-delay="200">
-                    <a href="portfolio.html" class="neo-btn-primary w-full sm:w-auto">Explore Our Work</a>
-                    <a href="contact.html" class="neo-btn w-full sm:w-auto">Get Started</a>
+                    <a href="pages/portfolio.html" class="neo-btn-primary w-full sm:w-auto">Explore Our Work</a>
+                    <a href="pages/contact.html" class="neo-btn w-full sm:w-auto">Get Started</a>
                 </div>
 
                 <!-- Layered hero graphic -->
@@ -361,7 +361,7 @@
                             concept to launch under one roof — with cost-friendly pricing, transparent communication, and
                             launch-ready results.
                         </p>
-                        <a href="contact.html" class="neo-btn-primary">Let's Get Started</a>
+                        <a href="pages/contact.html" class="neo-btn-primary">Let's Get Started</a>
                     </div>
                     <div class="relative flex items-center justify-center" data-aos="fade-left" data-aos-delay="150">
                         <div
@@ -874,7 +874,7 @@
                             Launch your first project with us and save 10% on the total package — no strings attached.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                            <a href="contact.html" class="neo-btn-primary">Select a Package</a>
+                            <a href="pages/contact.html" class="neo-btn-primary">Select a Package</a>
                             <a :href="'tel:+92' + data.profile.contact.mobile.replace(/-/g, '')" class="neo-btn">Call Us At</a>
                         </div>
                     </div>
