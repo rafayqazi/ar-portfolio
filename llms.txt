@@ -1,4 +1,4 @@
-﻿# AR Software Solutions
+# AR Software Solutions
 > Premium Development Agency — Enterprise SaaS, Web Development, CMS, and Digital Marketing.
 
 ## About
@@ -7,20 +7,23 @@ AR Software Solutions was founded by Abdul Rafay. We specialize in MERN stack, L
 
 ## Services
 https://rafayqazi.github.io/ar-portfolio/services.html
-- Enterprise SaaS Development: Multi-tenant architectures, custom dashboards, API integration
-- Web Development: React, Vue, MERN & LAMP stacks
-- CMS & E-Commerce: WordPress, Shopify, Headless CMS
-- SEO Optimization: Technical SEO, on-page optimization, keyword strategy
+- Enterprise SaaS Development: https://rafayqazi.github.io/ar-portfolio/services/saas-development.html
+- Custom Web Development: https://rafayqazi.github.io/ar-portfolio/services/web-development.html
+- CMS & Headless Architecture: https://rafayqazi.github.io/ar-portfolio/services/cms-customization.html
+- SEO Optimization & Growth: https://rafayqazi.github.io/ar-portfolio/services/seo-optimization.html
+- Copywriting & Content Marketing: https://rafayqazi.github.io/ar-portfolio/services/copywriting.html
+- E-Commerce Solutions: https://rafayqazi.github.io/ar-portfolio/services/e-commerce.html
+- Social Media Management: https://rafayqazi.github.io/ar-portfolio/services/social-media.html
 
 ## E-Commerce
-https://rafayqazi.github.io/ar-portfolio/e-commerce.html
+https://rafayqazi.github.io/ar-portfolio/services/e-commerce.html
 - Shopify Theme & App Development: custom themes, Liquid, private apps, B2B/wholesale setup
 - eBay Store Management: store setup, SEO listings, inventory syncing, repricing, order automation
 - Custom E-Commerce: WooCommerce, Magento, headless storefronts, subscription pricing
 - Payments & CRO: Stripe, PayPal, local gateways, checkout optimization, abandoned-cart recovery
 
 ## Social Media Management
-https://rafayqazi.github.io/ar-portfolio/social-media.html
+https://rafayqazi.github.io/ar-portfolio/services/social-media.html
 - Content creation: Reels, carousels, stories, photography direction, captions, hashtag research
 - Posting & scheduling: strategic calendars optimized for peak engagement times
 - Community management: comments, DMs, and mentions handled on-brand

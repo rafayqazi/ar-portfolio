@@ -21,14 +21,39 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://rafayqazi.github.io/ar-portfolio/e-commerce.html</loc>
-    <lastmod>2026-03-30</lastmod>
-    <priority>0.80</priority>
+    <loc>https://rafayqazi.github.io/ar-portfolio/services/saas-development.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://rafayqazi.github.io/ar-portfolio/social-media.html</loc>
-    <lastmod>2026-03-30</lastmod>
-    <priority>0.80</priority>
+    <loc>https://rafayqazi.github.io/ar-portfolio/services/web-development.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://rafayqazi.github.io/ar-portfolio/services/cms-customization.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://rafayqazi.github.io/ar-portfolio/services/seo-optimization.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://rafayqazi.github.io/ar-portfolio/services/copywriting.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://rafayqazi.github.io/ar-portfolio/services/e-commerce.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://rafayqazi.github.io/ar-portfolio/services/social-media.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rafayqazi.github.io/ar-portfolio/portfolio.html</loc>
