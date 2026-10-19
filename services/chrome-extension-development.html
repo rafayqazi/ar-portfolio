@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrome Extension Development | AR Software Solutions</title>
+    <meta name="description" content="Custom Chrome extension development for browser automation, marketplace tools, productivity workflows, and Manifest V3 integrations.">
+    <meta name="keywords" content="Chrome Extension Development, Browser Extension, Manifest V3, Chrome Web Store, AR Software Solutions">
+    <meta name="author" content="Abdul Rafay">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rafayqazi.github.io/ar-portfolio/services/chrome-extension-development.html">
+    <meta property="og:title" content="Chrome Extension Development | AR Software Solutions">
+    <meta property="og:description" content="Custom browser extensions that streamline workflows, automate repetitive tasks, and add useful features to the websites you use.">
+    <meta property="og:image" content="https://rafayqazi.github.io/ar-portfolio/images/japan-shopping-extension.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chrome Extension Development | AR Software Solutions">
+    <meta name="twitter:description" content="Custom browser extensions that streamline workflows, automate repetitive tasks, and add useful features to the websites you use.">
+    <meta name="twitter:image" content="https://rafayqazi.github.io/ar-portfolio/images/japan-shopping-extension.png">
+    <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+    <meta name="theme-color" content="#0b1121">
+    <link rel="canonical" href="https://rafayqazi.github.io/ar-portfolio/services/chrome-extension-development.html">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/index.css?v=9">
+    <script src="../js/data.js?v=6"></script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Chrome Extension Development",
+            "serviceType": "Browser Extension Development",
+            "url": "https://rafayqazi.github.io/ar-portfolio/services/chrome-extension-development.html",
+            "description": "Custom Chrome extensions for browser automation, productivity, and marketplace workflows.",
+            "provider": {
+                "@type": "Organization",
+                "name": "AR Software Solutions",
+                "url": "https://rafayqazi.github.io/ar-portfolio/"
+            }
+        }
+    </script>
+</head>
+
+<body class="antialiased relative wm-theme" x-data="{ data: portfolioData, menuOpen: false }">
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+    </div>
+
+    <nav class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center gap-2 relative group">
+                <div class="w-10 h-10 rounded-full neo-card flex items-center justify-center text-primary font-bold text-xl">AR</div>
+                <span class="font-bold text-xl tracking-tight hidden sm:block">Software Solutions<span class="text-primary">.</span></span>
+            </a>
+            <div class="hidden md:flex items-center space-x-2" x-data="{ servicesMenu: false }">
+                <a href="../index.html" class="neo-btn px-4 py-2 text-sm">Home</a>
+                <a href="../pages/about.html" class="neo-btn px-4 py-2 text-sm">About</a>
+                <div class="relative">
+                    <button @click="servicesMenu = !servicesMenu" @click.outside="servicesMenu = false" class="neo-btn active px-4 py-2 text-sm">Services</button>
+                    <div x-show="servicesMenu" x-transition style="display: none;" class="absolute left-0 mt-3 w-72 glass-panel rounded-2xl p-3 shadow-2xl">
+                        <a href="chrome-extension-development.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-primary">Chrome Extension Development</a>
+                        <a href="saas-development.html" class="block px-4 py-2.5 rounded-xl text-sm text-slate-400 hover:text-primary">Enterprise SaaS Development</a>
+                        <a href="web-development.html" class="block px-4 py-2.5 rounded-xl text-sm text-slate-400 hover:text-primary">Website Development</a>
+                        <a href="e-commerce.html" class="block px-4 py-2.5 rounded-xl text-sm text-slate-400 hover:text-primary">E-Commerce &amp; Shopify</a>
+                        <a href="cms-customization.html" class="block px-4 py-2.5 rounded-xl text-sm text-slate-400 hover:text-primary">CMS Customization</a>
+                        <a href="social-media.html" class="block px-4 py-2.5 rounded-xl text-sm text-slate-400 hover:text-primary">Social Media Management</a>
+                        <a href="seo-optimization.html" class="block px-4 py-2.5 rounded-xl text-sm text-slate-400 hover:text-primary">SEO Optimization</a>
+                        <a href="copywriting.html" class="block px-4 py-2.5 rounded-xl text-sm text-slate-400 hover:text-primary">Creative Copywriting</a>
+                    </div>
+                </div>
+                <a href="../pages/portfolio.html" class="neo-btn px-4 py-2 text-sm">Portfolio</a>
+                <a href="../pages/publications.html" class="neo-btn px-4 py-2 text-sm">Publications</a>
+                <a href="../pages/contact.html" class="neo-btn-primary ml-4">Start a Project</a>
+            </div>
+            <button @click="menuOpen = !menuOpen" class="md:hidden neo-btn p-2" aria-label="Toggle navigation">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div x-show="menuOpen" x-transition style="display: none;" class="md:hidden absolute w-full top-full left-0 glass-panel shadow-2xl">
+            <div class="flex flex-col p-4 space-y-2">
+                <a href="../index.html" class="text-slate-300 p-3">Home</a>
+                <a href="../pages/about.html" class="text-slate-300 p-3">About</a>
+                <a href="chrome-extension-development.html" class="text-primary font-medium p-3">Chrome Extension Development</a>
+                <a href="../pages/publications.html" class="text-slate-300 p-3">Publications</a>
+                <a href="../pages/portfolio.html" class="text-slate-300 p-3">Portfolio</a>
+                <a href="../pages/contact.html" class="neo-btn-primary w-full text-center py-3">Start a Project</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32">
+        <section class="container mx-auto px-6 max-w-6xl py-16 md:py-24">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-up">
+                    <span class="text-primary text-xs font-bold uppercase tracking-widest block mb-4">Browser tools, built around your workflow</span>
+                    <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight leading-tight mb-6">Chrome Extension <span class="text-gradient">Development</span></h1>
+                    <p class="text-slate-300 text-lg leading-relaxed mb-8">Turn repetitive browser tasks into simple, reliable tools. We build custom Chrome extensions that add useful features to the websites and workflows your team already uses.</p>
+                    <a href="../pages/contact.html" class="neo-btn-primary inline-flex items-center gap-2 px-7 py-4">Discuss Your Extension <span aria-hidden="true">&rarr;</span></a>
+                </div>
+                <div class="neo-card border border-white/10 rounded-3xl p-8 md:p-12 flex items-center justify-center min-h-72" data-aos="fade-left">
+                    <img src="../images/japan-shopping-extension.png" alt="Japan Shopping Assistant Chrome extension icon" class="w-48 h-48 object-contain rounded-3xl shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-[#0c1222] border-y border-white/5">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="max-w-3xl mb-12">
+                    <span class="text-primary text-xs font-bold uppercase tracking-widest block mb-3">What we build</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Useful extensions, not just toolbar buttons</h2>
+                    <p class="text-slate-400 leading-relaxed">From a focused personal tool to a multi-site workflow, each extension is designed around clear user controls and the browser permissions it actually needs.</p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <article class="neo-card p-6 border border-white/5"><h3 class="text-lg font-bold text-white mb-3">Workflow automation</h3><p class="text-slate-400 text-sm leading-relaxed">Reduce repetitive browser actions with focused tools for research, operations, and daily tasks.</p></article>
+                    <article class="neo-card p-6 border border-white/5"><h3 class="text-lg font-bold text-white mb-3">Marketplace helpers</h3><p class="text-slate-400 text-sm leading-relaxed">Add price calculations, listing context, and useful marketplace-specific controls where people shop.</p></article>
+                    <article class="neo-card p-6 border border-white/5"><h3 class="text-lg font-bold text-white mb-3">Custom browser interfaces</h3><p class="text-slate-400 text-sm leading-relaxed">Build clear popup settings, independent feature toggles, and controls that make complex tools easy to use.</p></article>
+                    <article class="neo-card p-6 border border-white/5"><h3 class="text-lg font-bold text-white mb-3">Page integrations</h3><p class="text-slate-400 text-sm leading-relaxed">Use content scripts to extend selected sites while keeping each integration scoped to its intended pages.</p></article>
+                    <article class="neo-card p-6 border border-white/5"><h3 class="text-lg font-bold text-white mb-3">Manifest V3 architecture</h3><p class="text-slate-400 text-sm leading-relaxed">Structure extension permissions, service workers, scripts, and browser storage for modern Chrome.</p></article>
+                    <article class="neo-card p-6 border border-white/5"><h3 class="text-lg font-bold text-white mb-3">Maintenance and iteration</h3><p class="text-slate-400 text-sm leading-relaxed">Improve an existing extension as target websites, user needs, and browser APIs evolve.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20">
+            <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-primary text-xs font-bold uppercase tracking-widest block mb-3">Featured project</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-5">Japan Shopping Assistant</h2>
+                    <p class="text-slate-400 leading-relaxed mb-6">A Chrome extension for international shoppers that shows estimated Japanese Yen prices for Mercari Japan listings and eBay search results, including estimated shipping on eBay. It can also apply eBay's “Located in Japan” filter, with each feature controlled independently from the popup.</p>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="tech-pill">Chrome Extension</span><span class="tech-pill">Manifest V3</span><span class="tech-pill">JavaScript</span>
+                    </div>
+                    <a href="https://github.com/rafayqazi/japan-shopping-extension" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-primary font-bold hover:text-white">Explore the GitHub project <span aria-hidden="true">&rarr;</span></a>
+                </div>
+                <a href="../pages/project.html?id=japan-shopping-assistant" class="glass-panel group block rounded-2xl overflow-hidden border border-white/5 hover:border-primary/40 transition-colors">
+                    <img src="../images/japan-shopping-extension.png" alt="Japan Shopping Assistant project preview" loading="lazy" class="w-full aspect-video object-contain bg-slate-900 p-10 group-hover:scale-[1.02] transition-transform">
+                    <span class="block p-5 text-white font-semibold">View project case study <span class="text-primary" aria-hidden="true">&rarr;</span></span>
+                </a>
+            </div>
+        </section>
+
+        <section class="py-20 bg-[#0c1222] border-y border-white/5">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-primary text-xs font-bold uppercase tracking-widest block mb-3">How we work</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">From browser pain point to polished tool</h2>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <article class="neo-card p-6 border border-white/5"><span class="text-primary font-bold">01</span><h3 class="text-white font-bold mt-3 mb-2">Discover</h3><p class="text-slate-400 text-sm">Map the target sites, user workflow, and the problem the extension should solve.</p></article>
+                    <article class="neo-card p-6 border border-white/5"><span class="text-primary font-bold">02</span><h3 class="text-white font-bold mt-3 mb-2">Design</h3><p class="text-slate-400 text-sm">Plan the popup experience, page interactions, and required browser permissions.</p></article>
+                    <article class="neo-card p-6 border border-white/5"><span class="text-primary font-bold">03</span><h3 class="text-white font-bold mt-3 mb-2">Build and test</h3><p class="text-slate-400 text-sm">Implement the extension and verify behavior on the target websites and supported browser flows.</p></article>
+                    <article class="neo-card p-6 border border-white/5"><span class="text-primary font-bold">04</span><h3 class="text-white font-bold mt-3 mb-2">Deliver</h3><p class="text-slate-400 text-sm">Prepare a documented handoff and support the next round of improvements.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20">
+            <div class="container mx-auto px-6 max-w-5xl text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Have an idea for a Chrome extension?</h2>
+                <p class="text-slate-400 text-lg mb-8">Tell us about the browser task you want to simplify, and we can shape it into a practical extension.</p>
+                <a href="../pages/contact.html" class="neo-btn-primary inline-flex px-8 py-4">Start a Conversation</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#0b1121] py-8 border-t border-white/5">
+        <div class="container mx-auto px-6 max-w-6xl flex flex-col sm:flex-row justify-between gap-4 text-sm text-slate-400">
+            <span>&copy; <span x-text="new Date().getFullYear()"></span> AR Software Solutions</span>
+            <div class="flex gap-5"><a href="../pages/portfolio.html" class="hover:text-primary">Portfolio</a><a href="../pages/contact.html" class="hover:text-primary">Contact</a></div>
+        </div>
+    </footer>
+</body>
+
+</html>

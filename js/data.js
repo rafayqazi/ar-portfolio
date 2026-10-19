@@ -95,6 +95,17 @@ const portfolioData = {
                 "technologies": ["PHP", "MySQL", "JavaScript", "Tailwind CSS", "AJAX"]
             }
         ],
+        "Chrome Extension Development": [
+            {
+                "id": "japan-shopping-assistant",
+                "title": "Japan Shopping Assistant (eBay & Mercari)",
+                "url": "https://github.com/rafayqazi/japan-shopping-extension",
+                "urlLabel": "View Source Code",
+                "images": ["images/japan-shopping-extension.png"],
+                "description": "A Manifest V3 Chrome extension that makes cross-border shopping from Japanese marketplaces easier. It displays estimated JPY prices for Mercari Japan listings and eBay search results, including estimated shipping on eBay, and can automatically apply eBay's \"Located in Japan\" filter. Shoppers can enable or disable each feature independently from the extension popup.",
+                "technologies": ["Chrome Extensions", "Manifest V3", "JavaScript", "Content Scripts", "Chrome Storage"]
+            }
+        ],
         "Web Development": [
             {
                 "id": "rangeela-wear",
@@ -225,3 +236,20 @@ const portfolioData = {
         ]
     }
 };
+
+const portfolioDataScriptUrl = document.currentScript?.src;
+if (portfolioDataScriptUrl) {
+    const siteRootUrl = new URL('../', portfolioDataScriptUrl);
+
+    for (const projects of Object.values(portfolioData.portfolio)) {
+        for (const project of projects) {
+            if (Array.isArray(project.images)) {
+                project.images = project.images.map(image => new URL(image, siteRootUrl).href);
+            }
+
+            if (project.pdf) {
+                project.pdf = new URL(project.pdf, siteRootUrl).href;
+            }
+        }
+    }
+}
