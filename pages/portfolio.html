@@ -51,7 +51,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Data Source -->
-    <script src="../js/data.js?v=6"></script>
+    <script src="../js/data.js?v=7"></script>
 
     <!-- Schema JSON-LD -->
     <script type="application/ld+json">
@@ -370,9 +370,20 @@
                         <!-- Image Side -->
                         <div :class="index % 2 !== 0 ? 'lg:col-start-2' : ''" x-data="{ activeImg: 0 }">
                             <div class="project-img-wrapper shadow-2xl">
-<img :src="item.images && item.images.length > 0 ? item.images[activeImg] : 'https://via.placeholder.com/800x400/0f172a/38bdf8?text=Preview'"
+                                <template x-if="item.images && item.images.length > 0">
+                                    <img :src="item.images[activeImg]"
                                     :alt="item.title" loading="lazy" decoding="async"
                                     onerror="this.onerror=null; this.src='https://via.placeholder.com/800x400/0f172a/38bdf8?text=Preview';">
+                                </template>
+                                <template x-if="!item.images || item.images.length === 0">
+                                    <div class="w-full h-full flex flex-col items-center justify-center gap-4 bg-gradient-to-br from-slate-900 to-slate-800 p-8 text-center">
+                                        <svg class="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 3.75h7.5L19 8.25v12A.75.75 0 0118.25 21h-11.5a.75.75 0 01-.75-.75v-16.5A.75.75 0 017 3.75zM14 3.75v4.5h4.5M9 13h6m-6 3h6"></path>
+                                        </svg>
+                                        <span class="text-xs font-semibold uppercase tracking-widest text-primary" x-text="item.category"></span>
+                                        <span class="text-xl font-bold text-white" x-text="item.title"></span>
+                                    </div>
+                                </template>
                             </div>
                             <!-- Thumbnail Strip (show only if multiple images) -->
                             <div class="thumb-strip mt-3 px-1" x-show="item.images && item.images.length > 1">
@@ -586,10 +597,20 @@ x-transition:leave-end="opacity-0" class="absolute inset-0 bg-slate-900/80 backd
 <!-- Modal Header/Banner -->
             <div class="h-64 sm:h-80 relative bg-slate-800 shrink-0 border-b border-white/5">
                 <div class="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent z-10"></div>
-                <img :src="selectedProject?.images && selectedProject.images.length > 0 ? selectedProject.images[0] : ''"
-                    :alt="selectedProject?.title"
-                    class="w-full h-full object-cover object-top"
-                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x400/123179/EE6341?text=Project+Preview';">
+                <template x-if="selectedProject?.images && selectedProject.images.length > 0">
+                    <img :src="selectedProject.images[0]"
+                        :alt="selectedProject.title"
+                        class="w-full h-full object-cover object-top"
+                        onerror="this.onerror=null; this.src='https://via.placeholder.com/800x400/123179/EE6341?text=Project+Preview';">
+                </template>
+                <template x-if="selectedProject && (!selectedProject.images || selectedProject.images.length === 0)">
+                    <div class="w-full h-full flex flex-col items-center justify-center gap-4 bg-gradient-to-br from-slate-900 to-slate-800 p-8 text-center">
+                        <svg class="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 3.75h7.5L19 8.25v12A.75.75 0 0118.25 21h-11.5a.75.75 0 01-.75-.75v-16.5A.75.75 0 017 3.75zM14 3.75v4.5h4.5M9 13h6m-6 3h6"></path>
+                        </svg>
+                        <span class="text-xs font-semibold uppercase tracking-widest text-primary" x-text="selectedProject.category"></span>
+                    </div>
+                </template>
             </div>
 
             <!-- Modal Body -->
@@ -656,6 +677,23 @@ x-transition:leave-end="opacity-0" class="absolute inset-0 bg-slate-900/80 backd
                     </div>
                 </div>
 
+                <div class="mb-10" x-show="selectedProject?.documents?.length">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 3.75h7.5L19 8.25v12A.75.75 0 0118.25 21h-11.5a.75.75 0 01-.75-.75v-16.5A.75.75 0 017 3.75zM14 3.75v4.5h4.5M9 13h6m-6 3h6"></path>
+                        </svg>
+                        Writing Samples
+                    </h3>
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <template x-for="document in selectedProject?.documents" :key="document.path">
+                            <a :href="document.path" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-all">
+                                <span class="font-semibold" x-text="document.label"></span>
+                            </a>
+                        </template>
+                    </div>
+                </div>
+
                 <!-- Gallery Preview -->
                 <div x-show="selectedProject?.images?.length > 1">
                     <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
@@ -667,7 +705,7 @@ x-transition:leave-end="opacity-0" class="absolute inset-0 bg-slate-900/80 backd
                         Project Gallery
                     </h3>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
-                        <template x-for="(img, idx) in selectedProject?.images.slice(1)" :key="idx">
+                        <template x-for="(img, idx) in selectedProject?.images?.slice(1)" :key="idx">
                             <a :href="img" target="_blank"
                                 class="block aspect-video rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition-colors group shadow-lg">
 <img :src="img"

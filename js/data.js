@@ -226,6 +226,30 @@ const portfolioData = {
                 "technologies": ["SEO Writing", "Copywriting"]
             },
             {
+                "id": "sugar-storm-app-store-complaint",
+                "title": "Sugar Storm App Store Complaint",
+                "documents": [
+                    {
+                        "label": "Sugar Storm complaint sample",
+                        "path": "fiverr/apple store complaints content/Complaint against _ Sugar Storm game _ 5 complaints.docx"
+                    }
+                ],
+                "description": "A structured app-store complaint-writing sample outlining user-facing concerns about the Sugar Storm 4+ game, including its feature descriptions, user experience, and privacy disclosures.",
+                "technologies": ["Content Writing", "Research", "App Store Guidelines"]
+            },
+            {
+                "id": "egypt-golf-app-store-complaint",
+                "title": "Egypt Golf App Store Complaint",
+                "documents": [
+                    {
+                        "label": "Egypt Golf complaint sample",
+                        "path": "fiverr/apple store complaints content/Complaints Against _Egypt Golf 4 Game_ _ 5 complaints.docx"
+                    }
+                ],
+                "description": "A structured app-store complaint-writing sample examining the Egypt Golf 4+ game's presentation, cultural representation, and privacy disclosures.",
+                "technologies": ["Content Writing", "Research", "App Store Guidelines"]
+            },
+            {
                 "id": "nawaz-internship-report",
                 "title": "Nawaz Internship Report",
                 "images": ["images/nawaz.png"],
@@ -249,6 +273,13 @@ if (portfolioDataScriptUrl) {
 
             if (project.pdf) {
                 project.pdf = new URL(project.pdf, siteRootUrl).href;
+            }
+
+            if (Array.isArray(project.documents)) {
+                project.documents = project.documents.map(document => ({
+                    ...document,
+                    path: new URL(document.path, siteRootUrl).href
+                }));
             }
         }
     }
