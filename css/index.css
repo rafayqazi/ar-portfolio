@@ -943,6 +943,154 @@ body.wm-theme [data-aos] {
   }
 }
 
+/* ==========================================================================
+   Hero Cover Parallax & 3D Interactive Showcase
+   ========================================================================== */
+.hero-parallax-stage {
+  perspective: 1400px;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.hero-parallax-card {
+  position: relative;
+  background: #090e19 !important;
+  transform-style: preserve-3d;
+  transition: transform 0.12s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
+  will-change: transform;
+  border-radius: 1.25rem;
+  box-shadow: 
+    0 25px 65px -15px rgba(0, 0, 0, 0.8),
+    0 0 45px -10px rgba(245, 158, 11, 0.25),
+    0 0 55px -15px rgba(238, 99, 65, 0.25);
+}
+
+@media (min-width: 640px) {
+  .hero-parallax-card {
+    border-radius: 1.75rem;
+  }
+}
+
+body.wm-theme .hero-parallax-card {
+  background: #090e19 !important;
+  box-shadow: 
+    0 25px 60px -15px rgba(18, 49, 121, 0.22),
+    0 10px 30px -10px rgba(0, 0, 0, 0.4),
+    0 0 40px -5px rgba(245, 158, 11, 0.25);
+  border: 1px solid rgba(18, 49, 121, 0.25) !important;
+}
+
+.hero-parallax-card:hover {
+  box-shadow: 
+    0 35px 85px -15px rgba(0, 0, 0, 0.9),
+    0 0 65px -8px rgba(245, 158, 11, 0.4),
+    0 0 75px -10px rgba(238, 99, 65, 0.35);
+}
+
+body.wm-theme .hero-parallax-card:hover {
+  box-shadow: 
+    0 35px 80px -15px rgba(18, 49, 121, 0.3),
+    0 0 65px -5px rgba(245, 158, 11, 0.35),
+    0 0 75px -8px rgba(238, 99, 65, 0.3);
+}
+
+.hero-parallax-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 2056 / 765;
+  object-fit: cover;
+  transform: translateZ(0);
+}
+
+.hero-browser-bar {
+  background: #080d1a !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.wm-theme .hero-browser-bar {
+  background: #0d1527 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.hero-browser-bar span,
+.hero-browser-bar button {
+  color: #f1f5f9 !important;
+}
+
+.hero-browser-bar .hero-status-pill {
+  color: #fbbf24 !important;
+  background-color: rgba(245, 158, 11, 0.18) !important;
+  border: 1px solid rgba(245, 158, 11, 0.45) !important;
+}
+
+.hero-glare-effect {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(circle 600px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.16), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  mix-blend-mode: overlay;
+}
+
+.hero-parallax-card:hover .hero-glare-effect {
+  opacity: 1;
+}
+
+.hero-contact-pill {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.wm-theme .hero-contact-pill {
+  background: #ffffff !important;
+  border: 1px solid rgba(18, 49, 121, 0.12) !important;
+  color: #123179 !important;
+  box-shadow: 0 4px 14px rgba(18, 49, 121, 0.08);
+}
+
+body.wm-theme .hero-contact-pill:hover {
+  background: #f8fafc !important;
+  border-color: #EE6341 !important;
+  color: #EE6341 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(238, 99, 65, 0.18);
+}
+
+@keyframes hero-ambient-pulse {
+  0% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.06);
+  }
+  100% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+}
+
+.hero-ambient-pulse {
+  animation: hero-ambient-pulse 5.5s ease-in-out infinite;
+}
+
+@keyframes hero-card-idle {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-7px) rotateX(1deg) rotateY(-0.8deg);
+  }
+}
+
+.hero-idle-float {
+  animation: hero-card-idle 6s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto !important;
