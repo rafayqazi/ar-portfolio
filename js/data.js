@@ -267,7 +267,8 @@ if (portfolioDataScriptUrl) {
 
     for (const projects of Object.values(portfolioData.portfolio)) {
         for (const project of projects) {
-            if (Array.isArray(project.images)) {
+            if (Array.isArray(project.images) && project.images.length > 0) {
+                project.thumb = new URL(`images/thumbs/${project.id}.webp`, siteRootUrl).href;
                 project.images = project.images.map(image => new URL(image, siteRootUrl).href);
             }
 

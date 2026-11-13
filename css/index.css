@@ -275,63 +275,89 @@ body {
   background: var(--accent);
 }
 
-/* Flip Card (Service Cards - design.md 4.4) */
-.flip-card {
-  perspective: 1200px;
-  height: 100%;
-}
-
-.flip-inner {
+/* Modern Service Cards (design.md 4.4) */
+.service-card {
   position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: 260px;
-  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-inner,
-.flip-card:focus-within .flip-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-front,
-.flip-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  background: var(--bg-color);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.5rem;
+  padding: 1.75rem;
   display: flex;
   flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: var(--shadow-light);
+  overflow: hidden;
+  height: 100%;
 }
 
-.flip-back {
-  transform: rotateY(180deg);
-}
-
-.flip-num {
+.service-card::before {
+  content: '';
   position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #EE6341, #123179);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(238, 99, 65, 0.45);
+  box-shadow: 0 20px 40px -10px rgba(18, 49, 121, 0.16), 0 0 25px -5px rgba(238, 99, 65, 0.15);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-icon-box {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.service-num {
+  font-family: monospace;
   font-size: 0.75rem;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   color: var(--text-secondary);
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
-.flip-link {
+.service-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  background: rgba(18, 49, 121, 0.06);
+  color: #475569;
+  border: 1px solid rgba(18, 49, 121, 0.08);
+  transition: all 0.2s ease;
+}
+
+.service-card:hover .service-tag {
+  background: rgba(238, 99, 65, 0.08);
+  border-color: rgba(238, 99, 65, 0.25);
+  color: #123179;
+}
+
+.service-action-link {
   margin-top: auto;
   color: var(--accent);
-  font-size: 0.875rem;
+  font-size: 0.825rem;
   font-weight: 700;
   transition: var(--transition-smooth);
 }
 
-.flip-link:hover {
-  color: white;
-  transform: translateX(4px);
+.service-action-link:hover {
+  color: var(--accent-strong);
 }
 
 /* WhatsApp Floating Button */
@@ -415,44 +441,54 @@ body {
    ========================================================== */
 
 body.wm-theme {
-  --bg-color: #ffffff;
-  --text-primary: #202020;
-  --text-secondary: #5b6574;
+  --bg-color: #f8faff;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
   --accent: #EE6341;
-  --accent-strong: #EE5E3B;
+  --accent-strong: #d94b29;
   --accent-2: #123179;
   --accent-2-light: #162C64;
-  --accent-glow: rgba(238, 99, 65, 0.3);
+  --accent-glow: rgba(238, 99, 65, 0.25);
 
-  --shadow-light: 8px 8px 18px rgba(18, 49, 121, 0.10), -8px -8px 18px rgba(255, 255, 255, 0.9);
-  --shadow-inset: inset 6px 6px 12px rgba(18, 49, 121, 0.08), inset -6px -6px 12px #ffffff;
+  --shadow-light: 0 10px 30px -5px rgba(18, 49, 121, 0.08), 0 4px 12px -2px rgba(18, 49, 121, 0.04);
+  --shadow-inset: inset 2px 2px 5px rgba(18, 49, 121, 0.05), inset -2px -2px 5px #ffffff;
 
-  --glass-bg: rgba(255, 255, 255, 0.75);
-  --glass-border: rgba(18, 49, 121, 0.12);
-  --glass-shadow: 0 12px 40px rgba(18, 49, 121, 0.10);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(18, 49, 121, 0.10);
+  --glass-shadow: 0 12px 35px -8px rgba(18, 49, 121, 0.08);
 
   background-color: var(--bg-color);
+  background-image: 
+    radial-gradient(circle at 10% 8%, rgba(238, 99, 65, 0.045) 0%, transparent 40%),
+    radial-gradient(circle at 90% 12%, rgba(18, 49, 121, 0.055) 0%, transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(245, 158, 11, 0.035) 0%, transparent 50%);
+  background-attachment: fixed;
   color: var(--text-primary);
 }
 
 /* Tailwind utility re-maps (higher specificity than CDN utilities) */
 body.wm-theme .text-white {
-  color: #123179; /* navy headings */
+  color: #0c1a3b; /* crisp deep navy headings */
 }
-body.wm-theme .text-slate-300 {
-  color: #3d4a5d;
+body.wm-theme .text-slate-100,
+body.wm-theme .text-slate-200 {
+  color: #1e293b;
+}
+body.wm-theme .text-slate-300,
+body.wm-theme .text-slate-300\/90 {
+  color: #334155;
 }
 body.wm-theme .text-slate-400 {
-  color: #5b6574;
+  color: #475569;
 }
 body.wm-theme .text-slate-500 {
-  color: #8a94a6;
+  color: #64748b;
 }
 body.wm-theme .text-slate-600,
 body.wm-theme .text-slate-700,
 body.wm-theme .text-slate-800,
 body.wm-theme .text-slate-900 {
-  color: #202020;
+  color: #0f172a;
 }
 body.wm-theme .text-purple-400,
 body.wm-theme .text-sky-300 {
@@ -597,28 +633,89 @@ body.wm-theme .glass-panel:hover {
   border-color: rgba(238, 99, 65, 0.35);
 }
 
-/* Service flip cards: front white, back coral (per Web Matrix) */
-body.wm-theme .flip-front {
+/* Modern Service Cards in Light Theme */
+body.wm-theme .service-card {
   background: #ffffff;
+  border: 1px solid rgba(18, 49, 121, 0.10);
+  box-shadow: 0 10px 28px -6px rgba(18, 49, 121, 0.07);
 }
-body.wm-theme .flip-back {
-  background: linear-gradient(145deg, #EE6341 0%, #EE5E3B 100%);
+
+body.wm-theme .service-card:hover {
+  background: #ffffff;
+  border-color: rgba(238, 99, 65, 0.45);
+  box-shadow: 0 22px 45px -10px rgba(18, 49, 121, 0.15), 0 0 25px -4px rgba(238, 99, 65, 0.14);
 }
-body.wm-theme .flip-back h3 {
-  color: #ffffff;
+
+body.wm-theme .service-card h3 {
+  color: #0c1a3b;
 }
-body.wm-theme .flip-back p {
-  color: rgba(255, 255, 255, 0.85);
+
+body.wm-theme .service-card p {
+  color: #475569;
 }
-body.wm-theme .flip-back .flip-link {
-  color: #ffffff;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-}
-body.wm-theme .flip-back .flip-link:hover {
+
+body.wm-theme .service-num {
   color: #123179;
 }
-body.wm-theme .flip-num {
-  color: #123179;
+
+/* Hero Typography & Highlights */
+.hero-status-badge {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.28);
+  color: #065f46;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.08);
+}
+
+body.wm-theme .hero-status-badge {
+  background: rgba(16, 185, 129, 0.10);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #065f46;
+}
+
+.hero-main-title {
+  color: #0c1a3b;
+}
+
+.hero-lead-text {
+  color: #334155 !important;
+}
+
+.hero-strong {
+  color: #0c1a3b;
+  font-weight: 700;
+}
+
+.hero-highlight {
+  color: #d97706;
+  font-weight: 700;
+}
+
+.hero-wa-btn {
+  background: #ffffff;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #047857;
+}
+
+.hero-wa-btn:hover {
+  background: #ecfdf5;
+  border-color: #10b981;
+  color: #065f46;
+}
+
+/* Skeleton Shimmer Loader for Portfolio Images */
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #eef2f6 25%, #f8faff 50%, #eef2f6 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 /* Hover states on light background */
